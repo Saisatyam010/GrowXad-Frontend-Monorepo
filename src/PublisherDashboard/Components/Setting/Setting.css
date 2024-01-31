@@ -1,0 +1,149 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.rs_page-profile {
+  padding: 0 0 60px;
+}
+
+.rs_main-wrapper {
+  background: white;
+  border-radius: var(--border-radius);
+  margin: 0 auto 30px !important;
+
+  padding: 40px 16px 40px;
+}
+
+
+.rs_text-h4 {
+  font-family: var(--font-family);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.rs_disabled {
+  border-color: rgba(0, 0, 0, 0.1) !important;
+  box-shadow: none !important;
+  color: #bbb !important;
+  width: 100%;
+  height: 40px;
+  margin-left: 1px;
+}
+
+.rs_chekbox {
+  margin: 15px 0 0 10px;
+}
+
+.rs_submit-button {
+  
+  background-color:#888888;
+  border-radius: 3px;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-family: var(--font-family);
+  font-size: 14px;
+  font-weight: 700;
+  border: none;
+  text-transform: uppercase;
+  transition: 0.25s;
+  margin-top: 9px;
+  height: 40px;
+  width: 130px;
+}
+
+.rs_submit-button:hover 
+{
+  background-color: #000;
+}
+
+.rs_submit-buttons {
+  
+  background-color: gray;
+  border-radius:3px;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-family: var(--font-family);
+  font-size: 14px;
+  font-weight: 700;
+  border: none;
+  margin-top: 9px;
+  height: 40px;
+  width: 130px;
+  text-transform: uppercase;
+  transition: 0.25s;
+  width: 60%;
+}
+
+.rs_submit-buttons:hover 
+{
+  background-color: #000;
+}
+
+.rs_page-content-wrap {
+  background: #f0f0f0;
+  color: #111;
+  cursor: default;
+  font: 400 14px/21px "Exo 2", sans-serif;
+  -webkit-font-smoothing: subpixel-antialiased;
+  overflow: auto;
+}
+
+.rs_input-device {
+  width: 271%;
+  height: 120%;
+  margin-left: 2px;
+}
+
+.rs_heading-text {
+  font-family: var(--font-family);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.rs_Checkbox 
+{
+  background-color: initial;
+  cursor: default;
+  appearance: auto;
+  box-sizing: border-box;
+  margin: 3px 3px 3px 4px;
+  padding: initial;
+  border: initial;
+  text-rendering: auto;
+  color: fieldtext;
+  letter-spacing: normal;
+  word-spacing: normal;
+  line-height: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  text-align: start;
+  appearance: auto;
+  -webkit-rtl-ordering: logical;
+  cursor: text;
+  background-color: field;
+  margin: 0em;
+  padding: 1px 0px;
+  border-width: 2px;
+  border-style: inset;
+  border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+  border-image: initial;
+  padding-block: 1px;
+  padding-inline: 2px;
+}
+
+.rs_checkbox_text 
+{
+  margin-left: 12px;
+}

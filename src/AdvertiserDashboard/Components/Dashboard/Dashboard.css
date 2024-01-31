@@ -1,0 +1,6 @@
+.dp_dashboard_chart_container{
+    border: 1px solid #E5E5E5;
+    border-radius: 0.625rem;
+    padding: 1.25rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}

@@ -1,0 +1,224 @@
+
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan&display=swap');
+
+* 
+{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+
+.rs_main-container2 
+{
+    margin: 0 auto;
+    max-width: 1215px;
+    padding: 0 20px;
+    width: 100%;
+}
+
+.rs_common-banner-new 
+{
+    /* background: linear-gradient(99.73deg,#c73414 4.29%,#fd4305 106.89%); */
+    border-radius: 20px;
+    color: #fff;
+    margin: 50px 0;
+    padding: 20px 0;
+    position: relative;
+   
+}
+
+.rs_common_banner__content 
+{
+    margin: 0 auto;
+    max-width: 1040px;
+    width: 100%;
+}
+
+.rs_text 
+{
+    text-align: center !important;
+}
+
+
+.rs_button 
+{
+    border:none;
+    min-width: 150px;
+    font-size: 20px;
+    padding: 15px 20px;
+    background: linear-gradient(275.54deg,#ff471f -58.22%,#ff8514 79.6%);
+    color:white;
+    font-weight: bold;
+    font-family: 'League Spartan', sans-serif;
+}
+
+.rs_ipp_why-join 
+{
+    background-color: #f7f8f9;
+    margin: 40px 0;
+    padding: 30px 0;
+}
+
+.rs_highlight-red 
+{
+    color: #ce0000;
+    font-family: 'League Spartan', sans-serif;
+}
+
+.rs_elems 
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-top: 50px;
+}
+
+.rs_elem_item 
+{
+    display: flex;
+    /* flex: 0 50%; */
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-bottom: 20px;
+}
+.rs_img 
+{
+    display: flex;
+    justify-content: center;
+}
+
+.rs_back 
+{
+    align-items: center;
+    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/652/confectionary.png);
+    filter: drop-shadow(2px 2px 24px rgba(0,0,0,.09));
+    height: 100px;
+    width: 100px;
+    border-radius: 10px;
+}
+
+.rs_p-text 
+{
+    color: #333;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 20px;
+    text-align: center;
+
+}
+
+.bgpricing{
+    /* background-image: url(/public//image/snow\ gif.gif); */
+    height:100%;
+}
+
+
+.rs_pricing_whyjoin{
+    /* style={{ border: "1px solid red",borderRadius:"15px"}} */
+    border: 2px solid rgb(115,3,91);
+    border-radius: 20px;
+    text-align: center;
+    padding: 50px 10px;
+    height: 100%;
+}
+
+.rs_pricing_whyjoin:hover{
+    /* box-shadow: 3px 3px 10px  rgb(115,3,91); */
+
+    box-shadow: 0 0 14px 0 rgba(0,0,0,.3);
+    box-shadow: 0 0 14px 0 rgba(0,0,0,.2);
+    /* padding: 20px;
+    margin-bottom: 20px; */
+    background: linear-gradient(rgba(255, 255, 255, 0.343), rgba(255, 255, 255, 2.315)) padding-box, conic-gradient(from var(--angle), #c892d682, #71065D) border-box;
+    border: 2px solid transparent;
+    border-radius: 16px;
+    /* max-width: 400px; */
+    animation: rotate-gradient 3s infinite linear;
+}
+
+@keyframes rotate-gradient {
+    from { --angle: 0deg; }
+    to { --angle: 360deg; }
+}
+
+.rs_pricing_whyjoin .rk_jointxt-2:hover{
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    cursor: pointer;
+    
+}
+
+
+.rk_jointxt{
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.1;
+
+}
+
+
+.rk_join-m-1{
+    color: #ff471f;
+}
+.rk_join-m-2{
+    color: gray;
+}
+
+.rk_join_icon{
+    font-size: 2.2rem;
+    color: #ff471f;
+    
+}
+
+.rk_price_h1{
+    font-weight: 900;
+    line-height: 2.5rem;
+    
+}
+.rk_price_h2{
+    font-weight: 800;
+    
+}
+
+
+.rk_price_bx-3{
+    
+    font-size: 1.3rem;
+    font-weight: 500;
+    line-height: 2.2rem;
+}
+.rk_price_bx-3 p{
+    
+    margin: 0;
+}
+
+.rk_price_bx-3 ul{
+    
+    padding: 0;
+    margin: 0;
+
+}
+
+.rk_price_bx-3 ul li{
+   
+    text-decoration: none;
+}
+.rk_price_bx-3 ul li a{
+    color: #ff471f;
+   
+    text-decoration: none;
+}
+.rk_price_bx-3-Vl{
+    width: 1px;
+   height: 100%;
+    background-color: rgba(128, 128, 128, 0.238);
+}
+.rk_price_bx-3-Hl{
+    color: rgba(128, 128, 128, 0.515);
+
+}
+
+
+/* -----create campaign button --->>> */
+

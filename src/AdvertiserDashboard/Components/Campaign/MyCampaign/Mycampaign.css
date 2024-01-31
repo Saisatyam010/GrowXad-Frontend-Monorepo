@@ -1,0 +1,54 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+  
+}
+
+.rk_mycampaign_btn1{
+    background-color: black;
+    color: white;
+    padding: 8px 25px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+
+}
+.rk_mycampaign_div2{
+    display: flex;
+    justify-content: space-around;
+}
+
+.rk_cpagoal_txt-cont{
+    margin-top: 8rem;
+    border-radius: 5px;
+    margin-bottom: 2rem;
+}
+.rk_cpagoal_txt-cont-main{
+    margin-top: 2rem;
+    border-radius: 5px;
+    margin-bottom: 2rem;
+}
+
+.rk_cpagoal_rule-main{
+    border-bottom: 1px solid #ccc;
+    /* margin: 1.5rem 0rem; */
+    margin-bottom: 1.5rem;
+    padding: .5rem 0rem;
+}
+
+.SSA-Table-MyCampaign-Select{
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+}
+.SSA-Table-MyCampaign-Select:focus{
+    width: 100%;
+    border: 1px solid #ccc !important;
+    border-radius: 5px;
+    padding: 5px;
+  box-shadow: none !important;
+}
+

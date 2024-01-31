@@ -1,0 +1,152 @@
+.SSA_CPA_Font42px{
+    font-size: 44px;
+    font-weight: 600;
+    line-height: 1em;
+    font-family: Rubik,sans-serif;
+}
+
+.SSA_CPA_Font22px{
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 28px;
+}
+.ssa_font-weight-500{
+    font-weight: 500 !important;
+}
+.SSA_CPA_Font20px{
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 22px;
+}
+
+.SSA_CPA_Font18px{
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 22px;
+}
+.SSA_CPA_TextPurple{
+    color: #73035b !important;
+}
+
+.SSA_CPA_BG_img2{
+    background-image: url('https://imagedelivery.net/f5tF3V4WaB6L98qcq1rX5w/f9f36bfc-9684-4a16-d928-1d1101fe0a00/public');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: #fff;
+    padding: 100px 0;
+}
+
+
+@property --angle {
+	syntax: '<angle>';
+	inherits: true;
+	initial-value: 0deg;
+}
+
+.SSA_CPA_Card2{
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 14px 0 rgba(0,0,0,.2);
+    padding: 20px;
+    margin-bottom: 20px; 	
+	border-radius: 16px
+}
+
+
+.SSA_CPA_Card{
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 14px 0 rgba(0,0,0,.2);
+    padding: 20px;
+    margin-bottom: 20px;
+	border: 2px solid transparent;
+	border-radius: 16px;
+	max-width: 400px; 
+}
+
+.SSA_CPA_Card:hover{
+    box-shadow: 0 0 14px 0 rgba(0,0,0,.3);
+    box-shadow: 0 0 14px 0 rgba(0,0,0,.2);
+    padding: 20px;
+    margin-bottom: 20px;
+    background: linear-gradient(white, white) padding-box, conic-gradient(from var(--angle), #ffffff, #71065d) border-box;
+	border: 2px solid transparent;
+	border-radius: 16px;
+	max-width: 400px;
+	animation: rotate-gradient 3s infinite linear;
+}
+@keyframes rotate-gradient {
+	from { --angle: 0deg; }
+	to { --angle: 360deg; }
+}
+
+.SSA_CPA_Width25px{
+    background: #71065d;
+    border-radius: 30px;
+    height: 4px;
+    margin: 0 auto;
+    width: 25px;
+}
+
+.SSA_CPA_Payment_cards{
+    background-color: #fff;
+    border-radius: 30px;
+    box-shadow: 0 0 39px 0 rgba(0,0,0,.1);
+    padding: 20px;
+    margin-bottom: 18px;
+    height: 110px;
+    border: 1px solid #eaeaea;
+}
+
+.SSA_COM_Network_Bg_main{
+    background-repeat: no-repeat;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-color: #ffffff;
+}
+
+.SSA_CPA_Network_button{
+    background-color: #73035b;
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    border: 1px solid #73035b;
+    border-radius: 5px;
+}
+
+.SSA_CPA_Network_button:hover{
+    background-color: #530442;
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    border: 1px solid #73035b;
+    border-radius: 5px;
+}
+
+.SSA_CPA_circle{
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 14px 0 rgba(115,3,91,.4);
+    padding: 20px;
+    border: 1px solid #eaeaea;
+}
+.SSA_CPA_img_zoom{
+    scale: 1;
+    transition: all 0.5s ease-in-out;
+}
+.SSA_CPA_img_zoom:hover{
+    scale: 1.2;
+    transition: all 0.5s ease-in-out;
+}
+.SSA_IMG_CPA_widthHeight {
+    width: 120px;
+    height: 145spx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+

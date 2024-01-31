@@ -1,0 +1,100 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+}
+
+.sk_h{
+    font-family: "League Spartan";
+}
+
+.sk_color{
+    color: #71065D;
+}
+
+
+
+.sk_border{
+    border-radius: 30px;
+    height: 660px;
+
+}
+
+@media (min-width:720px) and (max-width:821px) {
+    .sk_border{
+        width: 60%;
+    }
+    
+
+}
+
+@media (min-width:320px) and (max-width:720px){
+    .sk_h{
+        font-size: 16px;
+    }
+}
+
+
+.sk_border:hover{
+   
+    background-color: #71065D !important;
+    
+
+}
+
+/* Growtharea css */
+
+
+   
+   
+   
+   .img-button {
+       width: 100%;
+       padding: 0;
+       border: none;
+       background: none;
+       cursor: pointer;
+   }
+   
+   
+   .sk_cont{
+       background-color:#efefef;
+       border-radius: 0 0 0 40px;
+       margin-bottom: 50px;
+       padding-bottom:0 !important ;
+       padding-top:0 ;
+    
+   
+   }
+   .sk_img{
+       margin-right: -150px;
+       margin-top  : -150px;
+       margin-left: 100px;
+   }
+   
+   .sk_effect_div{
+       /* overflow: hidden; */
+   }
+   
+   
+   
+  
+   .sk_real01{
+   
+    /* top: -150px; */
+    
+    z-index: -1;
+    
+    
+   }
+
+   .sk_body{
+    margin: 0;   
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "League Spartan";
+  
+   }
+   
+   

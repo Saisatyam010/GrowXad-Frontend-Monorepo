@@ -1,0 +1,22 @@
+.sana-tabel-payment {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .sana-tabel-payment td, .sana-tabel-payment th {
+    border: 1px solid #ddd;
+    padding: 18px;
+  }
+  
+  .sana-tabel-payment tr:nth-child(even){background-color: #f2f2f2;}
+  
+  .sana-tabel-payment tr:hover {background-color: #ddd;}
+  
+  .sana-tabel-payment th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    font-size: 22px;
+    color: rgb(0, 0, 0);
+  }

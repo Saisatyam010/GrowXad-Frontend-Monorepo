@@ -1,0 +1,102 @@
+.SSA_Newsletter_form-control{
+	height: 50px;
+	background: #ffffff;
+	border-color: grey;
+	padding: 0 15px;
+	font-size: 16px;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+.SSA_Newsletter_form-control:focus{
+	
+    border: 2px solid #73035b;
+	-webkit-box-shadow: 0px 0px 20px rgba(0, 0, 0, .1);
+	-moz-box-shadow: 0px 0px 20px rgba(0, 0, 0, .1);
+	box-shadow: 0px 0px 20px rgba(0, 0, 0, .1);
+}
+
+.SSA_Newsletter_MainHeading{
+    font-size: 3rem;
+    font-weight: 700;
+    line-height:50px;
+    padding-top: 20px;
+}
+.SSA_Newsletter_MainHeading2{
+    font-size: 2.3rem;
+    font-weight: 600;
+    line-height:50px;
+    padding-top: 40px;
+}
+.SSA_Newsletter_Para{
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 26px;
+}
+
+.SSA_Newsletter_font16px{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+}
+
+.SSA_Newsletter_LeftBorder{
+    border-left: 3px solid #73035b;
+    padding-left: 20px;
+}
+
+.SSA_Newsletter_font18px{
+    font-size: 18px;
+    font-weight: 400;
+    color: #303030;
+    line-height: 26px;
+
+}
+
+.SSA_Newsletter_BTN{
+    background-color: #73035b;
+    color: #fff;
+    border-radius: 0;
+    padding: 10px 30px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 26px;
+    border: 2px solid #73035b;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+.SSA_Newsletter_BTN:hover{
+    background-color: #501844;
+    color: #fff;
+    border-radius: 0;
+    padding: 10px 30px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 26px;
+    border: 2px solid #73035b;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.SSA_Newsletter_text_purple{
+    color: #73035b;
+}
+
+.SSA_Newsletter_text_grey{
+    color: #818181;
+}
+
+.bgimgNEWSLETTER{
+    background: linear-gradient(to bottom, rgba(205, 205, 205, 0.1), rgba(197, 194, 194, 0.1)), url("https://imagedelivery.net/f5tF3V4WaB6L98qcq1rX5w/9ac2bff2-b4e3-411f-0240-6c753e8f9b00/public");
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+}

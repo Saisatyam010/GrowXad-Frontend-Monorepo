@@ -1,0 +1,166 @@
+.SSA_SelfService_MainHeading{
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0px;
+    padding: 20px 0px;
+
+}
+.SSA_SelfService_SubHeadiing{
+    font-size: 2.8rem;
+    font-weight: 600;
+    line-height:40px;
+}
+.SSA_SelfService_Para{
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 26px;
+}
+.SSA_SELFSERVICE_PURPLE{
+    color: #73035B;
+}
+.SSA_SelfServe_card1 {
+    display: block;
+    position: relative;
+    background-color: #FFFFFF;
+    border-radius: 4px;
+    padding: 32px 24px;
+    margin: 12px;
+    border: 1px solid #FAFAFA;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, .2);
+    text-decoration: none;
+    z-index: 0;
+    overflow: hidden;
+    &:before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: -16px;
+      right: -16px;
+      background: #73035B;
+      height: 62px;
+      width: 62px;
+      color: white !important;
+      border-radius: 32px;
+      transform: scale(0);
+      transform-origin: 50% 50%;
+      transition: transform 0.45s ease-out;
+    }
+    &:hover:before {
+      transform: scale(21);
+    }
+  }
+  .SSA_SelfServe_card1:hover {
+      transition: all 0.3s ease-out;
+      color: rgba(255, 255, 255) !important;
+      .SSA_benefits_font26px_purple{
+        color: rgba(255, 255, 255) !important;
+      }
+  }
+
+.ab-sscontainer1 {
+ 
+    border-radius: 20px;
+}
+.ab-sscontainer2 {
+    background-color: rgb(70, 12, 57);
+    border-radius: 20px;
+    color: white;
+}
+.ab-ssbtn {
+    
+    margin-top: 30px;
+    font-size: 20px;
+    border: 1px solid #71065d;
+    padding: 10px 20px;
+    color: #73035B;
+    font-weight: 700;
+    border-radius: 10px;
+    
+}
+
+.ab-sspara {
+    font-size: 18px;
+    font-weight: 400;
+}
+.ab-ssborderpara1 {
+    padding: 35px 30px;
+    border-radius: 16px;
+    border: 1px dotted grey;
+}
+.ab-ssborderpara1:hover {
+    padding: 35px 30px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+.ab-ssborderpara2 {
+    padding: 30px 10px 11px 20px;
+    border-radius: 16px;
+    border: 1px dotted grey;
+}
+.ab-ssborderpara2:hover {
+    padding: 30px 10px 11px 20px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.ab-ssborder {
+    padding: 16px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    border-radius: 15px;
+}
+.ab-ssborder:hover {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+.ab-ssborder1 {
+    padding: 16px;
+    box-shadow: rgba(49, 49, 75, 0.25) 0px 50px 100px -20px, rgba(67, 67, 67, 0.3) 0px 30px 60px -30px, rgba(26, 50, 74, 0.35) 0px -2px 6px 0px inset;
+    border-radius: 15px;
+}
+
+.ab-ssborder1 p{
+padding: 10px 0px;
+}
+
+.ab-ssborder1:hover {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.ab-ssbtn2 {
+    padding: 20px 30px;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    background: #73035B;
+    
+}
+
+
+.ab-selfservice-iconcontainer{
+    padding: 5px;
+    border-radius: 15px;
+    border: 1px solid #71065d;
+    background-color: whitesmoke;
+}
+
+.ab-sspoints {
+    display: inline-flex;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    background-color: #73035B;
+    color: white;
+}
+.ab-ssline {
+    width: 35px;
+    height: 8px;
+    background-color: #73035B;
+    border-radius: 10px;
+  text-align: center;
+}
+.ab-ssline:hover{
+    width: 35px;
+    height: 8px;
+    background-color: #000000;
+    border-radius: 10px;
+  text-align: center;
+}

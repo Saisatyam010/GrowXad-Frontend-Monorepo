@@ -1,0 +1,84 @@
+.dp_particles_main_container {
+    background-color: white;
+    /* border-radius: 50px; */
+    border: 1px solid rgb(115 3 91);
+}
+
+.dp_particles_main_container:hover {
+    background-color: #efbbbb23;
+}
+
+.dp_particles_learnmore_button {
+    outline: none;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0px 20px;
+    transition: transform 0.3s ease;
+    transform: scale(1);
+    
+}
+
+.dp_particles_learnmore_button:hover {
+    background-color: #d9d9d9;
+    /* border: 1px solid rgb(115 3 91); */
+    
+    transform: scale(1.1);
+}
+
+
+.dp_particles_livedemo_button {
+   
+    outline: none;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    transform: scale(1);
+
+
+}
+
+.dp_particles_livedemo_button:hover {
+    transform: scale(1.1);
+}
+
+.dp_particles_paragraph {
+    font-size: 14px;
+    margin: 0px;
+}
+
+
+
+
+
+
+
+
+
+
+body, div, p, iframe {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+  }
+
+
+  .video-container {
+    position: relative;
+    padding-top: 56.25%; }
+
+  iframe {
+    border: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }

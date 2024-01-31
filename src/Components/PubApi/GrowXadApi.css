@@ -1,0 +1,122 @@
+.ab-api-1bg {
+    background-color: rgb(115, 3, 91);
+}
+
+.ab-apiimg {
+    width: 100%;
+}
+
+.ab-SSA_Benefit_bg_img_main {
+    background-size: cover;
+    background: linear-gradient(to top, #000000, rgb(68, 6, 6), rgb(0, 0, 0));
+    background-blend-mode: lighten;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.ab-api-card {
+    padding: 15px;
+    font-size: 18px;
+    color: rgb(115, 3, 91);
+    border-radius: 10px;
+}
+
+@media (min-width:765px) {
+    .ab-api-card {
+        height: 115px;
+    }
+}
+
+.ab-api-ad-pb {
+    padding: 15px;
+    font-size: 18px;
+    color: rgb(115, 3, 91);
+    border-radius: 10px;
+}
+
+.ab-api-btn1 {
+    padding: 15px 25px;
+    color: white;
+    font-size: 15px;
+    font-weight: 400;
+    border: none;
+    border-radius: 10px;
+    margin: 0px 10px 0px 10px;
+    background: linear-gradient(88.41deg, #6400a7 13.18%, #e112e8 98.42%);
+}
+
+.ab-api-btn1:hover {
+    padding: 15px 25px;
+    color: white;
+    font-size: 15px;
+    font-weight: 400;
+    border: none;
+    border-radius: 10px;
+    margin: 0px 10px 0px 10px;
+    background: linear-gradient(88.41deg, rgb(188, 38, 202) 13.18%, rgb(212, 12, 219));
+}
+
+.ab-apibg-last {
+    background-image: url('https://imagedelivery.net/f5tF3V4WaB6L98qcq1rX5w/9fd1a302-7201-478f-512e-9e31de10bf00/public');
+    background-size: 100% 100%;
+    height: 400px;
+}
+
+.ab-api-btn {
+    padding: 15px 25px;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    border: none;
+    border-radius: 10px;
+    margin: 0px 10px 0px 10px;
+    background: linear-gradient(88.41deg, #6400a7 13.18%, #e112e8 98.42%);
+}
+
+.ab-api-btn:hover {
+    padding: 15px 25px;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    border: none;
+    border-radius: 10px;
+    margin: 0px 10px 0px 10px;
+    background: linear-gradient(88.41deg, #8926ca 13.18%, #87308a 98.42%);
+}
+
+.ab-api-card {
+    position: relative;
+}
+
+.ab-api-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.ab-api-card:hover::before {
+    opacity: 1;
+    animation: pulse-border 1.5s infinite;
+}
+
+@keyframes pulse-border {
+    0% {
+        border-color: #007bff;
+    }
+
+    50% {
+        border-color: #ff7f50;
+    }
+
+    100% {
+        border-color: #007bff;
+    }
+}

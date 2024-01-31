@@ -1,0 +1,137 @@
+/* Row - 1 CSS  */
+
+.dp_cpagoals_top_container {
+    background-color: #efefef;
+    border-bottom-left-radius: 30px;
+    padding: 40px;
+}
+
+.dp_cpagoals_top_container span {
+    font-size: 30px;
+    font-weight: 700;
+
+}
+
+.dp_cpagoals_top_left_col {
+    padding: 1px;
+}
+
+.dp_cpagoals_top_left_col p {
+    font-size: 14px;
+    padding: 10px 0px;
+}
+
+.dp_cpagoals_signup_button {
+    border: none;
+    border-radius: 10px;
+    padding: 10px 40px;
+    background-color: #73035b;
+    color: white;
+}
+
+.dp_cpagoals_topbenifits_container {
+    color: white;
+    margin-top: 50px;
+    background-color: #333333;
+    border-radius: 30px;
+    padding: 40px;
+}
+
+
+.dp_cpa_enableCPA_numbering {
+    display: inline-flex;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    color: white;
+}
+
+.dp_cpa_enableCPA_link {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.dp_cpa_enableCPA_link:hover {
+    color: blue;
+    cursor: pointer;
+}
+
+.dp_cpa_enableCPA_bgimage {
+    background-image: url(https://adsterra.com/_nuxt/img/screenshot.1559b10.png);
+    background-size: 100% 100%;
+}
+
+.dp_cpa_enableCPA_bgimage_txt {
+    padding: 10px 10px;
+    border-radius: 15px;
+    background-color: #caf0f8;
+}
+
+.dp_topusecases_container {
+    border-radius: 20px;
+    font-size: 20px;
+    color: white;
+    background-color: #333333;
+}
+
+.dp_topusecases_container span {
+    border-radius: 10px;
+    padding: 10px;
+    background-color: white;
+
+}
+
+.dp_apply_row {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-top: 1px solid lightgray;
+    margin: 0px;
+
+}
+
+.dp_apply_row :hover {
+    background-color: lightgray;
+}
+
+.dp_payment_items {
+    list-style-type: none;
+    display: flex;
+    margin: 0px;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 5px;
+}
+
+.dp_payment_items li{
+    background-color: #e7ecef;
+    margin: 5px 0px;
+    border-radius: 15px;
+    border: 1px solid lightgray;
+}
+
+.a{
+    background-image: url(https://adsterra.com/_nuxt/img/background.4612f35.png);
+   
+}
+
+.SSA_NEW_SmartCPM_card_black_bg{
+    background-color: #333;
+    border-radius: 22px;
+    height: 220px;
+    padding: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.SSA_NEW_SmartCPM_imgbgcolor{
+    align-items: center;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 2px 2px 0 #b4b4b4, 12px 12px 44px rgba(115, 3, 91, 0.9);
+    height: 72px;
+    z-index: 1;
+    justify-content: center;
+    width: 72px;
+}

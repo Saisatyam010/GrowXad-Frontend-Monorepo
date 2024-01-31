@@ -1,0 +1,207 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+}
+
+.sk_h{
+    font-family: "League Spartan";
+}
+
+.sk_color{
+    color: #71065D;
+}
+
+
+
+.sk_border{
+    border-radius: 30px;
+    height: 100%;
+    transition: transform 0.3s ease;
+}
+
+@media (min-width:720px) and (max-width:821px) {
+    .sk_border{
+        width: 60%;
+    }
+    
+
+}
+
+@media (min-width:320px) and (max-width:720px){
+    .sk_h{
+        font-size: 16px;
+    }
+}
+
+@property --angle {
+	syntax: '<angle>';
+	inherits: true;
+	initial-value: 0deg;
+}
+
+
+
+.SSA_CARD_EFFECT2{
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 14px 0 rgba(0,0,0,.2);
+    padding: 20px;
+    margin-bottom: 20px;
+   
+	
+	border-radius: 16px
+ 
+}
+
+
+.SSA_CARD_EFFECT{
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 14px 0 rgba(0,0,0,.2);
+    padding: 20px;
+    margin-bottom: 20px;
+	border: 2px solid transparent;
+	border-radius: 16px;
+	max-width: 400px; 
+}
+
+.SSA_CARD_EFFECT:hover{
+    box-shadow: 0 0 14px 0 rgba(0,0,0,.3);
+    box-shadow: 0 0 14px 0 rgba(0,0,0,.2);
+    padding: 20px;
+    margin-bottom: 20px;
+    background: linear-gradient(white, white) padding-box, conic-gradient(from var(--angle), #ffffff, #71065d) border-box;
+	border: 2px solid transparent;
+	border-radius: 16px;
+	max-width: 400px;
+	animation: rotate-gradient 3s infinite linear;
+}
+@keyframes rotate-gradient {
+	from { --angle: 0deg; }
+	to { --angle: 360deg; }
+}
+
+
+
+
+.sk_border:hover{
+    transform: translateY(-10px);
+    background-color:rgb(115 3 91) !important;
+    color: white;
+
+
+
+    box-shadow: 0 0 14px 0 rgba(0,0,0,.3);
+    box-shadow: 0 0 14px 0 rgba(0,0,0,.2);
+    /* padding: 20px;
+    margin-bottom: 20px; */
+    background: linear-gradient(rgba(255, 255, 255, 0.343), rgba(255, 255, 255, 0.315)) padding-box, conic-gradient(from var(--angle), #FFFFFF, #71065D) border-box;
+    border: 2px solid transparent;
+    border-radius: 16px;
+    /* max-width: 400px; */
+    animation: rotate-gradient 3s infinite linear;
+}
+
+@keyframes rotate-gradient {
+    from { --angle: 0deg; }
+    to { --angle: 360deg; }
+}
+
+
+/* Growtharea css */
+
+
+   
+   
+   
+   .img-button {
+       width: 100%;
+       padding: 0;
+       border: none;
+       background: none;
+       cursor: pointer;
+   }
+   
+   
+   .sk_cont{
+       background-color:#efefef;
+       border-radius: 0 0 0 40px;
+       margin-bottom: 50px;
+       padding-bottom:0 !important ;
+       padding-top:0 ;
+       /* position: relative; */
+   
+   }
+   .sk_img{
+       margin-right: -150px;
+       margin-top  : -150px;
+       margin-left: 100px;
+   }
+   
+   .sk_effect_div{
+       overflow: hidden;
+   }
+   .sk_effect_img:hover{
+       transform: scale(1.1);
+   
+   }
+   
+   .sk_effect_img{              
+       transition: transform 0.3s ease;
+    
+   }
+   
+  
+   .sk_real01{
+    position: absolute;
+    top: -150px;
+    
+    z-index: -1;
+    
+    
+   }
+
+   .sk_body{
+    margin: 0;   
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "League Spartan";
+    position: relative;
+   }
+
+
+   @media  (max-width:1000px) {
+ .sk_growth_img_cont{
+    margin-bottom: 1150px;
+    
+   }
+    
+   }
+   @media  (min-width:1001px) and (max-width:1024px) {
+ .sk_growth_img_cont{
+    margin-bottom: 650px;
+    
+   }
+    
+   }
+
+
+  
+/* 
+   @media (min-width:410px) and (max-width:766) {
+    .sk_growth_img_cont{
+        margin-bottom: 1200px;
+       }
+    
+   } */
+
+
+
+
+
+  
+   
+   
+   

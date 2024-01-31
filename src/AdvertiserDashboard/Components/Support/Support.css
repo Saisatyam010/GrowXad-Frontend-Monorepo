@@ -1,0 +1,82 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.rs_main-wrapper {
+  background: var(--white);
+  border-radius: var(--border-radius);
+  margin: 0 auto 30px !important;
+  max-width: 100%;
+  padding: 40px 16px 40px;
+  position: relative;
+  width: 1200px;
+}
+
+.rs_heading-text {
+  font-family: var(--font-family);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 28px;
+  margin-bottom: 48px;
+  text-align: center;
+}
+
+.rs_input-device {
+  min-height: 1.4375em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 50%;
+  font-weight: 400;
+  font-family: Roboto, sans-serif;
+  line-height: 1.4375em;
+  box-sizing: border-box;
+  position: relative;
+  cursor: text;
+  display: inline-flex;
+  -webkit-box-align: center;
+  align-items: center;
+  font-size: 14px;
+  position: relative;
+  border-radius: 6px;
+  height: 48px;
+  box-sizing: border-box;
+  border: 1px solid gray;
+}
+
+.rs_button {
+  background-color: #71065d;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-family: var(--font-family);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  padding: 8px 24px;
+  text-transform: uppercase;
+  transition: 0.25s;
+  width: 100px;
+  margin-left: 310px;
+  margin-top: 30px;
+  box-shadow: inset;
+}
+
+.rs_text-ticket {
+  border-radius: var(--border-radius);
+  color: var(--gray-14);
+  display: inline-block;
+  font-family: var(--font-family);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  padding: 8px;
+  position: absolute;
+  text-transform: uppercase;
+  transition: 0.25s;
+  z-index: 1;
+  margin-top: 36px;
+}
