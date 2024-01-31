@@ -15,7 +15,7 @@ const Charnot = () => {
 
   return (
     <div style={containerStyle}>
-      <Link to={'/'} className='no-underline'><h1 className='  bg-gray-50 relative top-6 text-blue-800'>Homepage</h1></Link>
+      <Link to={'/'} className='no-underline'><h1 className='  bg-gray-50 relative top-6 text-blue-800'>Go to Home Page</h1></Link>
     </div>
   );
 };
