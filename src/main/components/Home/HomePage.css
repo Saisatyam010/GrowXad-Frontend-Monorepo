@@ -1,0 +1,71 @@
+.SSA_HOME_section-background {
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    color: #FFFFFF;
+    justify-content: center;
+    align-items: center;
+}
+
+.SSA_HOME_parallax {
+    background-image: url("https://imagedelivery.net/f5tF3V4WaB6L98qcq1rX5w/5561246c-a733-423d-0e07-a923f070df00/public");
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://imagedelivery.net/f5tF3V4WaB6L98qcq1rX5w/d73f5969-a1d4-4dc2-b75a-71204b6c9000/public");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+
+}
+
+.SSA_Btn_HOME_buytraffic {
+    border: 1px solid #FFFFFF;
+    border-radius: 5px;
+    font-weight: 600;
+    color: #73065D;
+    background-color: #fff;
+}
+
+
+.SSA_Btn_HOME_buytraffic:hover {
+    border: 1px solid #FFFFFF;
+    border-radius: 5px;
+    font-weight: 600;
+    color: #73065D;
+    background-color: #f4f4f4;
+}
+
+.SSA_HOME_21pxFont {
+    font-size: 21px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: #FFFFFF;
+
+}
+
+.SSA_HOME_MAIN_TEXT {
+    font-size: 3.8rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #FFFFFF;
+
+}
+
+.SSA_Btn_HOME_selltraffic {
+    border: 1px solid #000000;
+    border-radius: 5px;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: #73065D;
+}
+
+.SSA_Btn_HOME_selltraffic:hover {
+    border: 1px solid #000000;
+    border-radius: 5px;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: #000000;
+}

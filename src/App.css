@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700&display=swap');
+*{
+  font-family: 'Nunito', sans-serif !important;
+  /* font-family: 'Ubuntu', sans-serif !important; */
+  /* font-family: 'Montserrat', sans-serif; */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+*{
+  --primary-color: #71065b;
+  --secondary-color: #000;
+  --tertiary-color:#fff;
+  --primary-btn:#FFC107;
+  --secondary-btn:#000;
+  --main-heading:60px;
+}
+.bgreferals{
+  background-color: #4E9FAA;
+  color: white;
+}
+.bgmaindash{
+  background-color: rgb(225, 222, 222);
+  color: black;
+}
+.bgwebsticsbutton{
+  background-color: #311DB2;
+}
+.webcl_theme{
+color: rgb(115 3 91) !important;
+}
+.webbackground_theme{
+    background-color:rgb(115 3 91) !important;
+}
+
+
+
+
+
+
+
