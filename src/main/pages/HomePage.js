@@ -12,7 +12,7 @@ const HomePage = () => {
         <div>
           <div className="row d-flex justify-content-center align-items-center ">
             <div className="col-md-7 p-4">
-              <h1 className={styles.heading} >WELCOME TO GROWXAD</h1>
+              <h1 className={styles.heading} > GROWXAD</h1>
               <p className="SSA_HOME_21pxFont py-1 p-3"> Unlock the full potential of your advertising campaigns with our cutting-edge platform. We are on a mission to empower your brand and extend your influence through revolutionary advertising solutions. Our goal is to provide you with the tools and technology needed to elevate your marketing efforts and achieve unparalleled success.</p>
             </div>
           </div>
