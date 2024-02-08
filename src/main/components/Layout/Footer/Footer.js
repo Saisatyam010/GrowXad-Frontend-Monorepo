@@ -39,10 +39,7 @@ const Footer = () => {
                           {SocialMediaImage?.map((social, index) =>
                             <li>
                               <Link to={social.Link}>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
+                             
 
                                 <div className="d-flex py-2 justify-content-center align-items-center">
                                   {social.icon}
