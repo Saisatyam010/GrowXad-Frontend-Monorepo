@@ -1,5 +1,10 @@
 import React from 'react'
+import { BiLogoMicrosoftTeams } from "react-icons/bi";
+import { BsArrowRightCircle } from "react-icons/bs";
+import { Link } from 'react-router-dom'
 
+
+import { Col,Button, } from 'react-bootstrap'
 const Section1 = () => {
   return (
     <div
@@ -12,7 +17,7 @@ const Section1 = () => {
         Tactics
       </div>
       <div className="row">
-        {solutions.map((item, index) => (
+        {/* {solutions.map((item, index) => (
           <div className="col-md-6 pt-4 " key={index}>
             <div className="p-md-5 p-3 SSA_card1 bg-white SSA_benefits_RoundRadius_card">
               <div className="SSA_benefits_font26px_purple pb-3">
@@ -26,7 +31,7 @@ const Section1 = () => {
               </p>
             </div>
           </div>
-        ))}
+        ))} */}
       </div>
     </div>
   </div>
@@ -43,7 +48,7 @@ const Section2=()=>{
         Tactics
       </div>
       <div className="row">
-        {solutions.map((item, index) => (
+        {/* {solutions.map((item, index) => (
           <div className="col-md-6 pt-4 " key={index}>
             <div className="p-md-5 p-3 SSA_card1 bg-white SSA_benefits_RoundRadius_card">
               <div className="SSA_benefits_font26px_purple pb-3">
@@ -57,7 +62,7 @@ const Section2=()=>{
               </p>
             </div>
           </div>
-        ))}
+        ))} */}
       </div>
     </div> <div className="container  py-md-5 py-3">
           <div className="text-center SSA_Ad_Benefits_font2rem_Section2 pt-5">
@@ -74,7 +79,7 @@ const Section2=()=>{
           </div>
           <div className="row align-items-center container px-md-5 px-3">
             <div className="col-md-7">
-              <SampleMap />
+              {/* <SampleMap /> */}
             </div>
             <div className="col-md-5 pt-md- pt-4">
               <div className="p-5">
@@ -161,7 +166,7 @@ const Section3=()=>{
           </div>
           <div className="row align-items-center container px-md-5 px-3">
             <div className="col-md-7">
-              <SampleMap />
+              {/* <SampleMap /> */}
             </div>
             <div className="col-md-5 pt-md- pt-4">
               <div className="p-5">
@@ -403,7 +408,7 @@ const Section5=()=>{
             <span className="webcl_theme">business growth</span>{" "}
           </div>
           <div className="row">
-            {CardDataSix.map((item, index) => (
+            {/* {CardDataSix.map((item, index) => (
               <div key={index} className="col-md-3 pt-4 px-2 text-white">
                 <div
                   className="py-3 px-3"
@@ -437,7 +442,7 @@ const Section5=()=>{
                   </div>
                 </div>
               </div>
-            ))}
+            ))} */}
           </div>
         </div>
       </div>

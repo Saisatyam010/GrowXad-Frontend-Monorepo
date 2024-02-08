@@ -10,7 +10,7 @@ const MainRouter = () => {
         exact: true
     },
     {
-      path:'/advetisers-benfits/',
+      path:'/advetisers-benefits/',
       component:<BenefitsForAdvertiserPage/>,
       exact:true
     }
