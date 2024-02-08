@@ -1,0 +1,387 @@
+.rs_btn {
+  border: none;
+}
+
+
+.rs_footer_adserver ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+.rs_footer_adserver .footer_section {
+  background: #000000;
+  position: relative;
+
+}
+
+.rs_footer_adserver .footer_cta {
+  border-bottom: 1px solid #373636;
+}
+
+.rs_footer_adserver .footer_pattern img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-size: cover;
+  background-position: 100% 100%;
+}
+
+.rs_footer_adserver .footer_logo {
+  margin-bottom: 30px;
+}
+
+.rs_footer_adserver .footer_logo img {
+  max-width: 200px;
+}
+
+.rs_footer_adserver .footer_text p {
+  margin-bottom: 14px;
+  font-size: 14px;
+  color: #7e7e7e;
+  line-height: 28px;
+}
+
+.rs_footer_adserver .footer_social-icon span {
+  color: #fff;
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+
+}
+
+.rs_footer_adserver .footer_social_icon a {
+  color: #fff;
+  font-size: 16px;
+  margin-right: 15px;
+}
+
+.rs_footer_adserver .footer_social_icon i {
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  line-height: 38px;
+  border-radius: 50%;
+
+}
+
+.rs_footer_adserver .footer_social_icon i:hover {
+  text-decoration: underline rgb(115 3 91);
+}
+
+.rs_footer_adserver .facebook_bg {
+  background: #3b5998;
+}
+
+.rs_footer_adserver .twitter_bg {
+  background: #55acee;
+}
+
+
+
+.rs_footer_adserver .footer_widget_heading h3 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 40px;
+  position: relative;
+
+}
+
+.rs_footer_adserver .footer_widget_heading h3::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -15px;
+  height: 2px;
+  width: 50px;
+  background: rgb(115 3 91) !important;
+
+}
+
+.rs_footer_adserver .footer_widget ul li {
+  display: inline-block;
+
+  width: 50%;
+  margin-bottom: 12px;
+}
+
+.rs_footer_adserver .footer_widget ul li a:hover {
+  color: rgb(115 3 91);
+}
+
+.rs_footer_adserver .footer_widget ul li a {
+  color: #878787;
+  text-transform: capitalize;
+  text-decoration: none;
+}
+
+.rs_footer_adserver .footer_widget ul li a:hover {
+  text-decoration: underline rgb(115 3 91);
+}
+
+.rs_footer_adserver .subscribe_form {
+  position: relative;
+  overflow: hidden;
+}
+
+.rs_footer_adserver .subscribe_form input {
+  width: 100%;
+  padding: 14px 28px;
+  background: #2e2e2e;
+  border: 1px solid #2e2e2e;
+  color: #fff;
+}
+
+.rs {
+  color: white;
+}
+
+.rs li {
+  display: in;
+}
+
+.rs_footer_adserver .subscribe_form .Subs_form_span {
+  position: absolute;
+  right: 0;
+  background: rgb(115 3 91);
+  padding: 13px 20px;
+  border: 1px solid rgb(115 3 91);
+  top: 0;
+}
+
+.rs_footer_adserver .subscribe_form .Subs_form_span i {
+  font-size: 22px;
+  transform: rotate(-6deg);
+}
+
+.rs_footer_adserver .copyright_area {
+  background: #202020;
+  padding: 25px 0;
+}
+
+.rs_footer_adserver .copyright_text p {
+  margin: 0;
+  font-size: 14px;
+  color: #878787;
+}
+
+.rs_footer_adserver .copyright_text p a {
+  color: rgb(115 3 91);
+
+}
+
+.rs_footer_adserver .footer_menu li {
+  display: inline-block;
+  margin-left: 20px;
+
+
+}
+
+.rs_footer_adserver .footer_menu li:hover a {
+  color: rgb(115 3 91);
+}
+
+.rs_footer_adserver .footer_menu li a {
+  font-size: 14px;
+  color: #878787;
+  text-decoration: none;
+}
+
+.rs_footer_adserver .footer_menu li a:hover {
+  text-decoration: underline rgb(115 3 91);
+}
+
+.rs_icon:hover {
+  color: rgb(115, 3, 91);
+}
+
+
+.rs_card_icon {
+  margin-left: 13px;
+}
+
+
+.ab123ab {
+  margin: 0;
+  padding: 0;
+}
+
+.abul123 {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.abul123 li {
+  list-style: none;
+}
+
+.abul123 li a {
+  display: block;
+  position: relative;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 40px;
+  text-align: center;
+  text-decoration: none;
+  color: #404040;
+  margin: 0 10px;
+  transition: .5s;
+}
+
+@media screen and (max-width:767px) {
+  .abul123 li a {
+    display: flex;
+    position: relative;
+    width: 30px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 10px;
+    text-align: center;
+    text-decoration: none;
+    color: #404040;
+    margin: 0 10px;
+    transition: .5s;
+  }
+}
+
+.abul123 li a span {
+  position: absolute;
+  transition: transform .5s;
+}
+
+.abul123 li a span:nth-child(1),
+.abul123 li a span:nth-child(3) {
+  width: 100%;
+  height: 3px;
+  background: #404040;
+}
+
+.abul123 li a span:nth-child(1) {
+  top: 0;
+  left: 0;
+  transform-origin: right;
+}
+
+.abul123 li a:hover span:nth-child(1) {
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .5s;
+}
+
+.abul123 li a span:nth-child(3) {
+  bottom: 0;
+  left: 0;
+  transform-origin: left;
+}
+
+.abul123 li a:hover span:nth-child(3) {
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform .5s;
+}
+
+.abul123 li a span:nth-child(2),
+.abul123 li a span:nth-child(4) {
+  width: 3px;
+  height: 100%;
+  background: #404040;
+}
+
+.abul123 li a span:nth-child(2) {
+  top: 0;
+  left: 0;
+  transform: scale(0);
+  transform-origin: bottom;
+}
+
+.abul123 li a:hover span:nth-child(2) {
+  transform: scale(1);
+  transform-origin: top;
+  transition: transform .5s;
+}
+
+.abul123 li a span:nth-child(4) {
+  top: 0;
+  right: 0;
+  transform: scale(0);
+  transform-origin: top;
+}
+
+.abul123 li a:hover span:nth-child(4) {
+  transform: scale(1);
+  transform-origin: bottom;
+  transition: transform .5s;
+}
+
+.facebook:hover {
+  color: #3b5998 !important;
+}
+
+.facebook:hover span {
+  background: rgb(115, 3, 91) !important;
+}
+
+.twitter:hover {
+  color: #1da1f2 !important;
+}
+
+.twitter:hover span {
+  background: rgb(115, 3, 91) !important;
+}
+
+.instagram:hover {
+  color: #c32aa3 !important;
+}
+
+.instagram:hover span {
+  background: rgb(115, 3, 91) !important;
+}
+
+.google:hover {
+  color: #dd4b39 !important;
+}
+
+.google:hover span {
+  background: rgb(115, 3, 91) !important;
+}
+
+u.abul123l li a .twitter {
+  color: #1da1f2 !important;
+}
+
+.abul123 li a:hover:nth-child(3) {
+  color: #c32aa3 !important;
+}
+
+.abul123 li a:hover:nth-child(4) {
+  color: #dd4b39 !important;
+}
+
+.ab_fontwhite {
+  color: white;
+  font-size: 20px;
+}
+
+.ab_td_none {
+  text-decoration: none;
+}
+
+.ab_imgfadeeffect {
+  filter: gray;
+  -webkit-filter: grayscale(1);
+  -webkit-transition: all .1s ease-in-out;
+}
+
+.ab_imgfadeeffect:hover {
+  filter: none;
+  -webkit-filter: grayscale(0);
+  -webkit-transform: scale(1.01);
+}
+
+.Adtype:hover {
+  color: rgb(115, 3, 91) !important;
+}
