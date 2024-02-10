@@ -22,7 +22,7 @@ function App() {
              {/* <CssBaseline /> */}
              <Router>
                  {/* Main Routes */}
-                  {/* <MainRouter/> */}
+                  <MainRouter/>
                    {/* Adertiser Dashboard Routes */}
                    <AdvertiserDashboardRouter/>
 

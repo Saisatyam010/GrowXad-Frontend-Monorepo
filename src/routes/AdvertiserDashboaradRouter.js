@@ -1,7 +1,7 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
-import AdvertiserDashbaordLayout from './../Features/advertiserDashboard/components/Layout/index';
-import CreateCampaign from '../Features/advertiserDashboard/pages/CreateCampaign';
+import AdvertiserDashbaordLayout from './../features/advertiserDashboard/components/Layout/index';
+import CreateCampaign from '../features/advertiserDashboard/pages/CreateCampaign';
 
 const AdvertiserDashboardRouter = () => {
   const advertiserDashboardRoutes = [
