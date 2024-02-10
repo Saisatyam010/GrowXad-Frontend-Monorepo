@@ -303,9 +303,10 @@ export default function General(props) {
                     <div className="card-content">
                       <div className="w-28"></div>
                       <div
-                        style={{ position: "relative", paddingTop: "56.25%" }}
+                        style={{ position: "relative", paddingTop: "14%" }}
                       >
-                        <iframe
+                        <img src="https://imagedelivery.net/f5tF3V4WaB6L98qcq1rX5w/468b88c0-def8-4fa0-0370-f778a03f8900/public" alt="" height= "100px" width= "100px"/>
+                        {/* <iframe
                           src="https://customer-b0uja279jrdjd4ih.cloudflarestream.com/0de5bd83fea70a1b8b1f087511321be5/iframe?preload=true&loop=true&autoplay=true&poster=https%3A%2F%2Fcustomer-b0uja279jrdjd4ih.cloudflarestream.com%2F0de5bd83fea70a1b8b1f087511321be5%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&controls=false"
                           style={{
                             border: "none",
@@ -317,9 +318,9 @@ export default function General(props) {
                           }}
                           allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
                           allowFullScreen="true"
-                        />
+                        /> */}
                       </div>
-                      <h4 className="text-center">In Page Push Ad</h4>
+                      <h4 className="text-center pt-2">In Page Push Ad</h4>
                     </div>
                   </div>
                 </label>
@@ -337,9 +338,11 @@ export default function General(props) {
                     <div className="card-content">
                       <div className="w-28"></div>
                       <div
-                        style={{ position: "relative", paddingTop: "56.25%" }}
+                        style={{ position: "relative", paddingTop: "14%" }}
                       >
-                        <iframe
+                        <img src="https://imagedelivery.net/f5tF3V4WaB6L98qcq1rX5w/33f238ec-ea4e-4546-edc8-cb9ccc9f1500/public" alt="" height= "100px" width= "100px"/>
+                    
+                        {/* <iframe
                           style={{
                             border: "none",
                             outline: "none",
@@ -348,9 +351,9 @@ export default function General(props) {
                           src="https://customer-b0uja279jrdjd4ih.cloudflarestream.com/e3c7c38f9e109e4782a0049b1f0703d6/iframe?preload=true&loop=true&autoplay=true&poster=https%3A%2F%2Fcustomer-b0uja279jrdjd4ih.cloudflarestream.com%2Fe3c7c38f9e109e4782a0049b1f0703d6%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&controls=false"
                           allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
                           allowFullScreen="true"
-                        />
+                        /> */}
                       </div>
-                      <h4 className="text-center">Native Ad</h4>
+                      <h4 className="text-center pt-2">Native Ad</h4>
                     </div>
                   </div>
                 </label>
@@ -368,8 +371,10 @@ export default function General(props) {
                     <span className="check-icon" />
                     <div className="card-content">
                       <div className="w-28"></div>
-                      <div className="video-container">
-                        <iframe
+                      <div className="video-container pt-3">
+                      <img src="https://imagedelivery.net/f5tF3V4WaB6L98qcq1rX5w/ce1d8289-46cc-4943-2142-111920948b00/public" alt="" height= "100px" width= "100px"/>
+                    
+                        {/* <iframe
                           src="https://customer-b0uja279jrdjd4ih.cloudflarestream.com/5ffcdd4471ab8a95f5d8e0cc83e4cfa6/iframe?muted=true&preload=true&loop=true&autoplay=true&poster=https%3A%2F%2Fcustomer-b0uja279jrdjd4ih.cloudflarestream.com%2F5ffcdd4471ab8a95f5d8e0cc83e4cfa6%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&controls=false"
                           style={{
                             border: "none",
@@ -381,9 +386,9 @@ export default function General(props) {
                           }}
                           allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
                           allowFullScreen="true"
-                        />
+                        /> */}
                       </div>
-                      <h4 className="text-center">Banner Ad</h4>
+                      <h4 className="text-center pt-2">Banner Ad</h4>
                     </div>
                   </div>
                 </label>
@@ -403,9 +408,11 @@ export default function General(props) {
                     <div className="card-content">
                       <div className="w-28"></div>
                       <div
-                        style={{ position: "relative", paddingTop: "56.25%" }}
+                        style={{ position: "relative", paddingTop: "4%" }}
                       >
-                        <iframe
+                            <img src="https://imagedelivery.net/f5tF3V4WaB6L98qcq1rX5w/12687a68-c192-41f8-4c43-3267fc34b800/public" alt="" height= "100px" width= "100px"/>
+                   
+                        {/* <iframe
                           src="https://customer-b0uja279jrdjd4ih.cloudflarestream.com/a48ffc895c18a3ca112ba112252bfd27/iframe?preload=true&loop=true&autoplay=true&poster=https%3A%2F%2Fcustomer-b0uja279jrdjd4ih.cloudflarestream.com%2Fa48ffc895c18a3ca112ba112252bfd27%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&controls=false"
                           style={{
                             border: "none",
@@ -417,9 +424,9 @@ export default function General(props) {
                           }}
                           allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
                           allowFullScreen="true"
-                        />
+                        /> */}
                       </div>
-                      <h4 className="text-center">Interstitial Ad</h4>
+                      <h4 className="text-center pt-2">Interstitial Ad</h4>
                     </div>
                   </div>
                 </label>
@@ -438,9 +445,12 @@ export default function General(props) {
                     <div className="card-content">
                       <div className="w-28"></div>
                       <div
-                        style={{ position: "relative", paddingTop: "56.25%" }}
+                        style={{ position: "relative", paddingTop: "4%" }}
                       >
-                        <iframe
+                          <img src="https://imagedelivery.net/f5tF3V4WaB6L98qcq1rX5w/09379916-612d-4eaf-daf0-adf002da8100/public" alt="" height= "100px" width= "100px"/>
+                   
+                  
+                        {/* <iframe
                           src="https://customer-b0uja279jrdjd4ih.cloudflarestream.com/ae8b7534f4833b00397c37881063689f/iframe?preload=true&loop=true&autoplay=true&poster=https%3A%2F%2Fcustomer-b0uja279jrdjd4ih.cloudflarestream.com%2Fae8b7534f4833b00397c37881063689f%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&controls=false"
                           style={{
                             border: "none",
@@ -452,7 +462,7 @@ export default function General(props) {
                           }}
                           allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
                           allowFullScreen="true"
-                        />
+                        /> */}
                       </div>
                       <h4 className="text-center">Popunder Ad</h4>
                     </div>
@@ -473,9 +483,10 @@ export default function General(props) {
                     <div className="card-content">
                       <div className="w-28"></div>
                       <div
-                        style={{ position: "relative", paddingTop: "56.25%" }}
+                        style={{ position: "relative", paddingTop: "4%" }}
                       >
-                        <iframe
+                        <img src="https://imagedelivery.net/f5tF3V4WaB6L98qcq1rX5w/43dc1a88-b0c9-4cb2-8c47-890f45c50f00/public" alt="" width='100px' height='100px'/>
+                        {/* <iframe
                           src="https://customer-b0uja279jrdjd4ih.cloudflarestream.com/b6e76847ac0cc17448ccec18911f7eb0/iframe?preload=true&loop=true&autoplay=true&poster=https%3A%2F%2Fcustomer-b0uja279jrdjd4ih.cloudflarestream.com%2Fb6e76847ac0cc17448ccec18911f7eb0%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&controls=false"
                           style={{
                             border: "none",
@@ -487,7 +498,7 @@ export default function General(props) {
                           }}
                           allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
                           allowFullScreen="true"
-                        />
+                        /> */}
                       </div>
                       <h4 className="text-center">Direct Link</h4>
                     </div>
