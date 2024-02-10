@@ -1,29 +1,31 @@
 import React from 'react'
-import {Routes, Route } from 'react-router-dom'
-import HomePage from '../main/pages/HomePage'
-import BenefitsForAdvertiserPage from '../main/pages/BenefitsForAdvertiserPage'
+import { Routes, Route } from 'react-router-dom'
+import AdvertiserDashbaordLayout from './../Features/advertiserDashboard/components/Layout/index';
+import CreateCampaign from '../Features/advertiserDashboard/pages/CreateCampaign';
+
 const AdvertiserDashboardRouter = () => {
-  const advertiserDashboardRoutes=[
+  const advertiserDashboardRoutes = [
     {
-        path: '/advertiser-benefits',
-        component:<BenefitsForAdvertiserPage/>,
-        exact: true
+      path: 'campaign/add',
+      component: <CreateCampaign />,
+      exact: true
     }
   ]
   return (
-    
+
     <Routes>
-    <Route path="/advertier" element={<HomePage/>} />
-    {advertiserDashboardRoutes.map((route, index) => (
-      <Route
-        key={index}
-        path={route.path}
-        element={route.component}
-        exact={route.exact}
-      />
-      
-    ))}
-  </Routes>
+      <Route path="/advertier-dashboard/" element={<AdvertiserDashbaordLayout />} >
+        {advertiserDashboardRoutes.map((route, index) => (
+          <Route
+            key={index}
+            path={route.path}
+            element={route.component}
+            exact={route.exact}
+          />
+
+        ))}
+      </Route>
+    </Routes>
   )
 }
 
