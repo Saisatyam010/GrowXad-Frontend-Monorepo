@@ -10,7 +10,7 @@ import styles from './Table.module.css';
 
 const tableData = [
     {
-        name: "Deepak",
+        name: "Deepak Parashar",
         type: "RON",
         details: "I",
         geo: "IN",
