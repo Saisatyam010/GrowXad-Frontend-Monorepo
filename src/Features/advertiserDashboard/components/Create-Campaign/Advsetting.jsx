@@ -11,7 +11,7 @@ import MenuItem from "@mui/material/MenuItem";
 import ListItemText from "@mui/material/ListItemText";
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
-import ContentCopyIcon from "@mui/icons-material/ContentCopy";
+// import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import { Button } from "@material-ui/core";
 import { SlotBookingChart } from "./SlotBookingChart";
 import { useForm, SubmitHandler, Controller, set } from "react-hook-form";
@@ -562,14 +562,14 @@ const handleCheckboxChange = () => {
                         boxShadow: "rgba(0, 0, 0, 0.1) 0px 4px 12px",
                         // Adding padding for the copy icon
                       }}
-                      InputProps={{
-                        endAdornment: (
-                          <ContentCopyIcon
-                            onClick={handleCopyLink}
-                            style={{ cursor: "pointer" }}
-                          />
-                        ),
-                      }}
+                      // InputProps={{
+                      //   endAdornment: (
+                      //     <ContentCopyIcon
+                      //       onClick={handleCopyLink}
+                      //       style={{ cursor: "pointer" }}
+                      //     />
+                      //   ),
+                      // }}
                     />
                   </div>
                 </div>

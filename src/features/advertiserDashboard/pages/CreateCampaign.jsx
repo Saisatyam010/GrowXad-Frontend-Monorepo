@@ -12,20 +12,17 @@ import {
 import { FaUserEdit } from "react-icons/fa";
 import { IoMdPricetags } from "react-icons/io";
 import { GiTargeted } from "react-icons/gi";
-import { SiDecapcms } from "react-icons/si";
 import { TbSettingsCog } from "react-icons/tb";
 import { TiTick } from "react-icons/ti";
-import Pricings from "../components/Pricings";
-import Targeting from "../components/Targeting";
-import Capping_limit from "../components/Capping_limit";
-import Advsetting from "../components/Advsetting";
-import GeneralPreview from "../components/GeneralPreview";
-import PricingsPreview from "../components/PricingsPreview";
-import TargetingsPreview from "../components/TargetingsPreview";
-import AdvSettingsPreview from "../components/AdvSettingsPreview";
-// import CappingLimit from "../components/Capping_limit";
-import PreviewBtns from "../components/PreviewBtns";
-import General from "../components/General";
+import Pricings from "../components/Create-Campaign/Pricings";
+import Targeting from "../components/Create-Campaign/Targeting";
+import Advsetting from "../components/Create-Campaign/Advsetting";
+import GeneralPreview from "../components/Create-Campaign/GeneralPreview";
+import PricingsPreview from "../components/Create-Campaign/PricingsPreview";
+import TargetingsPreview from "../components/Create-Campaign/TargetingsPreview";
+import AdvSettingsPreview from "../components/Create-Campaign/AdvSettingsPreview";
+import PreviewBtns from "../components/Create-Campaign/PreviewBtns";
+import General from "../components/Create-Campaign/General";
 
 
 function getSteps() {
