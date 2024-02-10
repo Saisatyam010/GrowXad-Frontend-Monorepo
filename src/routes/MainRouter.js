@@ -3,6 +3,7 @@ import {Routes, Route } from 'react-router-dom'
 import HomePage from '../main/pages/HomePage'
 import BenefitsForAdvertiserPage from '../main/pages/BenefitsForAdvertiserPage'
 import ForgotPass from '../main/pages/ForgotPass'
+import ResetPass from '../main/pages/ResetPass'
 const MainRouter = () => {
   const mainRoutes=[
     {
@@ -18,6 +19,11 @@ const MainRouter = () => {
     {
       path:'/forgot-password',  
       component:<ForgotPass/>,
+      exact:true
+    },
+    {
+      path:'/reset-password',
+      component:<ResetPass/>,
       exact:true
     }
   ]

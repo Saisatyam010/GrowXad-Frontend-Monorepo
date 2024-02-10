@@ -19,9 +19,10 @@ function ForgotPassword() {
   <div className="text-lg text-gray-50 py-2 font-semibold">
     <FaArrowLeftLong /> 
   </div> &nbsp; &nbsp;
-  <div className="text-base text-gray-50 py-2 font-semibold">
-     Back to Login
-  </div>
+  <div className="text-base text-gray-50 hover:cursor-pointer font-semibold hover:border-b">
+  Back to Login
+</div>
+
 </div>
 
     </div>
