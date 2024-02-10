@@ -1,0 +1,154 @@
+* {
+    --border-color: #ddd;
+    --bg-blue: #007bff;
+    --white: #fff;
+    --grey: #666;
+    --lightgrey: rgb(170, 170, 170);
+    --red: rgb(255, 33, 83);
+    --black: black;
+}
+
+.table_container {
+    width: 100%;
+    /* border: 1px solid var(--border-color); */
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.ab_tablecontainerbox {
+    border: 1px solid var(--black);
+    margin: 10px;
+    border-radius: 2px;
+}
+
+.table_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    /* background-color: #F5F5F5; */
+    border-bottom: 1px solid var(--border-color);
+}
+
+.header_left {
+    display: flex;
+    align-items: center;
+}
+
+.header_right {
+    display: flex;
+    align-items: center;
+}
+
+.filter_container {
+    margin-left: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.filter_container input,
+.filter_container select {
+    margin-right: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 4px;
+    font-size: 14px;
+}
+
+.bulk_actions {
+    display: flex;
+}
+
+.bulk_actions button {
+    margin-right: 8px;
+    border: none;
+    border-radius: 4px;
+    padding: 8px;
+    font-size: 14px;
+    background-color: var(--bg-blue);
+    color: var(--white);
+    cursor: pointer;
+}
+
+.table_info {
+    font-size: 14px;
+    color: var(--grey);
+}
+
+/* ... same as before ... */
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th,
+.table td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.table th {
+    background-color: var(--white);
+    font-weight: bold;
+}
+
+.table tr:hover {
+    background-color: var(--white);
+}
+
+.ab_btnradius {
+    border-radius: 5px;
+    display: flex;
+    border: 1px solid var(--lightgrey);
+}
+
+.ab_spanborderleft {
+    border-left: 1px solid var(--lightgrey);
+    padding: 2px 5px;
+}
+
+.ab_m_left {
+    margin-left: 10px;
+}
+
+.ab_spanborderright {
+    border-right: 1px solid var(--lightgrey);
+    padding: 2px 4px;
+}
+
+.ab_m_right {
+    margin-right: 10px;
+}
+
+.ab_btnred {
+    border-radius: 5px;
+    padding: 2px 8px;
+    display: flex;
+    color: var(--white);
+    background-color: var(--red);
+    border: 1px solid var(--red);
+}
+
+.ab_btnreddollar {
+    border-radius: 5px;
+    padding: 5px 2px 0px 2px;
+    background-color: var(--red);
+    border: 1px solid var(--red);
+}
+
+.ab_ditbtn {
+    padding-top: 6px;
+    padding-left: 4px;
+    padding-right: 4px;
+    border: 1px solid var(--grey);
+    margin-left: 5px;
+    border-radius: 5px;
+}
+
+.ab_ditbtn ul {
+    padding: 0px 10px;
+    margin-bottom: 2px;
+    margin-top: 2px;
+}
