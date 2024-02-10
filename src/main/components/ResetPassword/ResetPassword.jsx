@@ -1,7 +1,7 @@
 import React from 'react'
 import { FaArrowLeftLong } from "react-icons/fa6";
 
-function ForgotPassword() {
+function ResetPassword() {
   return (
     <div >
        <div className='flex flex-col justify-center items-center h-screen'>
@@ -32,4 +32,4 @@ function ForgotPassword() {
   )
 }
 
-export default ForgotPassword
+export default ResetPassword
