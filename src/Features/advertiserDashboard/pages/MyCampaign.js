@@ -1,11 +1,11 @@
 import React from "react";
-import Table from '../Components/Table';
+import Table from '../components/Mycampaign/Table';
 
 const MyCampaign = () => {
     return (
-        <div className={styles.table}>
-            <Table />
-        </div>
+
+        <Table />
+        
     );
 };
 

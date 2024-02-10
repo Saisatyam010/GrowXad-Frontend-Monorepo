@@ -1,0 +1,64 @@
+.ab_iconsizedh {
+    font-size: 40px;
+}
+
+.ab_btndh {
+    padding: 10px 20px;
+    background: linear-gradient(90deg, #71065d, #39002D);
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    border: none;
+    border-radius: 30px;
+}
+
+.ab_btndh:hover {
+    padding: 10px 20px;
+    background: linear-gradient(90deg, #71065d, #5f024b);
+    opacity: 0.9;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    border: none;
+    border-radius: 30px;
+}
+.ab_color{
+    color: #71065d;
+}
+
+.ab_balance {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.ab_balance:hover {
+    font-size: 18px;
+    font-weight: 600;
+    color: #71065d;
+}
+
+.ab_pointer {
+    cursor: pointer;
+}
+
+.ab_ditbtn {
+    border: none;
+}
+
+.ab_ditbtn:hover {
+    border: none;
+}
+
+.ab_ditbtn ul {
+    padding: 0px 10px;
+    margin-bottom: 2px;
+    margin-top: 2px;
+    border: none;
+}
+
+.ab_greydiv {
+    padding: 10px 10px;
+    border-radius: 6px;
+    background: #ecf2f8;
+    color: #858d9d;
+}
