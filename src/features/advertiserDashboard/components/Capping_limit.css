@@ -1,0 +1,44 @@
+.ab-CLmaindiv {
+  padding: 20px 25px;
+  background-color: rgba(249, 244, 247, 0.8);
+  border-radius: 25px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    
+}
+
+.ab-CLheading {
+  font-size: 30px;
+  padding: 15px 0px;
+  padding-left: 50px;
+  font-weight: 500;
+  color: black ;
+  
+}
+
+.ab-CLh2 {
+  width: 100%;
+  font-size: 20px;
+  padding-left: 40px;
+  color: black;
+  display: flex;
+  justify-content: start !important;
+
+}
+
+.ab-CLh2hr {
+  width: 800px;
+  margin: 0;
+  color: #ababab;
+ 
+  justify-content: start !important;
+}
+
+.ab-CLsubhead {
+  color: #626262;
+}
+
+.ab-CLarrow {
+  appearance: none;
+  margin: 0;
+}

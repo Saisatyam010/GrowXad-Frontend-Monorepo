@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap');
+
+/* Formatting Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.radioGroup {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color: #3a3a3a;
+}
+
+.radioGroup hr {
+  margin: 20px 0;
+  border: none;
+  border-bottom: 1px solid #d9d9d9;
+}
+
+.radioGroup label,
+.radioGroup input {
+  cursor: pointer;
+}
+
+.radioGroup h2,
+.radioGroup h3,
+.radioGroup h4,
+.radioGroup h5 {
+  font-weight: 600;
+  line-height: 1.3;
+  color: #1f2949;
+}
+
+.radioGroup h2 {
+  font-size: 24px;
+}
+
+.radioGroup h3 {
+  font-size: 18px;
+}
+
+.radioGroup h4 {
+  font-size: 14px;
+}
+
+.radioGroup h5 {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.radioGroup img {
+  max-width: 100%;
+  display: block;
+  /* vertical-align: middle; */
+}
+
+.radioGroup .container {
+  max-width: 99vw;
+  margin: 15px auto;
+  padding: 0 15px;
+}
+
+.radioGroup .top-text-wrapper {
+  margin: 20px 0 30px 0;
+}
+
+.radioGroup .top-text-wrapper h4 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.radioGroup .top-text-wrapper code {
+  font-size: 0.85em;
+  background: linear-gradient(90deg, #fce3ec, #ffe8cc);
+  color: #ff2200;
+  padding: 0.1rem 0.3rem 0.2rem;
+  border-radius: 0.2rem;
+}
+
+.radioGroup .tab-section-wrapper {
+  padding: 30px 0;
+}
+
+.radioGroup .grid-wrapper {
+  display: grid;
+  grid-gap: 30px;
+  place-items: center;
+  place-content: center;
+}
+
+.radioGroup .grid-col-auto {
+  grid-auto-flow: column;
+  grid-template-rows: auto;
+}
+
+/* Main Styles: Radio Card */
+.radioGroup :root {
+  --primary-color: #3057d5;
+  --transition: 200ms linear;
+}
+
+.radioGroup label.radio-card {
+  cursor: pointer;
+
+
+}
+
+.radioGroup .card-content-wrapper {
+  background: #fff;
+  border-radius: 5px;
+  max-width: 800px !important;
+  padding: 15px;
+  display: grid;
+  border: 1px solid black;
+  box-shadow: 0 2px 4px 0 rgba(219, 215, 215, 0.04);
+  transition: var(--transition);
+}
+
+.radioGroup .check-icon {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  border: solid 2px #e3e3e3;
+  border-radius: 50%;
+  transition: var(--transition);
+  position: relative;
+}
+
+.radioGroup .check-icon:before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("https://clipground.com/images/white-tick-png-6.jpg");
+  background-repeat: no-repeat;
+  background-size: 12px;
+  background-position: center center;
+  transform: scale(1.6);
+  transition: var(--transition);
+  opacity: 0;
+}
+
+.radioGroup input[type='radio'] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.radioGroup input[type='radio']:checked+.card-content-wrapper {
+  box-shadow: 0 2px 4px 0 rgba(219, 215, 215, 0.5), 0 0 0 2px var(--primary-color);
+}
+
+.radioGroup input[type='radio']:checked+.card-content-wrapper .check-icon {
+  background: var(--primary-color)
+}
+
+.SSAR_Targeting_Toggle_color:checked{
+    background-color: #73035b !important;
+    border-color: #73035b !important;
+}
+
+.SSAR_Targeting_purple_border::selection{
+    /* border: 1px solid #73035b !important; */
+}
+
+.SSAR_FORM_uploadOuter {
+  text-align: center;
+  padding: 20px;
+  strong {
+    padding: 0 10px
+  }
+}
+.SSAR_FORM_dragBox {
+  width: 282px;
+  height: 248px;
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+  /* font-weight: bold; */
+  line-height: 10px;
+  padding-top: 42px;
+  padding-bottom: 19px;
+  color: #999;
+  border: 2px dashed #ccc;
+  display: inline-block;
+  transition: transform 0.3s;
+  input[type="file"] {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    top: 0;
+    left: 0;
+  }
+}
+.SSAR_FORM_draging {
+  transform: scale(1.1);
+}
+#preview {
+  text-align: center;
+  img {
+    max-width: 100%
+  }
+}.SSAR_FORM_previewItem {
+  max-width: 310px;
+  margin: 10px;
+  text-align: center;
+}
+
+.SSAR_FORM_previewItem img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}

@@ -1,0 +1,142 @@
+.SSA-campaign_name_input{
+    padding:7px 10px;
+    border: 1px solid rgb(198, 198, 198);
+    width: 100%;
+    border-radius: 5px;
+    margin: 3px;
+}
+.SSA-campaign_name_selecter {
+  margin: 3px;
+}
+
+.SSA_Campaign_SmallText{
+    font-size: 12px;
+    color: #000000;
+
+}
+.SSA_Campaign_SmallText2{
+    font-size: 14px;
+    color:#000;
+font-size: 600;
+}
+.SSA_CAmpaign_border{
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 5px;
+    padding: 10px;
+    margin: 3px;
+
+}
+
+.SSA_Campaign_custom-file-upload {
+    border-bottom: 1px dotted #000;
+    cursor: pointer;
+  font-size: 14px;
+    color: #525252;
+    
+    font-family: Arial, sans-serif;
+}
+
+.SSA_Campaign_custom-file-upload input {
+    display: none;
+}
+
+.SSA_Campaign_custom-file-upload:hover {
+    color: purple;
+}
+
+.SSA_Campaign_Checkbox{
+    width: 1.4em;
+    height: 1.4em;
+}
+
+.SSA_Campaign_budget-container {
+    display: flex;
+    align-items: center;
+}
+
+.SSA_MarginRight10px {
+    margin-right: 10px; /* Adjust spacing between text and SSA_Campaign_line */
+}
+
+.SSA_Campaign_line {
+    border-top: 1px solid #000000; /* Change color or style as needed */
+    flex: 1;
+}
+
+.SSA_Campaign_ContinueBtn{
+    background-color: #202020;
+    color: rgb(0, 0, 0) !important;
+    border-radius: 5px;
+    border: none;
+    padding: 10px 24px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 3px;
+}
+.SSA_Campaign_ContinueBtn.disabled {
+  /* Styles for the disabled button */
+  color:#000000;
+  background-color: #000000; /* Change to your desired background color */
+  /* Add any other styles for the disabled button */
+}
+.SSA_Campaign_ContinueBtn:hover{
+  background-color: #b516ab;
+  color: rgb(0, 0, 0) !important;
+  border-radius: 5px;
+  border: none;
+  padding: 10px 24px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 3px;
+}
+
+
+.SSA_Campagin_Sticky{
+    position: sticky;
+    top: 12px;
+}
+
+.SSA_campaign_1remFont{
+    font-size: 1.2rem;
+}
+
+.SSA_campaign_0remFont{
+    font-size: 1rem;
+    padding-top: 2px;
+}
+
+@keyframes borderAnimation {
+    0% {
+      border-color: border-purple-600;
+    }
+    50% {
+      border-color: #ff0000; /* Change to your desired color at the midpoint of the animation */
+    }
+    100% {
+      border-color: border-purple-600;
+    }
+  }
+
+  .border-animate {
+    animation: borderAnimation 2s infinite; /* You can adjust the duration and iteration count as needed */
+  }
+
+
+  
+
+@keyframes borderAnimation {
+    0% {
+      border-color: #000000; /* Initial border color */
+    }
+    50% {
+      border-color: #ff0000; /* Change to your desired color at the midpoint of the animation */
+    }
+    100% {
+      border-color: #000000; /* Back to the initial border color */
+    }
+  }
+  
+  .animated-border .react-select__control {
+    border-width: 2px; /* Adjust the border width as needed */
+    animation: borderAnimation 2s infinite; /* Adjust the duration and iteration count as needed */
+  }
