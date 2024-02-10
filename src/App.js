@@ -8,6 +8,8 @@ import HomePage from './main/pages/HomePage';
 import AdvertiserDashboardRouter from './routes/AdvertiserDashboaradRouter';
 
 
+import CreateCampaign from './features/advertiserDashboard/pages/CreateCampaign';
+
 // import SignupAndLogin from './Components/SignupAndLogin/UserLogin';
 
 function App() {

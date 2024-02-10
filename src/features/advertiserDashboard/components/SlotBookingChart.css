@@ -1,0 +1,74 @@
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+
+.hour-label {
+    display: block;
+    position: relative;
+    /* Adjust this value as needed */
+    margin-bottom: 12px;
+    /* Adjust this value as needed */
+    cursor: pointer;
+}
+
+
+.dp_table_td input[type="checkbox"] {
+    width: 100%;
+    appearance: none;
+    border: 1px solid lightgray;
+    height: 100%;
+}
+
+.dp_table_td input[type="checkbox"]:checked {
+    background-color: #71065d;
+    content: none
+}
+
+
+.dp_table_td input[type="checkbox"]:checked+span {
+    background-color: #71065d;
+
+}
+
+
+.dp_table_td input[type="checkbox"]:checked+span {
+    background-color: #71065d;
+
+}
+
+.dp_table_td .selected span {
+    background-color: #71065d;
+}
+
+.dp_table_td .selected {
+
+    background-color: #71065d;
+
+    /* Adjust the color as needed */
+}
+
+
+.dp_table_td {
+    width: 5px !important;
+    height: 25px !important;
+    padding: 0px !important;
+    color: green;
+}
+
+.dp_table_th {
+    width: 25px !important;
+    height: 25px !important;
+    padding: 0px !important;
+}
+/* td {
+    width: 5px !important;
+    height: 25px !important;
+    padding: 0px !important;
+}
+
+th {
+    width: 25px !important;
+    height: 25px !important;
+    padding: 0px !important;
+} */
