@@ -2,6 +2,7 @@ import React from 'react'
 import {Routes, Route } from 'react-router-dom'
 import HomePage from '../main/pages/HomePage'
 import BenefitsForAdvertiserPage from '../main/pages/BenefitsForAdvertiserPage'
+import ForgotPass from '../main/pages/ForgotPass'
 const MainRouter = () => {
   const mainRoutes=[
     {
@@ -12,6 +13,11 @@ const MainRouter = () => {
     {
       path:'/advetisers-benfits/',
       component:<BenefitsForAdvertiserPage/>,
+      exact:true
+    },
+    {
+      path:'/forgot-password',  
+      component:<ForgotPass/>,
       exact:true
     }
   ]
