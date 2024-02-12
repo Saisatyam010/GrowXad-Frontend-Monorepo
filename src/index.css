@@ -4,10 +4,12 @@
 @tailwind utilities;
 
 
+@layer components {
+  .error-message {
+    @apply text-xs text-red-500 p-0 m-0;
+  }
+}
 
-/* index.js  */
-
-@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap");
 
 html,
 body,

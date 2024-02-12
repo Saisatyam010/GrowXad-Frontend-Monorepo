@@ -1,7 +1,7 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
-import AdvertiserDashbaordLayout from './../features/advertiserDashboard/components/Layout/index';
-import CreateCampaign from '../features/advertiserDashboard/pages/CreateCampaign';
+import AdvertiserDashbaordLayout from './../features/AdvertiserDashboard/components/Layout/index';
+import CreateCampaign from '../features/AdvertiserDashboard/pages/CreateCampaign';
 
 const AdvertiserDashboardRouter = () => {
   const advertiserDashboardRoutes = [
@@ -14,7 +14,7 @@ const AdvertiserDashboardRouter = () => {
   return (
 
     <Routes>
-      <Route path="/advertier-dashboard/" element={<AdvertiserDashbaordLayout />} >
+      <Route path="/advertiser-dashboard/" element={<AdvertiserDashbaordLayout />} >
         {advertiserDashboardRoutes.map((route, index) => (
           <Route
             key={index}
