@@ -9,6 +9,11 @@ const AdvertiserDashboardRouter = () => {
       path: 'campaign/add',
       component: <CreateCampaign />,
       exact: true
+    },
+    {
+      path: 'campaign/my-campaigns',
+      component: <MyCampaign/>,
+      exact: true
     }
   ]
   return (
