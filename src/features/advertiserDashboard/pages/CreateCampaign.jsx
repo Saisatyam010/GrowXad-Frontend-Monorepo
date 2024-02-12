@@ -1,22 +1,16 @@
 import React, { useReducer, useState } from "react";
 import {
-  Typography,
-  TextField,
-  Button,
   Stepper,
   Step,
   StepLabel,
 } from "@material-ui/core";
-
-
 import { FaUserEdit } from "react-icons/fa";
 import { IoMdPricetags } from "react-icons/io";
 import { GiTargeted } from "react-icons/gi";
 import { TbSettingsCog } from "react-icons/tb";
-import { TiTick } from "react-icons/ti";
 import Pricings from "../components/Create-Campaign/Pricings";
 import Targeting from "../components/Create-Campaign/Targeting";
-import Advsetting from "../components/Create-Campaign/Advsetting";
+import Advsetting from "../components/Create-Campaign/AdvanceSettings";
 import GeneralPreview from "../components/Create-Campaign/GeneralPreview";
 import PricingsPreview from "../components/Create-Campaign/PricingsPreview";
 import TargetingsPreview from "../components/Create-Campaign/TargetingsPreview";
@@ -24,16 +18,10 @@ import AdvSettingsPreview from "../components/Create-Campaign/AdvSettingsPreview
 import PreviewBtns from "../components/Create-Campaign/PreviewBtns";
 import General from "../components/Create-Campaign/General";
 
-
-function getSteps() {
-  return ["General", "Pricings", "Targetings", "Advance Settings"];
-}
-
-
-
 const CreateCampaign = () => {
+  const steps=["General", "Pricings", "Targetings", "Advance Settings"];
   const campaignDatata = {
-    general: { adFormat: "In Page Push Ad", feed: "All", afterVerification: "Start",imageSize: "300x250"},
+    general: { adFormat: "Banner Ad", feed: "All", afterVerification: "Start",imageSize: "300x250"},
     pricings: { pricingModel: "CPM" },
     targetings: {},
     advSettings: { proxyFilter: "Allow", buyingType: "Smoothly" },
@@ -67,31 +55,8 @@ const CreateCampaign = () => {
     dispatch({ type: "ADD_ADVSETTING_DATA", payload: data });
   };
   const [state, dispatch] = useReducer(reducer, campaignDatata);
-  console.log(state, "state");
-  console.log(state.pricings, "campaignDatata.pricings");
-  const [campaignData, setCampaignData] = useState({});
-  const [pricingData, setPricingData] = useState({});
-  const [targetingData, setTargetingData] = useState({});
-  const [advSettingData, setAdvSettingData] = useState({});
-
   const [activeStep, setActiveStep] = useState(1);
-  const [skippedSteps, setSkippedSteps] = useState([]);
-  const steps = getSteps();
-
-  // const isStepOptional = (step) => {
-  //   return step === 1 || step === 2;
-  // };
-
-  console.log(campaignData, "campaignData");
-  console.log(pricingData, "pricingData");
-  console.log(targetingData, "targetingData");
-  console.log(advSettingData, "advSettingData");
-
-  const isStepSkipped = (step) => {
-    return skippedSteps.includes(step);
-  };
-
-  
+ 
   const StepIconComponent = (index) => {
     switch (index) {
       case 0:
@@ -111,66 +76,69 @@ const CreateCampaign = () => {
   const GeneralIcon = () => {
     return (
       <div
-        className={`flex gap-2 align-items-center  w-40 justify-center !items-center py-2 rounded-t-md  text-sm ${
-          activeStep >= 1
+        onClick={() => setActiveStep(1)}
+        className={`cursor-pointer flex gap-2 align-items-center  w-40 justify-center !items-center py-2 rounded-t-md  text-sm ${
+          activeStep == 1
             ? "bg-[#71065D] text-white"
             : "bg-gray-200 text-gray-500"
         }`}
       >
         <FaUserEdit
           size={16}
-          className={`${activeStep >= 1 ? "text-white" : "text-gray-400"}`}
+          className={`${activeStep == 1 ? "text-white" : "text-gray-400"}`}
         />
         General
-        {activeStep >= 2 && (
+        {/* {activeStep >= 2 && (
           <span className="rounded-full p-[2px] bg-green-700 text-white">
             <TiTick size={12} />
           </span>
-        )}
+        )} */}
       </div>
     );
   };
   const PricingsIcon = () => {
     return (
       <div
-        className={`flex gap-2 align-items-center  w-40 justify-center !items-center py-2 rounded-t-md  text-sm ${
-          activeStep >= 2
+      onClick={() => setActiveStep(2)}
+        className={`cursor-pointer flex gap-2 align-items-center  w-40 justify-center !items-center py-2 rounded-t-md  text-sm ${
+          activeStep == 2
             ? "bg-[#71065D] text-white"
             : "bg-gray-200 text-gray-500"
         }`}
       >
         <IoMdPricetags
           size={16}
-          className={`${activeStep >= 2 ? "text-white" : "text-gray-400"}`}
+          className={`${activeStep == 2 ? "text-white" : "text-gray-400"}`}
         />
         Pricings
-        {activeStep >= 3 && (
+        {/* {activeStep == 3 && (
           <span className="rounded-full p-[2px] bg-green-700 text-white">
             <TiTick size={12} />
           </span>
-        )}
+        )} */}
       </div>
     );
   };
   const TargetingsIcon = () => {
     return (
       <div
-        className={`flex gap-2 align-items-center  w-40 justify-center !items-center py-2 rounded-t-md  text-sm ${
-          activeStep >= 3
+        onClick={() => setActiveStep(3)}
+        className={`cursor-pointer flex gap-2 align-items-center  w-40 justify-center !items-center py-2 rounded-t-md  text-sm ${
+          activeStep == 3
             ? "bg-[#71065D] text-white"
             : "bg-gray-200 text-gray-500"
         }`}
       >
         <GiTargeted
           size={16}
-          className={`${activeStep >= 3 ? "text-white" : "text-gray-400"}`}
+          className={`${activeStep == 3 ? "text-white" : "text-gray-400"}`}
         />
         Targetings
-        {activeStep >= 4 && (
+        {/* {activeStep >= 4 && (
           <span className="rounded-full p-[2px] bg-green-700 text-white">
             <TiTick size={12} />
           </span>
-        )}
+        )} */}
       </div>
     );
   };
@@ -178,7 +146,8 @@ const CreateCampaign = () => {
   const AdvanceSettings = () => {
     return (
       <div
-        className={`flex gap-2 align-items-center  w-40 justify-center !items-center py-2 rounded-t-md  text-sm ${
+      onClick={() => setActiveStep(4)}
+        className={`cursor-pointer flex gap-2 align-items-center  w-40 justify-center !items-center py-2 rounded-t-md  text-sm ${
           activeStep == 4
             ? "bg-[#71065D] text-white"
             : "bg-gray-200 text-gray-500"
@@ -195,7 +164,7 @@ const CreateCampaign = () => {
   return (
     <div className="bg-[#fafafa] px-12 py-4 m-0 h-auto flex gap-4 ">
       <section className="w-[70%]">
-        <h2 className="text-black font-semibold text-xl ml-4">
+        <h2 className="text-black font-medium text-xl ml-2">
           Create Campaign
         </h2>
         <Stepper activeStep={activeStep} className="bg-transparent">
@@ -203,9 +172,7 @@ const CreateCampaign = () => {
             const labelProps = {};
             const stepProps = {};
 
-            if (isStepSkipped(index)) {
-              stepProps.completed = false;
-            }
+           
             return (
               <Step {...stepProps} key={index}>
                 <StepLabel
@@ -241,8 +208,7 @@ const CreateCampaign = () => {
               handleTargetingData={handleTargetingData}
               button={activeStep}
               func={setActiveStep}
-              targetingData={targetingData}
-              setTargetingData={setTargetingData}
+             
             />
           )}
           {activeStep == 4 && (
@@ -251,8 +217,7 @@ const CreateCampaign = () => {
               handleAdvSettingData={handleAdvSettingData}
               button={activeStep}
               func={setActiveStep}
-              advSettingData={advSettingData}
-              setAdvSettingData={setAdvSettingData}
+              
             />
           )}
 
@@ -261,14 +226,14 @@ const CreateCampaign = () => {
       </section>
       {/* Campaign Summary */}
       <section className="w-[30%]">
-        <h2 className="text-black font-semibold text-xl ml-4 mb-4 text-center">
+        <h2 className="text-black font-medium text-xl ml-4 mb-4 text-center">
           Campaign Summary
         </h2>
         <div className="space-y-4">
-          <GeneralPreview generalData={state.general}/>
-          <PricingsPreview pricingData={state.pricings} />
-          <TargetingsPreview targetingData={state.targetings} />
-          <AdvSettingsPreview advSettingData={state.advSettings} />
+          <GeneralPreview generalData={state.general} setActiveStep={setActiveStep}/>
+          <PricingsPreview pricingData={state.pricings} setActiveStep={setActiveStep} />
+          <TargetingsPreview targetingData={state.targetings} setActiveStep={setActiveStep} />
+          <AdvSettingsPreview advSettingData={state.advSettings} setActiveStep={setActiveStep} />
           <PreviewBtns />
         </div>
       </section>

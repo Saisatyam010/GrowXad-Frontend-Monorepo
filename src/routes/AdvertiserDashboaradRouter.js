@@ -19,7 +19,7 @@ const AdvertiserDashboardRouter = () => {
   return (
 
     <Routes>
-      <Route path="/advertier-dashboard/" element={<AdvertiserDashbaordLayout />} >
+      <Route path="/advertiser-dashboard/" element={<AdvertiserDashbaordLayout />} >
         {advertiserDashboardRoutes.map((route, index) => (
           <Route
             key={index}
