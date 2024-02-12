@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom'
 import AdvertiserDashbaordLayout from './../features/AdvertiserDashboard/components/Layout/index';
 import CreateCampaign from '../features/AdvertiserDashboard/pages/CreateCampaign';
 import HelpCenter from '../features/AdvertiserDashboard/pages/HelpCenter'
+import AddFunds from '../features/AdvertiserDashboard/pages/AddFunds'
 
 const AdvertiserDashboardRouter = () => {
   const advertiserDashboardRoutes = [
@@ -14,6 +15,11 @@ const AdvertiserDashboardRouter = () => {
     {
       path: 'help-center',
       component:<HelpCenter/>,
+      exact:true
+    },
+    {
+      path:'add-funds',
+      component:<AddFunds/>,
       exact:true
     }
     // {
