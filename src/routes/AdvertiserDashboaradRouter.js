@@ -3,6 +3,10 @@ import { Routes, Route } from 'react-router-dom';
 import AdvertiserDashbaordLayout from './../features/advertiserDashboard/components/Layout/index';
 import CreateCampaign from '../features/advertiserDashboard/pages/CreateCampaign';
 import MyCampaign from '../features/advertiserDashboard/pages/MyCampaign'
+
+import HelpCenter from '../features/AdvertiserDashboard/pages/HelpCenter'
+import AddFunds from '../features/AdvertiserDashboard/pages/AddFunds'
+
 const AdvertiserDashboardRouter = () => {
   const advertiserDashboardRoutes = [
     {
@@ -10,6 +14,16 @@ const AdvertiserDashboardRouter = () => {
       component: <CreateCampaign />,
       exact: true
     },
+    {
+      path: 'help-center',
+      component:<HelpCenter/>,
+      exact:true
+    },
+    {
+      path:'add-funds',
+      component:<AddFunds/>,
+      exact:true
+    }
     {
       path: 'campaign/my-campaigns',
       component: <MyCampaign/>,
