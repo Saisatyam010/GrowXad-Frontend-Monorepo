@@ -2,6 +2,7 @@ import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 import AdvertiserDashbaordLayout from './../features/AdvertiserDashboard/components/Layout/index';
 import CreateCampaign from '../features/AdvertiserDashboard/pages/CreateCampaign';
+import HelpCenter from '../features/AdvertiserDashboard/pages/HelpCenter'
 
 const AdvertiserDashboardRouter = () => {
   const advertiserDashboardRoutes = [
@@ -11,10 +12,15 @@ const AdvertiserDashboardRouter = () => {
       exact: true
     },
     {
-      path: 'campaign/my-campaigns',
-      component: <MyCampaign/>,
-      exact: true
+      path: 'help-center',
+      component:<HelpCenter/>,
+      exact:true
     }
+    // {
+    //   path: 'campaign/my-campaigns',
+    //   component: <MyCampaign/>,
+    //   exact: true
+    // }
   ]
   return (
 

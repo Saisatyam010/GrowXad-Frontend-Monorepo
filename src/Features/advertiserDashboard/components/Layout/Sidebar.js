@@ -1,5 +1,4 @@
 import { useNavigate, Link } from "react-router-dom";
-import "./Layout.css";
 import { ProSidebar, Menu, MenuItem, SubMenu } from "react-pro-sidebar";
 import { IconButton, Typography, useTheme } from "@mui/material";
 import Box from '@mui/material/Box';
@@ -227,6 +226,7 @@ const Sidebar = () => {
                 icon={<ApiIcon />}
                 selected={selected}
                 setSelected={setSelected}
+                
               />
               <Item
                 title="Conversion Tracking"
@@ -279,7 +279,9 @@ const Sidebar = () => {
                 to="settings"
                 icon={<TimelineOutlinedIcon />}
                 selected={selected}
+                style={{ marginTop: 59 }}
                 setSelected={setSelected}
+
               />
               <hr />
 
