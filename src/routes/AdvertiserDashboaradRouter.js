@@ -7,6 +7,7 @@ import MyCampaign from '../features/AdvertiserDashboard/pages/MyCampaign'
 import HelpCenter from '../features/AdvertiserDashboard/pages/HelpCenter'
 import AddFunds from '../features/AdvertiserDashboard/pages/AddFunds'
 import MyCampaign from './../features/AdvertiserDashboard/pages/MyCampaign';
+import Overview from '../features/AdvertiserDashboard/pages/Overview';
 
 const AdvertiserDashboardRouter = () => {
   const advertiserDashboardRoutes = [
@@ -28,6 +29,11 @@ const AdvertiserDashboardRouter = () => {
     {
       path: 'campaigns',
       component: <MyCampaign />,
+      exact: true
+    },
+    {
+      path: 'overview',
+      component: <Overview />,
       exact: true
     }
   ]

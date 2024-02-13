@@ -1,7 +1,7 @@
 import { Col, Container, Row } from 'react-bootstrap';
 import React, { useState, useEffect } from "react";
 import { AgChartsReact } from "ag-charts-react";
-import { Container } from 'react-bootstrap';
+import styles from './Overview.module.css';
 
 function ChartData() {
 
@@ -98,7 +98,7 @@ function ChartData() {
     }, []);
 
     return (
-        <Container className='bg-black'>
+        <Container className={`p-4 ${styles.ab_divbackground}`}>
             <Row className='mt-4'>
                 <Col>
                     <div style={{ height: "400px" }}>

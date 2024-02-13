@@ -10,7 +10,6 @@
 .ab_text {
     font-size: 20px;
     font-weight: 600;
-    color: white;
 }
 
 .ab_divnumber {
@@ -23,4 +22,8 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+.ab_divbackground {
+    background-color: #f6f6f6;
 }

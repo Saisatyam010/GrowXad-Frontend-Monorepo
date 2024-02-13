@@ -55,7 +55,7 @@ function StatsData() {
         },]
 
     return (
-        <Container className='bg-black p-4'>
+        <Container className={`p-4 ${styles.ab_divbackground}`}>
             <Row >
                 <div>
                     <h3 className={styles.ab_text}>Advertiser Dashboard</h3>
