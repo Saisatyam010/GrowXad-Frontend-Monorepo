@@ -1,5 +1,4 @@
 import { useNavigate, Link } from "react-router-dom";
-import "./Layout.css";
 import { ProSidebar, Menu, MenuItem, SubMenu } from "react-pro-sidebar";
 import { IconButton, Typography, useTheme } from "@mui/material";
 import Box from '@mui/material/Box';
