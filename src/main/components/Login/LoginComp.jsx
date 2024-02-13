@@ -6,6 +6,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import TextField from "@mui/material/TextField";
 import Checkbox from "@mui/material/Checkbox";
+import style from "./LoginComp.module.css";
 
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
@@ -34,11 +35,11 @@ function LoginComp() {
                 Please sign-in to your account and start the adventure
               </p>
 
-              <div className="p-3 bg-gray-10 rounded-md bg-[#efcae8] text-purple">
+              {/* <div className="p-3 bg-gray-10 rounded-md bg-[#efcae8] text-purple">
                 Email: admin@materio.com / Pass: admin
-              </div>
+              </div> */}
 
-              <div className="form-group pt-4">
+              {/* <div className="form-group pt-4">
                 <TextField
                   id="outlined-basic"
                   label="Outlined"
@@ -48,23 +49,45 @@ function LoginComp() {
                   // placeholder="Username"
                   required="required"
                 />
+              </div> */}
+
+              <div className="form-group pt-4">
+                <div class={style.form_input}>
+                  <input
+                    type="email"
+                    placeholder="Email address"
+                    id="email#"
+                    className="w-full"
+                  />
+                  <label for="email">Email Address</label>
+                </div>
               </div>
+
               <div className="form-group">
-                <input
+                {/* <input
                   type="password"
                   className="form-control"
                   placeholder="Password"
                   required="required"
-                />
+                /> */}
+                <div class={`${style.form_input} mt-4`}>
+                  <input
+                    type="password"
+                    placeholder="Password"
+                    id="password#"
+                    className="w-full"
+                  />
+                  <label for="password">Password</label>
+                </div>
               </div>
 
               <div className="clearfix py-3">
                 <label className="float-left form-check-label">
-                  <Checkbox {...label} color="secondary" />
+                  <Checkbox {...label} style={{ color: "purple" }} />
                   Remember me
                 </label>
 
-                <a href="#" className="float-right text-purple">
+                <a href="#" className="float-right text-purple pt-2">
                   Forgot Password?
                 </a>
               </div>
@@ -78,13 +101,13 @@ function LoginComp() {
                 </button> */}
                 <Button
                   type="submit"
-                  className=" text-white bg-gradient-to-r w-full from-purple to-darkPurple hover:from-darkPurple hover:to-purple focus:ring-4 px-4 focus:ring-purple-300 text-lg rounded-lg font-semibold py-2.9 mb-2 dark:bg-gradient-to-r dark:from-purple dark:to-darkPurple dark:hover:from-darkPurple dark:hover:to-purple dark:focus:ring-purple-900"
+                  className=" text-white bg-gradient-to-r w-full from-purple to-darkPurple hover:from-darkPurple hover:to-purple focus:ring-4 px-4 focus:ring-purple-300 text-lg rounded-lg font-semibold py-3 mb-2 dark:bg-gradient-to-r dark:from-purple dark:to-darkPurple dark:hover:from-darkPurple dark:hover:to-purple dark:focus:ring-purple-900"
                 >
                   Log in
                 </Button>
               </div>
             </form>
-            <p className="text-center">
+            <p className="text-center text-lg ">
               New on our platform?
               <a href="#" className="text-purple">
                 {" "}
