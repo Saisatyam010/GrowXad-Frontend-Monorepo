@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Container, Navbar, Nav, NavDropdown, Button, Modal, Row, Col } from "react-bootstrap";
+import SignUpButton from "./SignUpButton";
 import './Header.css';
 import { Link } from "react-router-dom";
 const Header = () => {
@@ -162,62 +162,7 @@ const Header = () => {
           </div>
           <div className='mr-0 d-flex nav-links'>
             <div>
-              <Button onClick={handleShow} className="btn SSA_Header_BTN  ssa_font-17px px-4 ms-1 py-2 webbackground_theme border-emerald-950 SSA_Header_BTN" style={{
-              }}>
-                Login/Signup
-              </Button>
-              <Modal className='modal-lg SSA_Modal_dialog modal-dialog-centered' show={showModal} onHide={handleClose} centered style={{ borderBottom: "1px solid red" }}>
-                <Modal.Header closeButton>
-                  <Modal.Title className="text-center fs-2">Authentication</Modal.Title>
-                </Modal.Header>
-                <div style={{ border: "1px dashed black" }}></div>
-                <div className="p-4" style={{ height: "365px" }}>
-                  <div className="container">
-                    <div className="row">
-                      <div className="col-md-4 text-center col-12">
-                        <div className='border-solid border-2 border-black  py-4 px-2' style={{ borderRadius: "20px" }}>
-                          <div>
-                            <img src="https://imagedelivery.net/f5tF3V4WaB6L98qcq1rX5w/ab168248-e66b-449d-6d5d-06c26aa56d00/public"></img>
-                          </div>
-                          <p>Monetize your website or other traffic</p>
-                          <button className="dp_modal_getstarted_btn">
-                            <Link to="/adveriserauthLogin" className="hover:no-underline">
-                              Get Started
-                            </Link>
-                          </button>
-                        </div>
-                      </div>
-                      <div className="col-md-4 text-center col-12">
-                        <div className='border-solid border-2 border-black  py-4 px-2' style={{ borderRadius: "20px" }}>
-                          <div>
-                            <img src="https://imagedelivery.net/f5tF3V4WaB6L98qcq1rX5w/544252aa-3ba1-44cd-2d49-129b26608500/public"></img>
-                          </div>
-                          <p>Monetize your website or other traffic</p>
-                          <button className="dp_modal_getstarted_btn">
-                            <Link to="/publisherauthLogin" className="hover:no-underline">
-                              Get Started
-                            </Link>
-                          </button>
-                        </div>
-                      </div>
-                      <div className="col-md-4 text-center col-12">
-                        <div className='border-solid border-2 border-black  py-4 px-2' style={{ borderRadius: "20px" }}>
-                          <div>
-                            <img src="https://imagedelivery.net/f5tF3V4WaB6L98qcq1rX5w/6b2ef7d2-9910-42c6-5615-93a88ec04200/public"></img>
-                          </div>
-                          <p>Get access to
-                            profitable CPA offers</p>
-                          <button className="dp_modal_getstarted_btn">
-                            <Link to="/affiliateauthLogin" className="hover:no-underline">
-                              Get Started
-                            </Link>
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </Modal>
+             <SignUpButton/>
             </div>
           </div>
         </div>
