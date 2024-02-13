@@ -39,13 +39,13 @@ const Header = () => {
             <Container fluid className='border-b-0 '>
                 <Row className='h-100'>
                     <Col md={4} >
-                        <div className='text-grey-700 d-flex align-items-center'>
+                        {/* <div className='text-grey-700 d-flex align-items-center'>
                             <div>
                                 <Link to='/advertiserdashboard'>
                                     <div className='ps-10'><img src="https://imagedelivery.net/f5tF3V4WaB6L98qcq1rX5w/ab168248-e66b-449d-6d5d-06c26aa56d00/public" height={100} width={140}></img></div>
                                 </Link>
                             </div>
-                        </div>
+                        </div> */}
                     </Col>
                     <Col md={3}>
                     </Col>

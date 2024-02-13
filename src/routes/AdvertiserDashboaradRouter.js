@@ -1,7 +1,9 @@
-import React from 'react'
-import { Routes, Route } from 'react-router-dom'
-import AdvertiserDashbaordLayout from './../features/AdvertiserDashboard/components/Layout/index';
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import AdvertiserDashbaordLayout from './../features/advertiserDashboard/components/Layout/index';
 import CreateCampaign from '../features/AdvertiserDashboard/pages/CreateCampaign';
+import MyCampaign from '../features/advertiserDashboard/pages/MyCampaign'
+
 import HelpCenter from '../features/AdvertiserDashboard/pages/HelpCenter'
 import AddFunds from '../features/AdvertiserDashboard/pages/AddFunds'
 
@@ -12,6 +14,11 @@ const AdvertiserDashboardRouter = () => {
       component: <CreateCampaign />,
       exact: true
     },
+    // {
+    //   path: 'campaign/my-campaigns',
+    //   component: <MyCampaign/>,
+    //   exact: true
+    // }
     {
       path: 'help-center',
       component:<HelpCenter/>,
@@ -21,12 +28,12 @@ const AdvertiserDashboardRouter = () => {
       path:'add-funds',
       component:<AddFunds/>,
       exact:true
+    },
+    {
+      path: 'campaign/my-campaigns',
+      component: <MyCampaign/>,
+      exact: true
     }
-    // {
-    //   path: 'campaign/my-campaigns',
-    //   component: <MyCampaign/>,
-    //   exact: true
-    // }
   ]
   return (
 

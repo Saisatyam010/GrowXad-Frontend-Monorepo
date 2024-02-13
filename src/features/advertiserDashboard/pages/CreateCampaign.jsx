@@ -21,7 +21,7 @@ import General from "../components/Create-Campaign/General";
 const CreateCampaign = () => {
   const steps=["General", "Pricings", "Targetings", "Advance Settings"];
   const campaignDatata = {
-    general: { adFormat: "Banner Ad", feed: "All", afterVerification: "Start",imageSize: "300x250"},
+    general: { adFormat: "Banner Ad", feed: "All", afterVerification: "Start",imageSize: "300x250",creatives:[]},
     pricings: { pricingModel: "CPM" },
     targetings: {},
     advSettings: { proxyFilter: "Allow", buyingType: "Smoothly" },

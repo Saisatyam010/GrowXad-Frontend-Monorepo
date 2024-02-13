@@ -2,8 +2,8 @@ import "./General.css";
 import InputAdornment from "@mui/material/InputAdornment";
 import TextField from "@mui/material/TextField";
 import React, { useEffect, useState } from "react";
-import { Button } from "@material-ui/core";
-import { useForm } from "react-hook-form";
+import { Button, FormControlLabel, Radio, RadioGroup } from "@material-ui/core";
+import { useFieldArray, useForm } from "react-hook-form";
 import { Controller } from "react-hook-form";
 import Select from "react-select";
 import "react-datepicker/dist/react-datepicker.css";
@@ -15,6 +15,7 @@ import { IoIosArrowDown } from "react-icons/io";
 import { IoIosArrowUp } from "react-icons/io";
 import InputLabel from "../shared/Form/Label";
 import dateFormat from "dateformat";
+import { MdOutlineDelete, MdOutlineEdit } from "react-icons/md";
 
 const fiveAM = dayjs().set("hour").startOf("hour");
 const nineAM = dayjs().set("hour", 9).startOf("hour");
@@ -34,7 +35,7 @@ const imageSize = [
 export default function General(props) {
   const { generalData, handleGeneralData, button, func } = props;
   const [openUploadSection, setOpenUploadSection] = useState(true);
-
+  const [file,setFile]=useState()
   const customTheme = (theme) => ({
     ...theme,
     colors: {
@@ -43,7 +44,7 @@ export default function General(props) {
       primary25: "#fbe5f6", // sets the background color when focused
       primary50: "#fbe5f6", // sets the border color when not focused
     },
-  });
+  })
   const {
     register,
     handleSubmit,
@@ -52,7 +53,12 @@ export default function General(props) {
     control,
     formState: { errors },
   } = useForm({ defaultValues: generalData });
-
+  
+  const { fields, append, prepend, remove, swap, move, insert } = useFieldArray({
+    control, // control props comes from useForm (optional: if you are using FormContext)
+    name: "creatives", // unique name for your Field Array
+  });
+  //console.log(URL.createObjectURL(`creatives.${0}.image`));
   useEffect(() => {
     reset(generalData);
   }, []);
@@ -76,7 +82,7 @@ export default function General(props) {
     },
     { value: "Mainstream Low Activity", label: "Mainstream Low Activity" },
   ];
-
+  console.log(fields)
   //Handle inputs for general data
   const handleInputGeneral = (e) => {
     const { name, value } = e.target;
@@ -121,14 +127,18 @@ export default function General(props) {
 
   const dragNdrop = (event) => {
     const files = event.target.files;
-    const updatedImages = [];
-
-    for (let i = 0; i < files.length; i++) {
-      const fileName = URL.createObjectURL(files[i]);
-      updatedImages.push({ url: fileName });
+    console.log(files)
+    if(event.target.files.length>5){
+      alert("You can upload maximum 5 files")
     }
-
-    setUploadedImages((prevImages) => [...prevImages, ...updatedImages]);
+    else{
+    setFile(event.target.files[0])
+    const updatedCreatives =Object.values(files).map((file) => { 
+      return { image: file, targetingURL:''};
+    });
+    append(updatedCreatives)
+    handleInputGeneral({target:{name:'creatives',value:updatedCreatives}})
+  }
   };
 
   const drag = () => {
@@ -388,16 +398,17 @@ export default function General(props) {
 
         {generalData.adFormat === "Interstitial Ad" ||
         generalData.adFormat === "Direct Link" ? null : (
-          <section className="pb-5 pt-3">
+          <section className="px-12 pb-5 pt-3">
             <div>
               <div
                 style={{ cursor: "pointer" }}
-                className="pr-5 SSAR_CreateCamp_18px_font d-flex justify-content-between"
+                className="SSAR_CreateCamp_18px_font d-flex justify-content-between"
                 onClick={() => setOpenUploadSection(!openUploadSection)}
               >
-                <h2 className="text-xl text-black pl-5">
+                <h2 className="text-xl text-black ">
                   Upload Creatives
                 </h2>
+               
                 {!openUploadSection ? (
                   <div className="d-flex align-items-center text-sm text-[#504e4e]">
                     Show &nbsp; <IoIosArrowDown />
@@ -408,9 +419,14 @@ export default function General(props) {
                   </div>
                 )}
               </div>
+              
             </div>
             {openUploadSection && (
               <div>
+                <p className="text-base pl-1 mt-0 mb-4 text-[#373636]">
+                Select a maximum of 5 files (photo/video/gif)
+            </p>
+               {fields.length==0&&
                 <div
                   className={`SSAR_FORM_uploadOuter ${
                     isDragging ? "dragging" : ""
@@ -450,37 +466,48 @@ export default function General(props) {
                       multiple
                     />
                   </span>
-                  <div id="preview" className="d-flex flex-wrap">
+                </div>
+                 }
+                  <div id="preview" className="grid grid-cols-2 gap-4">
                     {/* Render uploaded images with delete buttons */}
-                    {uploadedImages.map((image, index) => (
+                    {fields.map((field, index) => (
+                      <div className="flex flex-col rounded-sm  border border-solid border-gray-300 py-2.5 px-3" key={field.id}>
+                        <h3 className="text-lg  text-black text-left">Creative {index+1}</h3>
+                        <input type="file" className="w-[300px]" />  
                       <div
                         key={index}
-                        className="position-relative m-2"
+                        className="position-relative my-2"
                         style={{ position: "relative" }}
                       >
                         {/* Cross delete button */}
                         <button
-                          className="btn text-white btn-danger btn-sm position-absolute top-0 end-0"
+                        tyep="button"
+                          className="btn text-white btn-danger btn-sm absolute top-2 right-2 rounded-md p-1"
                           onClick={() => deleteImage(index)}
-                          style={{ zIndex: 1 }} // Ensure the button is above the image
+                           // Ensure the button is above the image
                         >
-                          x
+                          <MdOutlineDelete size={20}/>
                         </button>
                         <img
-                          src={image.url}
+                          src={URL.createObjectURL(watch(`creatives.${index}.image`))}
                           alt=""
                           width={300}
-                         
-                          height={
-                            generalData.imageSize === "300x250" ? 250 : 100
-                          }
-                          className="img-thumbnail "
+                          height={250}
+                          
+                          
                           style={{ display: "block" }}
                         />
+                        </div>
+                        <div className="relative w-[300px]">
+                      <input type="text" {...register(`creatives.${index}.targetingURL`)} className="text-xs w-full rounded-sm border-gray-400 disabled:bg-[#eaebed]" disabled={true} placeholder="Targeting URL*"/>
+                       <EditTargetingURL register={register}/>
+                      
+                      </div>
+                      
                       </div>
                     ))}
                   </div>
-                </div>
+                
               </div>
             )}
           </section>
@@ -529,7 +556,7 @@ const RadioInputLabel=({label,value,register,imgSrc,handleInputGeneral})=>{
       type="radio"
       name="radio-card"
      
-     
+      className="hidden"
       value={value}
       
       {...register("adFormat",{required:true,onChange:handleInputGeneral})}
@@ -548,4 +575,108 @@ const RadioInputLabel=({label,value,register,imgSrc,handleInputGeneral})=>{
   </label>
   )
 
+}
+
+const EditTargetingURL=({register})=>{
+  const [isShowModal,setIsShowModal]=useState(false)
+  return(
+    
+      <div className="absolute top-1 right-2">
+     <button className="bg-gray-500 rounded-md px-2 py-1 text-xs text-white" type="button" onClick={()=>setIsShowModal(true)}><MdOutlineEdit size={16}/></button>
+    {isShowModal&&
+    <div className="fixed  z-50 flex items-center justify-center top-0 left-0 w-full h-screen bg-[rgba(0,0,0,0.5)] ">
+       <div className="max-w-lg bg-white mx-auto rounded-md px-10 py-6 space-y-2 ">
+       <h2 className="text-xl text-black  ">Select Target Url</h2>
+        <RadioGroup
+            row
+            aria-labelledby="demo-row-radio-buttons-group-label"
+            name="row-radio-buttons-group"
+            className="pl-2  "
+            defaultValue={"Add to one creative"}
+            sx={{
+              borderColor: "rgb(115 3 91)",
+              "& .MuiOutlinedInput-root": {
+                "&.Mui-focused fieldset": {
+                  borderColor: "rgb(115 3 91)",
+                },
+                "&:hover fieldset": {
+                  borderColor: "rgb(115 3 91)",
+                },
+              },
+            }}
+
+            // onChange={handleRadioChange}
+          >
+            <FormControlLabel
+              value="Add to one creative"
+              control={
+                <Radio
+                {...register("targetingCreativeType", { required: true })}
+                />
+              }
+              label="Add to one creative"
+            />
+            <FormControlLabel
+              className="text-sm"
+              value="SmartCPM"
+              control={
+                <Radio {...register("targetingCreativeType", { required: true })} />
+              }
+              label="Add to all creatives"
+            />
+          
+        </RadioGroup>
+          <TextField
+            placeholder="Target Url *"
+            {...register("Targeting URl", {
+              required: true,
+             
+            })}
+            sx={{
+              width:'100%',
+              "& .MuiOutlinedInput-root": {
+                "&.Mui-focused fieldset": {
+                  borderColor: "rgb(115 3 91)",
+                },
+                "&:hover fieldset": {
+                  borderColor: "rgb(115 3 91)",
+                },
+              },
+            }}
+            
+          /> 
+          <p className="text-xs font-light mb-1">{`Example: http://www.domain.com/in.php?sourceid={zoneid}Allowed placeholders: {zoneid}, SUBID, {campaignid} . More information`}</p>
+          <div className="flex justify-end gap-3 mt-3">
+          <Button
+            className={`font-semibold text-sm px-4 py-1 `}
+            style={{
+              background: '#000011',
+              padding: "8px 25px 8px 25px",
+            }}
+            variant="contained"
+            color="primary"
+            onClick={()=>setIsShowModal(false)}
+            type="button"
+          >
+            Cancel
+          </Button>
+          <Button
+            className={`font-semibold text-sm px-4 py-1 `}
+            style={{
+              background: "linear-gradient(180deg, #73035B 0%, #46133B 100%",
+              padding: "8px 25px 8px 25px",
+            }}
+            variant="contained"
+            color="primary"
+           
+            type="submit"
+          >
+            Add
+          </Button>
+          </div>
+       </div>
+    </div>
+    }
+    </div>
+  )
 }
