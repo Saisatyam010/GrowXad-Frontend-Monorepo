@@ -1,8 +1,4 @@
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 
 @layer components {
   .error-message {
@@ -47,3 +43,8 @@ body,
 .sideBar {
   height: 100%;
 }
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
