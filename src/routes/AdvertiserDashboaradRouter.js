@@ -13,11 +13,6 @@ const AdvertiserDashboardRouter = () => {
       component: <CreateCampaign />,
       exact: true
     },
-    // {
-    //   path: 'campaign/my-campaigns',
-    //   component: <MyCampaign/>,
-    //   exact: true
-    // }
     {
       path: 'help-center',
       component: <HelpCenter />,
@@ -29,7 +24,7 @@ const AdvertiserDashboardRouter = () => {
       exact: true
     },
     {
-      path: 'campaign/my-campaigns',
+      path: 'campaigns',
       component: <MyCampaign />,
       exact: true
     }
