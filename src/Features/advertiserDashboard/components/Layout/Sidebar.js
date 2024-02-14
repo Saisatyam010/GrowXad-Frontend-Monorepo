@@ -8,16 +8,11 @@ import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import ReceiptOutlinedIcon from "@mui/icons-material/ReceiptOutlined";
 import BarChartOutlinedIcon from "@mui/icons-material/BarChartOutlined";
 import PieChartOutlineOutlinedIcon from "@mui/icons-material/PieChartOutlineOutlined";
-import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
-import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import PlayCircleFilledIcon from '@mui/icons-material/PlayCircleFilled';
 import AppRegistrationIcon from '@mui/icons-material/AppRegistration';
 import CampaignIcon from '@mui/icons-material/Campaign';
-import FlagIcon from '@mui/icons-material/Flag';
-import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import ApiIcon from '@mui/icons-material/Api';
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
 import Avatar from '@mui/material/Avatar';
 import { useState } from "react";
 import { FaTelegram, FaSkype, FaRegUser } from "react-icons/fa";
@@ -104,20 +99,24 @@ const Sidebar = () => {
         className="sideBar"
         sx={{
           "& .pro-sidebar-inner": {
-            background: `${colors.primary[400]} !important`,
+            background: `${colors.grey[100]} !important`,
           },
           "& .pro-icon-wrapper": {
             backgroundColor: "transparent !important",
           },
           "& .pro-inner-item": {
-            padding: "5px 15px 5px 20px !important",
+            padding: "5px 20px 5px 20px !important",
+            color: `${colors.grey[500]}`,
+            fontWeight: "medium !important",
+            fontFamily:"Nunito Sans', sans-serif",
+            fontSize: "16px !important",
           },
           "& .pro-inner-item:hover": {
-            color: "#73035b !important",
-            fontWeight: "bold !important",
+            color: "#fff !important",
+            fontWeight: "medium !important",
           },
           "& .pro-menu-item.active": {
-            color: "#73035b !important",
+            color: "#fff !important",
             fontWeight: "800 !important",
           },
 
@@ -128,42 +127,36 @@ const Sidebar = () => {
         <ProSidebar collapsed={isCollapsed}>
           <Menu iconShape="square">
 
-            <MenuItem
-              onClick={() => setIsCollapsed(!isCollapsed)}
-              icon={isCollapsed ?
-                <HiLogout size={'22px'} /> : undefined}
+            <Box
+              display="flex"
+              justifyContent={!isCollapsed?"space-between":"center"}
+              alignItems="center"
+              padding={isCollapsed ? "0px 0px 0px 0px" : "0px 10px 0px 20px"}
+                          
+              position="relative"
               style={{
                 fontSize: "20px",
-                margin: "5px 0 5px 0",
+                
                 color: colors.grey[100],
               }}
             >
-              {!isCollapsed && (
-                <Box
-                  display="flex"
-                  justifyContent="space-between"
-                  alignItems="center"
-                >
-                  <Link to='/advertiserdashboard'>
-                    <img src="https://imagedelivery.net/f5tF3V4WaB6L98qcq1rX5w/ab168248-e66b-449d-6d5d-06c26aa56d00/public" height={100} width={140}></img>
-                  </Link>
-                  <IconButton onClick={() => setIsCollapsed(!isCollapsed)}>
-                    <img src="https://imagedelivery.net/f5tF3V4WaB6L98qcq1rX5w/828fe15d-cf76-4bd6-186d-36920186df00/public" height={50} width={70} />
-                    <HiLogin size={'22px'} />
-                  </IconButton>
-                </Box>
-              )}
-            </MenuItem>
+              {!isCollapsed ?
+               
+                <img src="https://imagedelivery.net/f5tF3V4WaB6L98qcq1rX5w/ab168248-e66b-449d-6d5d-06c26aa56d00/public" style={{width: "135px", height: "auto"}} />
+            : 
+              <img src="https://imagedelivery.net/f5tF3V4WaB6L98qcq1rX5w/828fe15d-cf76-4bd6-186d-36920186df00/public" style={{width: "40px", height: "auto"}} 
+              />
+           }
+            {isCollapsed ?
+               <button onClick={() => setIsCollapsed(!isCollapsed)} className="absolute top-4 -right-0  z-50 rounded-full text-white"><HiLogout size={16}   /></button> :<button onClick={() => setIsCollapsed(!isCollapsed)} className="text-white" > <HiLogin size={16}/></button>}
+            </Box>
 
-            {!isCollapsed && (
-              <Box mb="25px">
-              </Box>
-            )}
+            <hr />
 
             <Box paddingLeft={isCollapsed ? undefined : "0%"}>
               <Typography
                 variant="h6"
-                color={colors.grey[300]}
+                color={colors.primary[900]}
                 sx={{ m: "5px 0 5px 20px" }}
                 display={isCollapsed ? "none" : "block"}
               >
@@ -217,7 +210,7 @@ const Sidebar = () => {
 
               <Typography
                 variant="h6"
-                color={colors.grey[300]}
+                color={colors.primary[900]}
                 sx={{
                   m: "15px 0 5px 20px",
                 }}
@@ -252,7 +245,7 @@ const Sidebar = () => {
 
               <Typography
                 variant="h6"
-                color={colors.grey[300]}
+                color={colors.primary[900]}
                 sx={{ m: "15px 0 5px 20px" }}
                 display={isCollapsed ? "none" : "block"}
 
@@ -277,7 +270,7 @@ const Sidebar = () => {
               />
               {/* <Typography
                 variant="h6"
-                color={colors.grey[300]}
+                color={colors.primary[900]}
                 sx={{ m: "15px 0 5px 20px" }}
                 display={isCollapsed ? "none" : "block"}
               >
@@ -288,7 +281,7 @@ const Sidebar = () => {
               <Item
                 title="Profile"
                 to="settings"
-                icon={<FaRegUser size={'20px'} />}
+                icon={<FaRegUser size={20} />}
                 selected={selected}
                 setSelected={setSelected}
 
@@ -296,7 +289,7 @@ const Sidebar = () => {
               <Item
                 title="Help Center"
                 to="support"
-                icon={<MdHelpOutline size={'22px'} />}
+                icon={<MdHelpOutline size={20} />}
                 selected={selected}
                 setSelected={setSelected}
               />

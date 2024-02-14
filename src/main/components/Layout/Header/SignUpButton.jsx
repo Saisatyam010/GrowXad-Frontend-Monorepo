@@ -24,7 +24,7 @@ const SignUpButton = () => {
           <div className="flex flex-col items-end col-md-7 gap-2">
             <img src="https://imagedelivery.net/f5tF3V4WaB6L98qcq1rX5w/4c01b7fc-36fd-4c9d-cb34-e325db9a2400/public" alt="GrowXads" loading="lazy" style={{ width: "150px" }} />
 
-            <span className="text-3xl font-bold" style={{ padding: "0px 24px" }}>SIGN UP</span>
+            <span className="text-2xl font-medium" style={{ padding: "0px 24px" }}>Sign up</span>
           </div>
 
           <div className="ab-closediv col-md-5">
