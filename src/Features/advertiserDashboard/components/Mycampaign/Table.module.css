@@ -12,12 +12,14 @@
     width: 100%;
     /* border: 1px solid var(--border-color); */
     border-radius: 4px;
-    overflow: hidden;
+    overflow:auto;
+    background-color: var(--white);
+    box-shadow: 0 2px 4px 0 rgba(219, 215, 215, 0.04);
 }
 
 .ab_tablecontainerbox {
-    border: 1px solid var(--black);
-    margin: 10px;
+   
+   
     border-radius: 2px;
 }
 

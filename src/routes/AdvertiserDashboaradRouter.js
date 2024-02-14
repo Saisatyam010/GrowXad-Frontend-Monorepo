@@ -3,11 +3,11 @@ import { Routes, Route } from 'react-router-dom';
 import AdvertiserDashbaordLayout from './../features/AdvertiserDashboard/components/Layout/index';
 import CreateCampaign from '../features/AdvertiserDashboard/pages/CreateCampaign';
 import MyCampaign from '../features/AdvertiserDashboard/pages/MyCampaign'
-
 import HelpCenter from '../features/AdvertiserDashboard/pages/HelpCenter'
 import AddFunds from '../features/AdvertiserDashboard/pages/AddFunds'
-import MyCampaign from './../features/AdvertiserDashboard/pages/MyCampaign';
+//import MyCampaign from './../features/AdvertiserDashboard/pages/MyCampaign';
 import Overview from '../features/AdvertiserDashboard/pages/Overview';
+import GetStarted from '../features/AdvertiserDashboard/pages/GetStarted';
 
 const AdvertiserDashboardRouter = () => {
   const advertiserDashboardRoutes = [
@@ -35,6 +35,11 @@ const AdvertiserDashboardRouter = () => {
       path: 'overview',
       component: <Overview />,
       exact: true
+    },
+    {
+      path:'get-started',
+      component:<GetStarted/>,
+      exact:true
     }
   ]
   return (

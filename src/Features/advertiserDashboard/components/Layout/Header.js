@@ -1,6 +1,4 @@
-import { useEffect, useState } from 'react';
-// import './Layout.css';
-import { Col, Container, Row } from "react-bootstrap";
+
 import { Link } from 'react-router-dom';
 import { IoWalletSharp } from "react-icons/io5";
 import { Dropdown } from 'flowbite-react';
@@ -26,7 +24,7 @@ const Header = () => {
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
     return (
-     <div style={{marginBottom:"80px"}}>
+     <div style={{marginBottom:"72px"}}>
     <div className='fixed top-0 left-0 z-30 w-full   bg-[#212121] m-0'>
            
                

@@ -219,7 +219,7 @@ export default function General(props) {
             
               <div className="flex flex-col gap-1 mb-4">
                <InputLabel label="Image Size" required={true} />
-
+               
                 <div>
                   <Controller
                     name="imageSize"

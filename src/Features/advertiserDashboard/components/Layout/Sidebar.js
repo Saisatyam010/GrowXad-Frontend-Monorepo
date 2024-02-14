@@ -106,7 +106,7 @@ const Sidebar = () => {
           },
           "& .pro-inner-item": {
             padding: "5px 20px 5px 20px !important",
-            color: `${colors.grey[500]}`,
+            color: `${colors.primary[800]}`,
             fontWeight: "medium !important",
             fontFamily:"Nunito Sans', sans-serif",
             fontSize: "16px !important",
@@ -126,37 +126,41 @@ const Sidebar = () => {
       >
         <ProSidebar collapsed={isCollapsed}>
           <Menu iconShape="square">
-
+           <div className={`sticky top-[14px] z-[100]`} style={{background:`${colors.grey}`}}>
             <Box
               display="flex"
               justifyContent={!isCollapsed?"space-between":"center"}
               alignItems="center"
               padding={isCollapsed ? "0px 0px 0px 0px" : "0px 10px 0px 20px"}
                           
-              position="relative"
+              position="sticky"
+              top="0"
+              zIndex={100}
               style={{
                 fontSize: "20px",
                 
                 color: colors.grey[100],
               }}
             >
+              
               {!isCollapsed ?
                
-                <img src="https://imagedelivery.net/f5tF3V4WaB6L98qcq1rX5w/ab168248-e66b-449d-6d5d-06c26aa56d00/public" style={{width: "135px", height: "auto"}} />
+                <img src="/images/growxad.png" style={{width: "auto", height: "43px", }} alt="brand-logo" />
             : 
-              <img src="https://imagedelivery.net/f5tF3V4WaB6L98qcq1rX5w/828fe15d-cf76-4bd6-186d-36920186df00/public" style={{width: "40px", height: "auto"}} 
+              <img src="https://imagedelivery.net/f5tF3V4WaB6L98qcq1rX5w/828fe15d-cf76-4bd6-186d-36920186df00/public" style={{width: "auto", height: "43px", }}  alt="brand-short-logo"
               />
            }
             {isCollapsed ?
-               <button onClick={() => setIsCollapsed(!isCollapsed)} className="absolute top-4 -right-0  z-50 rounded-full text-white"><HiLogout size={16}   /></button> :<button onClick={() => setIsCollapsed(!isCollapsed)} className="text-white" > <HiLogin size={16}/></button>}
+               <button onClick={() => setIsCollapsed(!isCollapsed)} className="absolute top-4 -right-0  z-50 rounded-full text-white"><HiLogout size={16}   /></button> :
+               <button onClick={() => setIsCollapsed(!isCollapsed)} className="absolute top-4 -right-0  z-50 text-white" > <HiLogin size={16}/></button>}
             </Box>
 
-            <hr />
-
+            <hr className="relative top-0" />
+            </div>
             <Box paddingLeft={isCollapsed ? undefined : "0%"}>
               <Typography
                 variant="h6"
-                color={colors.primary[900]}
+                color={colors.primary[400]}
                 sx={{ m: "5px 0 5px 20px" }}
                 display={isCollapsed ? "none" : "block"}
               >
@@ -164,7 +168,7 @@ const Sidebar = () => {
               </Typography>
               <Item
                 title="Get Started"
-                to="dashboard"
+                to="get-started"
                 icon={<HomeOutlinedIcon />}
                 selected={selected}
                 setSelected={setSelected}
@@ -172,7 +176,7 @@ const Sidebar = () => {
 
               <Item
                 title="Overview"
-                to="/advertiserdashboard/welcome"
+                to="overview"
                 icon={<PlayCircleFilledIcon />}
                 selected={selected}
                 setSelected={setSelected}
@@ -180,7 +184,7 @@ const Sidebar = () => {
 
               <Item
                 title="Statistics"
-                to="statistics"
+                to="/advertiser-dashboard/statistics"
                 icon={<ReceiptOutlinedIcon />}
                 selected={selected}
                 setSelected={setSelected}
@@ -195,14 +199,14 @@ const Sidebar = () => {
               />
               <Item
                 title="Add Funds"
-                to="trafficchart"
+                to="add-funds"
                 icon={<BarChartOutlinedIcon />}
                 selected={selected}
                 setSelected={setSelected}
               />
               <Item
                 title="Traffic Inventory"
-                to="trafficchart"
+                to="traffic-inventory"
                 icon={<PiChartLineUpBold size={'20px'} />}
                 selected={selected}
                 setSelected={setSelected}
@@ -210,7 +214,7 @@ const Sidebar = () => {
 
               <Typography
                 variant="h6"
-                color={colors.primary[900]}
+                color={colors.primary[400]}
                 sx={{
                   m: "15px 0 5px 20px",
                 }}
@@ -229,7 +233,7 @@ const Sidebar = () => {
 
               <Item
                 title="My Campaigns"
-                to="campaign/my-campaigns"
+                to="campaigns"
                 icon={<CampaignIcon />}
                 selected={selected}
                 setSelected={setSelected}
@@ -245,7 +249,7 @@ const Sidebar = () => {
 
               <Typography
                 variant="h6"
-                color={colors.primary[900]}
+                color={colors.primary[400]}
                 sx={{ m: "15px 0 5px 20px" }}
                 display={isCollapsed ? "none" : "block"}
 
@@ -255,7 +259,7 @@ const Sidebar = () => {
 
               <Item
                 title="Postback URL"
-                to="tracking/api"
+                to="tracking/postback-url"
                 icon={<ApiIcon />}
                 selected={selected}
                 setSelected={setSelected}
@@ -263,7 +267,7 @@ const Sidebar = () => {
               />
               <Item
                 title="Real Time Traffic"
-                to="tracking/conversiontracking"
+                to="tracking/real-time-traffic"
                 icon={<TrendingUpIcon />}
                 selected={selected}
                 setSelected={setSelected}
@@ -280,7 +284,7 @@ const Sidebar = () => {
               <hr />
               <Item
                 title="Profile"
-                to="settings"
+                to="profile"
                 icon={<FaRegUser size={20} />}
                 selected={selected}
                 setSelected={setSelected}
@@ -288,7 +292,7 @@ const Sidebar = () => {
               />
               <Item
                 title="Help Center"
-                to="support"
+                to="help-center"
                 icon={<MdHelpOutline size={20} />}
                 selected={selected}
                 setSelected={setSelected}
@@ -298,13 +302,13 @@ const Sidebar = () => {
                 sx={{ display: 'flex' }}>
                 <Avatar alt="Remy Sharp" src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
 
-                <Box px={1} paddingLeft={isCollapsed ? undefined : "0%"}>
-                  <Typography variant="p" sx={{ color: colors.grey[100], textAlign: "start" }} style={{ fontSize: "13px", display: 'flex', paddingLeft: "15px" }}
+                <Box px={1} paddingLeft={isCollapsed ? undefined : "0%"} marginBottom={1}>
+                  <Typography variant="p" sx={{ color: colors.primary[400], textAlign: "start" }} style={{ fontSize: "13px", display: 'flex', alignItems:'center',paddingLeft: "15px" }}
                     display={isCollapsed ? "none" : "block"}>
-                    Meshavkina
+                     Allen Meshavkina 
                     {/* {JSON.parse(localStorage.getItem("user"))?.data?.fullName} */}
                   </Typography>
-                  <Typography variant="p" sx={{ textAlign: "center" }} style={{ fontSize: "11px", display: 'flex', paddingLeft: "15px" }}
+                  <Typography variant="p" sx={{  color: colors.primary[400],textAlign: "center" }} style={{ fontSize: "11px", display: 'flex', paddingLeft: "15px" }}
                     display={isCollapsed ? "none" : "block"}>
                     {/* {JSON.parse(localStorage.getItem("user"))?.data?.email} */}
                     Personal Manager
@@ -313,15 +317,15 @@ const Sidebar = () => {
               </Box>
 
               <Box px={2}>
-                <Typography variant="p" sx={{ color: colors.grey[100] }} style={{ fontSize: "15px" }}
+                <Typography variant="p" sx={{ color: colors.primary[400] }} style={{ fontSize: "15px" }}
                   display={isCollapsed ? "none" : "block"}>
                   Contact Your Manager
                 </Typography>
-                <Typography sx={{ textAlign: "start", color: colors.blueAccent[500] }} style={{ fontSize: "13px", cursor: "pointer" }}
+                <Typography sx={{ textAlign: "start", color:colors.blueAccent[400] }} style={{ fontSize: "13px", cursor: "pointer" }}
                   display={isCollapsed ? "none" : "block"}>
-                  Mital@growxad.com
+                  alen.meshavkina@growxad.com
                 </Typography>
-                <Typography sx={{ display: 'flex', textAlign: "start" }} style={{ fontSize: "20px" }}
+                <Typography sx={{ display: 'flex', textAlign: "start", gap:'4px' }} style={{ fontSize: "20px" }}
                   display={isCollapsed ? "none" : "block"}>
                   <FaTelegram />
                   <FaSkype />

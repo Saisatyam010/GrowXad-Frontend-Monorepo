@@ -55,14 +55,14 @@ function StatsData() {
         },]
 
     return (
-        <Container className={`p-4 ${styles.ab_divbackground}`}>
+        <Container className={` ${styles.ab_divbackground} `}>
             <Row >
                 <div>
-                    <h3 className={styles.ab_text}>Advertiser Dashboard</h3>
+                    <h2 className="text-black font-medium text-2xl ml-4 my-4">Overview</h2>
                 </div>
                 {divData.map((divData, index) => (
                     <Col md={2} >
-                        <div key={index} className={styles.ab_divbox} >
+                        <div key={index} className={`${styles.ab_divbox} border border-solid border-gray-100`} >
                             <h3 className={styles.ab_divnumber}>{divData.divnumber}</h3>
                             <p className={styles.ab_divtext} > {divData.divtext}</p>
                         </div>

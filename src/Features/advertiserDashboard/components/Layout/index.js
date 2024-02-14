@@ -18,7 +18,10 @@ const AdvertiserDashbaordLayout = () => {
                        
                         <div style={{ height: "100vh", width: "100%", overflowY: "scroll" }} >
                             <Header />
+                            <div className='bg-[#fcfcfc] px-12 py-2.5 m-0'>
                             <Outlet />
+                            </div>
+                            
                         </div>
 
                     </div>

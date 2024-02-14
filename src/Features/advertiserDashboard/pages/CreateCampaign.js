@@ -162,7 +162,7 @@ const CreateCampaign = () => {
     );
   };
   return (
-    <div className="bg-[#fcfcfc] px-12 py-4 m-0 h-auto flex gap-4 ">
+    <div className="m-0 h-auto flex gap-4 ">
       <section className="w-[70%]">
         <h2 className="text-black font-medium text-xl ml-2">
           Create Campaign
