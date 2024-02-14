@@ -38,7 +38,7 @@ const togglePasswordVisibility = () => {
           <div className="login-form p-5">
             <form>
               <div className="text-start text-3xl  font-semibold">
-                Welcome to Materio!👋🏻
+              Log in as an Advertiser👋🏻
               </div>
               <p className="text-lg text-gray-100">
                 Please sign-in to your account and start the adventure
@@ -67,6 +67,9 @@ const togglePasswordVisibility = () => {
                     placeholder="Email address"
                     id="email"
                     className="w-full"
+                    style={{
+                      '--tw-ring-shadow':'none'
+                    }}
                   />
                   <label for="email">Email Address</label>
                 </div>
@@ -79,6 +82,9 @@ const togglePasswordVisibility = () => {
       placeholder="Password"
       id="password"
       className="w-full pr-10"
+      style={{
+        '--tw-ring-shadow':'none'
+      }}
     />
     <label htmlFor="password">Password</label>
     <span className="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer" onClick={togglePasswordVisibility}>
@@ -98,20 +104,20 @@ const togglePasswordVisibility = () => {
                 </a>
               </div>
 
-              <div className="form-group">
-                {/* <button
-                  type="submit"
-                  className="btn btn-primary my-2 py-2 btn-block"
-                >
-                  Log in
-                </button> */}
-                <Button
-                  type="submit"
-                  className=" text-white bg-gradient-to-r w-full from-purple to-darkPurple hover:from-darkPurple hover:to-purple focus:ring-4 px-4 focus:ring-purple-300 text-lg rounded-lg font-semibold py-3 mb-2 dark:bg-gradient-to-r dark:from-purple dark:to-darkPurple dark:hover:from-darkPurple dark:hover:to-purple dark:focus:ring-purple-900"
-                >
-                  Log in
-                </Button>
-              </div>
+              <div className="form-grop">
+              <Button
+  type="submit"
+  className="text-white bg-gradient-to-r w-full from-purple to-darkPurple hover:from-darkPurple hover:to-purple focus:ring-4 px-4 focus:ring-purple-300 text-lg rounded-lg font-semibold py-3 mb-2 dark:bg-gradient-to-r dark:from-purple dark:to-darkPurple dark:hover:from-darkPurple dark:hover:to-purple dark:focus:ring-purple-900 outline-none !important border-transparent"
+  style={{
+    '--bs-btn-border-color': 'transparent',
+    '--bs-btn-focus-box-shadow': 'none'
+  }}
+>
+  Log in
+</Button>
+
+</div>
+
             </form>
             <p className="text-center text-lg ">
               New on our platform?
