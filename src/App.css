@@ -6,7 +6,7 @@
   box-sizing: border-box;
 }
 *{
-  --primary-color: #71065b;
+  --primary-color: #71065d;
   --secondary-color: #000;
   --tertiary-color:#fff;
   --primary-btn:#FFC107;
@@ -31,9 +31,31 @@ color: rgb(115 3 91) !important;
     background-color:rgb(115 3 91) !important;
 }
 
+/* Hide scrollbar for Chrome, Safari and Opera */
+.pro-sidebar::-webkit-scrollbar {
+  display: none !important;
+  
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.pro-sidebar {
+  -ms-overflow-style: none !important;  /* IE and Edge */
+  scrollbar-width: none!important;  /* Firefox */
+}
 
 
 
+.pro-sidebar-layout::-webkit-scrollbar {
+  display: none;
+}
 
+/* Hide scrollbar for IE, Edge and Firefox */
+.pro-sidebar-layout {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
 
+.idsgfkhbdskhbvkdsh{
+  margin-bottom: 100px !important;
+}
 

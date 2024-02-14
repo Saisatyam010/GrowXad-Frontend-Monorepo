@@ -54,7 +54,7 @@ export default function General(props) {
     formState: { errors },
   } = useForm({ defaultValues: generalData });
   
-  const { fields, append, prepend, remove, swap, move, insert } = useFieldArray({
+  const { fields, append, prepend, remove, swap, move, insert,update } = useFieldArray({
     control, // control props comes from useForm (optional: if you are using FormContext)
     name: "creatives", // unique name for your Field Array
   });
@@ -82,7 +82,7 @@ export default function General(props) {
     },
     { value: "Mainstream Low Activity", label: "Mainstream Low Activity" },
   ];
-  console.log(fields)
+  
   //Handle inputs for general data
   const handleInputGeneral = (e) => {
     const { name, value } = e.target;
@@ -102,16 +102,24 @@ export default function General(props) {
     ) {
       newGeneralData.imageSize = "300x250";  
     }
-
-    // handleGeneralData({ ...generalData, [name]: value }); 
     handleGeneralData(newGeneralData);
   };
 
+  const handleImageRemove=(index)=>{
+     remove(index);
+     console.log(fields,"fields")
+     handleGeneralData({...generalData,creatives:watch('creatives')})
+  }
   const onSubmit = (data) => {
     props.func(props.button + 1);
   };
 
- 
+  const handleCreativeChange=(e,index)=>{
+    const file=e.target.files[0]
+    console.log(file,"file")
+    update(index,{image:file,targetingURL:''})
+    handleInputGeneral({target:{name:'creatives',value:watch('creatives')}})
+  }
 
  
   const [activeStep, setActiveStep] = useState(1);
@@ -123,16 +131,16 @@ export default function General(props) {
 
 
   const [isDragging, setIsDragging] = useState(false);
-  const [uploadedImages, setUploadedImages] = useState([]);
+  
 
   const dragNdrop = (event) => {
     const files = event.target.files;
-    console.log(files)
+   
     if(event.target.files.length>5){
       alert("You can upload maximum 5 files")
     }
     else{
-    setFile(event.target.files[0])
+    
     const updatedCreatives =Object.values(files).map((file) => { 
       return { image: file, targetingURL:''};
     });
@@ -140,7 +148,7 @@ export default function General(props) {
     handleInputGeneral({target:{name:'creatives',value:updatedCreatives}})
   }
   };
-
+ 
   const drag = () => {
     setIsDragging(true);
   };
@@ -149,11 +157,7 @@ export default function General(props) {
     setIsDragging(false);
   };
 
-  const deleteImage = (index) => {
-    const updatedImages = [...uploadedImages];
-    updatedImages.splice(index, 1);
-    setUploadedImages(updatedImages);
-  };
+  
 
   return (
     
@@ -459,7 +463,7 @@ export default function General(props) {
                       {...register("image", {
                         // required: true,
                         onChange: (event) => {
-                          handleInputGeneral(event);
+                          
                           dragNdrop(event);
                         },
                       })}
@@ -473,7 +477,7 @@ export default function General(props) {
                     {fields.map((field, index) => (
                       <div className="flex flex-col rounded-sm  border border-solid border-gray-300 py-2.5 px-3" key={field.id}>
                         <h3 className="text-lg  text-black text-left">Creative {index+1}</h3>
-                        <input type="file" className="w-[300px]" />  
+                        <input type="file" className="w-[300px]" onChange={(e)=>handleCreativeChange(e,index)} />  
                       <div
                         key={index}
                         className="position-relative my-2"
@@ -481,9 +485,9 @@ export default function General(props) {
                       >
                         {/* Cross delete button */}
                         <button
-                        tyep="button"
+                        type="button"
                           className="btn text-white btn-danger btn-sm absolute top-2 right-2 rounded-md p-1"
-                          onClick={() => deleteImage(index)}
+                          onClick={() =>handleImageRemove(index)}
                            // Ensure the button is above the image
                         >
                           <MdOutlineDelete size={20}/>
@@ -577,8 +581,24 @@ const RadioInputLabel=({label,value,register,imgSrc,handleInputGeneral})=>{
 
 }
 
-const EditTargetingURL=({register})=>{
+const EditTargetingURL=()=>{
   const [isShowModal,setIsShowModal]=useState(false)
+  const {
+    register,
+    handleSubmit,
+    watch,
+    reset,
+    control,
+    formState: { errors },
+  } = useForm({ defaultValues:{targetingRadio:"Add to one creative", targetingURl:""}});
+  const onSubmit=(data)=>{
+    if(data.targetingRadio=="Add to one creative"){
+      console.log("Add to one creative")
+    }
+    else{
+       
+    }
+  }
   return(
     
       <div className="absolute top-1 right-2">
@@ -611,7 +631,7 @@ const EditTargetingURL=({register})=>{
               value="Add to one creative"
               control={
                 <Radio
-                {...register("targetingCreativeType", { required: true })}
+                {...register("targetingRadio", { required: true })}
                 />
               }
               label="Add to one creative"
@@ -620,7 +640,7 @@ const EditTargetingURL=({register})=>{
               className="text-sm"
               value="SmartCPM"
               control={
-                <Radio {...register("targetingCreativeType", { required: true })} />
+                <Radio {...register("targetingRadio", { required: true })} />
               }
               label="Add to all creatives"
             />
