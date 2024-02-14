@@ -7,10 +7,19 @@ import Button from "react-bootstrap/Button";
 import TextField from "@mui/material/TextField";
 import Checkbox from "@mui/material/Checkbox";
 import style from "./LoginComp.module.css";
+import { useState } from 'react';
+import { FiEye, FiEyeOff } from 'react-icons/fi';
+
+
 
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
 function LoginComp() {
+  const [showPassword, setShowPassword] = useState(false);
+
+const togglePasswordVisibility = () => {
+  setShowPassword(!showPassword);
+};
   return (
     <Container fluid>
       <Row className="align-items-center">
@@ -56,7 +65,7 @@ function LoginComp() {
                   <input
                     type="email"
                     placeholder="Email address"
-                    id="email#"
+                    id="email"
                     className="w-full"
                   />
                   <label for="email">Email Address</label>
@@ -64,22 +73,19 @@ function LoginComp() {
               </div>
 
               <div className="form-group">
-                {/* <input
-                  type="password"
-                  className="form-control"
-                  placeholder="Password"
-                  required="required"
-                /> */}
-                <div class={`${style.form_input} mt-4`}>
-                  <input
-                    type="password"
-                    placeholder="Password"
-                    id="password#"
-                    className="w-full"
-                  />
-                  <label for="password">Password</label>
-                </div>
-              </div>
+  <div className={`${style.form_input} mt-4 relative`}>
+    <input
+      type={showPassword ? "text" : "password"}
+      placeholder="Password"
+      id="password"
+      className="w-full pr-10"
+    />
+    <label htmlFor="password">Password</label>
+    <span className="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer" onClick={togglePasswordVisibility}>
+      {!showPassword ? <FiEyeOff /> : <FiEye />}
+    </span>
+  </div>
+</div>
 
               <div className="clearfix py-3">
                 <label className="float-left form-check-label">

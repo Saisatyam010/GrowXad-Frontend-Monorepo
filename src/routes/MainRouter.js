@@ -4,6 +4,7 @@ import HomePage from '../main/pages/HomePage'
 import BenefitsForAdvertiserPage from '../main/pages/BenefitsForAdvertiserPage'
 import ForgotPass from '../main/pages/ForgotPass'
 import LoginComp from '../main/components/Login/LoginComp'
+import SignupComp from '../main/components/Signup/SignupComp'
 const MainRouter = () => {
   const mainRoutes=[
     {
@@ -23,6 +24,10 @@ const MainRouter = () => {
     },{
       path:'/login',
       component:<LoginComp/>,
+      exact:true
+    },{
+      path:'/signup',
+      component:<SignupComp/>,
       exact:true
     }
   ]
