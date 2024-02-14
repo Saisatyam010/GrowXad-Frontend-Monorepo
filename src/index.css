@@ -1,9 +1,10 @@
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
-
+@layer components {
+  .error-message {
+    @apply text-xs text-red-500 p-0 m-0;
+  }
+}
 
 /* index.js  */
 
@@ -42,3 +43,8 @@ body,
 .sideBar {
   height: 100%;
 }
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

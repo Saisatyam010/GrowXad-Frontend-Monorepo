@@ -1,30 +1,25 @@
-import "./Targetings.css";
-import "./FormExample.css";
-import Box from "@mui/material/Box";
+import "./General.css";
 import InputAdornment from "@mui/material/InputAdornment";
 import TextField from "@mui/material/TextField";
 import React, { useEffect, useState } from "react";
-import InputLabel from "./InputLabel";
-import { Button } from "@material-ui/core";
-import { useForm } from "react-hook-form";
-
+import { Button, FormControlLabel, Radio, RadioGroup } from "@material-ui/core";
+import { useFieldArray, useForm } from "react-hook-form";
 import { Controller } from "react-hook-form";
 import Select from "react-select";
 import "react-datepicker/dist/react-datepicker.css";
 import dayjs from "dayjs";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-import { TimePicker } from "@mui/x-date-pickers/TimePicker";
 import { DateTimePicker } from "@mui/x-date-pickers";
 import { IoIosArrowDown } from "react-icons/io";
 import { IoIosArrowUp } from "react-icons/io";
-// import img from "../../../—Pngtree—image upload icon photo upload_5279796.png";
-import dateFormat, { masks } from "dateformat";
+import InputLabel from "../shared/Form/Label";
+import dateFormat from "dateformat";
+import { MdOutlineDelete, MdOutlineEdit } from "react-icons/md";
+
 const fiveAM = dayjs().set("hour").startOf("hour");
 const nineAM = dayjs().set("hour", 9).startOf("hour");
 
-const ITEM_HEIGHT = 48;
-const ITEM_PADDING_TOP = 8;
 
 const verificationData = [
   { label: "Start", value: "Start" },
@@ -35,72 +30,12 @@ const imageSize = [
   { label: "300x250", value: "300x250" },
   { label: "300x100", value: "300x100" },
 ];
-// const countries = [
-//   "All Countries",
-//   "Afghanistan",
-//   "Aland Islands",
-//   "Albania",
-//   "Algeria",
-//   "American Samoa",
-//   "Andorra",
-//   "Angola",
-//   "Anguilla",
-//   "Antarctica",
-//   "Antigua and Barbuda",
-//   "Argentina",
-//   "Armenia",
-//   "Aruba",
-//   "Australia",
-//   "Austria",
-//   "Azerbaijan",
-//   "Bahamas",
-//   "Bahrain",
-//   "Bangladesh",
-//   "Barbados",
-//   "Belarus",
-//   "Belgium",
-//   "Belize",
-//   "Benin",
-//   "Yemen",
-//   "Zambia",
-// ];
-
-const stylesFor = {
-  color: "black", // Set text color
-  "& .MuiOutlinedInput-notchedOutline": {
-    borderColor: "black", // Set border color
-    color: "black", // Set text color
-  },
-  "&:hover .MuiOutlinedInput-notchedOutline": {
-    borderColor: "black", // Set hover border color
-  },
-  "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-    borderColor: "black", // Set focused border color
-  },
-  "&.Mui-focused": {
-    color: "black", // Set focused text color
-  },
-};
-
 
 
 export default function General(props) {
   const { generalData, handleGeneralData, button, func } = props;
-  const [openUploadSection, setOpenUploadSection] = useState(false);
-  const [destinationUrl, setDestinationUrl] = useState("");
-  const handleChange = (event) => {
-    // Remove "https://" from the entered value before setting it
-    const newValue = event.target.value.replace(/^https:\/\/ /, "");
-    setDestinationUrl(`https://${newValue}`);
-  };
-
-  const [verification, setVerification] = useState({
-    value: "Start",
-    label: "Start",
-  });
-
-  // const [selectedDate, setSelectedDate] = useState(false);
-  const [selectedDate, setSelectedDate] = useState(false);
+  const [openUploadSection, setOpenUploadSection] = useState(true);
+  const [file,setFile]=useState()
   const customTheme = (theme) => ({
     ...theme,
     colors: {
@@ -109,18 +44,21 @@ export default function General(props) {
       primary25: "#fbe5f6", // sets the background color when focused
       primary50: "#fbe5f6", // sets the border color when not focused
     },
-  });
+  })
   const {
     register,
     handleSubmit,
     watch,
-    // setValue,
-    // getValues,
     reset,
     control,
     formState: { errors },
   } = useForm({ defaultValues: generalData });
-
+  
+  const { fields, append, prepend, remove, swap, move, insert } = useFieldArray({
+    control, // control props comes from useForm (optional: if you are using FormContext)
+    name: "creatives", // unique name for your Field Array
+  });
+  //console.log(URL.createObjectURL(`creatives.${0}.image`));
   useEffect(() => {
     reset(generalData);
   }, []);
@@ -144,11 +82,10 @@ export default function General(props) {
     },
     { value: "Mainstream Low Activity", label: "Mainstream Low Activity" },
   ];
-
+  console.log(fields)
+  //Handle inputs for general data
   const handleInputGeneral = (e) => {
     const { name, value } = e.target;
-    // console.log(e.target.value, "e.target.value");
-    //setSelectedValue(e.target.value);
     let newGeneralData = { ...generalData, [name]: value };
 
     if (name == "afterVerification" && value != "Scheduled") {
@@ -170,29 +107,11 @@ export default function General(props) {
     handleGeneralData(newGeneralData);
   };
 
-  // const handleInputGeneral = (e) => {
-  //   const { name, value } = e.target;
-  //   console.log(value, "e.target.value");
-  //   handleGeneralData(prevState => ({ ...prevState, [name]: Array.isArray(value) ? value : [value] }));
-  // }
-  useEffect(() => {
-    reset(generalData);
-    console.log("comonent Mounted");
-    return () => {
-      console.log("unmounted");
-    };
-  }, []);
   const onSubmit = (data) => {
     props.func(props.button + 1);
   };
 
-  const handleVerification = (selectedOption) => {
-    const selectedValue = selectedOption ? selectedOption.value : null;
-    setVerification({ value: selectedValue, label: selectedValue });
-
-    const selectedDateSelected = selectedValue === "Schelduled";
-    setSelectedDate(selectedDateSelected);
-  };
+ 
 
  
   const [activeStep, setActiveStep] = useState(1);
@@ -202,23 +121,24 @@ export default function General(props) {
     setActiveStep(activeStep - 1);
   };
 
-  // const handleNext = () => {
-  //   // props.func.setActiveStep(props.button.activeStep + 1);
-  //   props.func(props.button.activeStep + 1);
-  // }
+
   const [isDragging, setIsDragging] = useState(false);
   const [uploadedImages, setUploadedImages] = useState([]);
 
   const dragNdrop = (event) => {
     const files = event.target.files;
-    const updatedImages = [];
-
-    for (let i = 0; i < files.length; i++) {
-      const fileName = URL.createObjectURL(files[i]);
-      updatedImages.push({ url: fileName });
+    console.log(files)
+    if(event.target.files.length>5){
+      alert("You can upload maximum 5 files")
     }
-
-    setUploadedImages((prevImages) => [...prevImages, ...updatedImages]);
+    else{
+    setFile(event.target.files[0])
+    const updatedCreatives =Object.values(files).map((file) => { 
+      return { image: file, targetingURL:''};
+    });
+    append(updatedCreatives)
+    handleInputGeneral({target:{name:'creatives',value:updatedCreatives}})
+  }
   };
 
   const drag = () => {
@@ -236,291 +156,65 @@ export default function General(props) {
   };
 
   return (
-    <>
+    
       <form
-        className="bg-white rounded-sm  border pt-4 border-gray-100 w-full"
+        className="bg-white rounded-sm  border pt-2 border-gray-100 w-full"
         onSubmit={handleSubmit(onSubmit)}
       >
         <section className="flex flex-col px-12 py-3">
-          {/* Campaing Name */}
+
+          {/* Campaign Name */}
           <div className="flex flex-col gap-1 mb-4">
-            <label
-              htmlFor="campaignName" // Use a unique ID here
-              className="block SSAR_CreateCamp_18px_font text-gray-900"
-            >
-              Campaign Name*
-            </label>
-            <TextField
-              id="campaignName" // Use the same unique ID as in the label
-              placeholder="Enter Campaign name"
-              {...register("campaignName", {
-                required: true,
-                onChange: handleInputGeneral,
-              })}
-              sx={{
-                width: "90%",
-                "& .MuiOutlinedInput-root": {
-                  "&.Mui-focused fieldset": {
-                    borderColor: "rgb(115 3 91)",
-                  },
+          <InputLabel label="Campaign Name" required={true} />
+          <TextField
+            placeholder="Enter Campaign name"
+            {...register("campaignName", {
+              required: true,
+              onChange: handleInputGeneral,
+            })}
+            sx={{
+              "& .MuiOutlinedInput-root": {
+                "&.Mui-focused fieldset": {
+                  borderColor: "rgb(115 3 91)",
                 },
-              }}
-              style={{
-                backgroundColor: "rgba(255, 255, 255, 0.8)",
-                boxShadow: "rgba(0, 0, 0, 0.1) 0px 4px 12px",
-              }}
-            />
-            <p className="text-xs font-light text-black">
+                "&:hover fieldset": {
+                  borderColor: "rgb(115 3 91)",
+                },
+              },
+            }}
+            
+          />
+          <p className="text-[0.7rem] pl-1 m-0 font-extralight text-black">
               We recommend: Product - Feed - Country. For example: Offer - Main
               - www.
             </p>
             {errors.campaignName && (
-              <span style={{ color: "red" }}>Campaign Name is required</span>
+              <span className="error-message">Campaign Name is required</span>
             )}
           </div>
           {/* Ad Format */}
-          <div className="flex flex-col gap-2 pt-3 mb-1 SSAR_CreateCamp_18px_font ">
+          <div className="flex flex-col  mb-3 ">
             <InputLabel
-              label="Ad Format*"
-              className="SSAR_CreateCamp_18px_font"
+              label="Ad Format"
+              required={true}
             />
-            <div className="radioGroup">
+            <div className="radioGroup ">
               <div className="flex gap-4 flex-wrap">
-                <label
-                  htmlFor="radio-card-1"
-                  className="radio-card SSAR_CreateCamp_18px_font"
-                >
-                  <input
-                    type="radio"
-                    name="radio-card"
-                    id="radio-card-1"
-                    defaultChecked
-                    value="In Page Push Ad"
-                    {...register("adFormat", { onChange: handleInputGeneral })}
-                  />
-                  <div className="card-content-wrapper">
-                    <span className="check-icon" />
-                    <div className="card-content">
-                      <div className="w-28"></div>
-                      <div
-                        style={{ position: "relative", paddingTop: "14%" }}
-                      >
-                        <img src="https://imagedelivery.net/f5tF3V4WaB6L98qcq1rX5w/468b88c0-def8-4fa0-0370-f778a03f8900/public" alt="" height= "100px" width= "100px"/>
-                        {/* <iframe
-                          src="https://customer-b0uja279jrdjd4ih.cloudflarestream.com/0de5bd83fea70a1b8b1f087511321be5/iframe?preload=true&loop=true&autoplay=true&poster=https%3A%2F%2Fcustomer-b0uja279jrdjd4ih.cloudflarestream.com%2F0de5bd83fea70a1b8b1f087511321be5%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&controls=false"
-                          style={{
-                            border: "none",
-                            position: "absolute",
-                            top: 0,
-                            left: 0,
-                            height: "100%",
-                            width: "100%",
-                          }}
-                          allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
-                          allowFullScreen="true"
-                        /> */}
-                      </div>
-                      <h4 className="text-center pt-2">In Page Push Ad</h4>
-                    </div>
-                  </div>
-                </label>
-                {/* /.radio-card */}
-                <label htmlFor="radio-card-2" className="radio-card">
-                  <input
-                    type="radio"
-                    name="radio-card"
-                    id="radio-card-2"
-                    value="Native Ad"
-                    {...register("adFormat", { onChange: handleInputGeneral })}
-                  />
-                  <div className="card-content-wrapper">
-                    <span className="check-icon" />
-                    <div className="card-content">
-                      <div className="w-28"></div>
-                      <div
-                        style={{ position: "relative", paddingTop: "14%" }}
-                      >
-                        <img src="https://imagedelivery.net/f5tF3V4WaB6L98qcq1rX5w/33f238ec-ea4e-4546-edc8-cb9ccc9f1500/public" alt="" height= "100px" width= "100px"/>
-                    
-                        {/* <iframe
-                          style={{
-                            border: "none",
-                            outline: "none",
-                            borderWidth: "0px",
-                          }}
-                          src="https://customer-b0uja279jrdjd4ih.cloudflarestream.com/e3c7c38f9e109e4782a0049b1f0703d6/iframe?preload=true&loop=true&autoplay=true&poster=https%3A%2F%2Fcustomer-b0uja279jrdjd4ih.cloudflarestream.com%2Fe3c7c38f9e109e4782a0049b1f0703d6%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&controls=false"
-                          allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
-                          allowFullScreen="true"
-                        /> */}
-                      </div>
-                      <h4 className="text-center pt-2">Native Ad</h4>
-                    </div>
-                  </div>
-                </label>
-                {/* /.radio-card */}
-                {/* /.radio-card */}
-                <label htmlFor="radio-card-3" className="radio-card">
-                  <input
-                    type="radio"
-                    name="radio-card"
-                    id="radio-card-3"
-                    value="Banner Ad"
-                    {...register("adFormat", { onChange: handleInputGeneral })}
-                  />
-                  <div className="card-content-wrapper">
-                    <span className="check-icon" />
-                    <div className="card-content">
-                      <div className="w-28"></div>
-                      <div className="video-container pt-3">
-                      <img src="https://imagedelivery.net/f5tF3V4WaB6L98qcq1rX5w/ce1d8289-46cc-4943-2142-111920948b00/public" alt="" height= "100px" width= "100px"/>
-                    
-                        {/* <iframe
-                          src="https://customer-b0uja279jrdjd4ih.cloudflarestream.com/5ffcdd4471ab8a95f5d8e0cc83e4cfa6/iframe?muted=true&preload=true&loop=true&autoplay=true&poster=https%3A%2F%2Fcustomer-b0uja279jrdjd4ih.cloudflarestream.com%2F5ffcdd4471ab8a95f5d8e0cc83e4cfa6%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&controls=false"
-                          style={{
-                            border: "none",
-                            position: "absolute",
-                            top: 0,
-                            left: 0,
-                            height: "100%",
-                            width: "100%",
-                          }}
-                          allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
-                          allowFullScreen="true"
-                        /> */}
-                      </div>
-                      <h4 className="text-center pt-2">Banner Ad</h4>
-                    </div>
-                  </div>
-                </label>
-                {/* /.radio-card */}
-
-                {/* /.radio-card */}
-                <label htmlFor="radio-card-4" className="radio-card">
-                  <input
-                    type="radio"
-                    name="radio-card"
-                    id="radio-card-4"
-                    value="Interstitial Ad"
-                    {...register("adFormat", { onChange: handleInputGeneral })}
-                  />
-                  <div className="card-content-wrapper">
-                    <span className="check-icon" />
-                    <div className="card-content">
-                      <div className="w-28"></div>
-                      <div
-                        style={{ position: "relative", paddingTop: "4%" }}
-                      >
-                            <img src="https://imagedelivery.net/f5tF3V4WaB6L98qcq1rX5w/12687a68-c192-41f8-4c43-3267fc34b800/public" alt="" height= "100px" width= "100px"/>
-                   
-                        {/* <iframe
-                          src="https://customer-b0uja279jrdjd4ih.cloudflarestream.com/a48ffc895c18a3ca112ba112252bfd27/iframe?preload=true&loop=true&autoplay=true&poster=https%3A%2F%2Fcustomer-b0uja279jrdjd4ih.cloudflarestream.com%2Fa48ffc895c18a3ca112ba112252bfd27%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&controls=false"
-                          style={{
-                            border: "none",
-                            position: "absolute",
-                            top: 0,
-                            left: 0,
-                            height: "100%",
-                            width: "100%",
-                          }}
-                          allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
-                          allowFullScreen="true"
-                        /> */}
-                      </div>
-                      <h4 className="text-center pt-2">Interstitial Ad</h4>
-                    </div>
-                  </div>
-                </label>
-                {/* /.radio-card */}
-                {/* /.radio-card */}
-                <label htmlFor="radio-card-5" className="radio-card">
-                  <input
-                    type="radio"
-                    name="radio-card"
-                    id="radio-card-5"
-                    value="PopUnder Ad"
-                    {...register("adFormat", { onChange: handleInputGeneral })}
-                  />
-                  <div className="card-content-wrapper">
-                    <span className="check-icon" />
-                    <div className="card-content">
-                      <div className="w-28"></div>
-                      <div
-                        style={{ position: "relative", paddingTop: "4%" }}
-                      >
-                          <img src="https://imagedelivery.net/f5tF3V4WaB6L98qcq1rX5w/09379916-612d-4eaf-daf0-adf002da8100/public" alt="" height= "100px" width= "100px"/>
-                   
-                  
-                        {/* <iframe
-                          src="https://customer-b0uja279jrdjd4ih.cloudflarestream.com/ae8b7534f4833b00397c37881063689f/iframe?preload=true&loop=true&autoplay=true&poster=https%3A%2F%2Fcustomer-b0uja279jrdjd4ih.cloudflarestream.com%2Fae8b7534f4833b00397c37881063689f%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&controls=false"
-                          style={{
-                            border: "none",
-                            position: "absolute",
-                            top: 0,
-                            left: 0,
-                            height: "100%",
-                            width: "100%",
-                          }}
-                          allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
-                          allowFullScreen="true"
-                        /> */}
-                      </div>
-                      <h4 className="text-center">Popunder Ad</h4>
-                    </div>
-                  </div>
-                </label>
-                {/* /.radio-card */}
-                {/* /.radio-card */}
-                <label htmlFor="radio-card-6" className="radio-card">
-                  <input
-                    type="radio"
-                    name="radio-card"
-                    id="radio-card-6"
-                    value="Direct Link"
-                    {...register("adFormat", { onChange: handleInputGeneral })}
-                  />
-                  <div className="card-content-wrapper">
-                    <span className="check-icon" />
-                    <div className="card-content">
-                      <div className="w-28"></div>
-                      <div
-                        style={{ position: "relative", paddingTop: "4%" }}
-                      >
-                        <img src="https://imagedelivery.net/f5tF3V4WaB6L98qcq1rX5w/43dc1a88-b0c9-4cb2-8c47-890f45c50f00/public" alt="" width='100px' height='100px'/>
-                        {/* <iframe
-                          src="https://customer-b0uja279jrdjd4ih.cloudflarestream.com/b6e76847ac0cc17448ccec18911f7eb0/iframe?preload=true&loop=true&autoplay=true&poster=https%3A%2F%2Fcustomer-b0uja279jrdjd4ih.cloudflarestream.com%2Fb6e76847ac0cc17448ccec18911f7eb0%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&controls=false"
-                          style={{
-                            border: "none",
-                            position: "absolute",
-                            top: 0,
-                            left: 0,
-                            height: "100%",
-                            width: "100%",
-                          }}
-                          allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
-                          allowFullScreen="true"
-                        /> */}
-                      </div>
-                      <h4 className="text-center">Direct Link</h4>
-                    </div>
-                  </div>
-                </label>
-                {/* /.radio-card */}
+                <RadioInputLabel label="Banner Ad" value="Banner Ad" register={register} handleInputGeneral={handleInputGeneral} imgSrc="https://imagedelivery.net/f5tF3V4WaB6L98qcq1rX5w/ce1d8289-46cc-4943-2142-111920948b00/public" />
+                <RadioInputLabel label="In Page Push Ad" value="In Page Push Ad" register={register} handleInputGeneral={handleInputGeneral} imgSrc="https://imagedelivery.net/f5tF3V4WaB6L98qcq1rX5w/468b88c0-def8-4fa0-0370-f778a03f8900/public" />
+                <RadioInputLabel label="Native Ad" value="Native Ad" register={register} handleInputGeneral={handleInputGeneral} imgSrc="https://imagedelivery.net/f5tF3V4WaB6L98qcq1rX5w/33f238ec-ea4e-4546-edc8-cb9ccc9f1500/public" />
+                <RadioInputLabel label="Popunder Ad" value="Popunder Ad" register={register} handleInputGeneral={handleInputGeneral} imgSrc="https://imagedelivery.net/f5tF3V4WaB6L98qcq1rX5w/09379916-612d-4eaf-daf0-adf002da8100/public" />
+                <RadioInputLabel label="Interstestial Ad" value="Interstestial Ad" register={register} handleInputGeneral={handleInputGeneral} imgSrc="https://imagedelivery.net/f5tF3V4WaB6L98qcq1rX5w/12687a68-c192-41f8-4c43-3267fc34b800/public" />
+                <RadioInputLabel label="Direct Link Ad" value="Direct Link Ad" register={register} handleInputGeneral={handleInputGeneral} imgSrc="https://imagedelivery.net/f5tF3V4WaB6L98qcq1rX5w/43dc1a88-b0c9-4cb2-8c47-890f45c50f00/public" />
               </div>
-              {/* /.grid-wrapper */}
             </div>
-            <div></div>
+        
           </div>
-
-          {generalData.adFormat === "Interstitial Ad" ||
-          generalData.adFormat === "Direct Link" ? null : (
-            <>
-              <div className="py-4">
-                <label
-                  htmlFor="exampleInputEmail1"
-                  class="form-label pt-1 pb-2 text-right SSAR_CreateCamp_18px_font d-flex justify-content-start align-items-center "
-                >
-                  Image Size* :
-                </label>
+          {/* Image Size */}
+          {generalData.adFormat === "Interstitial Ad" ||generalData.adFormat === "Direct Link" ? null : (
+            
+              <div className="flex flex-col gap-1 mb-4">
+               <InputLabel label="Image Size" required={true} />
 
                 <div>
                   <Controller
@@ -542,35 +236,22 @@ export default function General(props) {
                             },
                           });
                         }}
-                        className="SSAR_Targeting_purple_border w-75"
-                        // {...register("afterVerification", { required: true ,onChange:handleInputGeneral})}
-                        styles={{
-                          control: (provided, state) => ({
-                            ...provided,
-                            width: "300px",
-                            backgroundColor: "rgba(255, 255, 255, 0.8)",
-                            boxShadow: "rgba(0, 0, 0, 0.1) 0px 4px 12px",
-                          }),
-                        }}
+                        className="SSAR_Targeting_purple_border w-60 text-sm"
+                        
                         theme={customTheme}
                       />
                     )}
-                    // rules={{ required: true }}
+                   
                   />
                 </div>
               </div>
-            </>
+            
           )}
 
-          {/* feed */}
-
-          <div className="py-4">
-            <label
-              htmlFor="exampleInputEmail1"
-              class="form-label pt-1 pb-2 text-right SSAR_CreateCamp_18px_font d-flex justify-content-start align-items-center "
-            >
-              Feed* :
-            </label>
+        
+          {/* Traffiv Channels/Feed */}
+          <div className="flex flex-col gap-1 mb-4">
+            <InputLabel label="Traffic Channels/Feed" required={false} />
 
             <Controller
               control={control}
@@ -601,7 +282,7 @@ export default function General(props) {
                       });
                     }
                   }}
-                  className="SSAR_Targeting_purple_border SSAR_Targeting_Toggle_color w-75"
+                  className="SSAR_Targeting_purple_border SSAR_Targeting_Toggle_color text-sm"
                   aria-label="Default select example"
                   options={Feed}
                   isMulti={true}
@@ -611,65 +292,42 @@ export default function General(props) {
             />
           </div>
 
-          {/* ---------------------------->> Upload Creatives <<--------------------------  */}
-
-          {/* <section className="flex flex-col  pt-4">
-            <h2 className="font-semibold mb-2 SSAR_CreateCamp_18px_font  ">
-              Upload Creative
-            </h2>
-
-            <FileUpload />
-          </section> */}
-
-          <section>
-            <div className="flex flex-col mt-1 pt-5 gap-1 mb-4 SSAR_CreateCamp_18px_font">
-              <InputLabel label="Destination URL*" />
-              <TextField
-                placeholder="example.com"
-                // value={DestinationURL.replace("https://", "")} // Display without "https://"
-                {...register("destinationURL", {
-                  required: true,
-                  onChange: (e) => handleInputGeneral(e),
-                })}
-                // {...register("DestinationURL", { required: true ,onChange:handleInputGeneral})}
-
-                InputProps={{
-                  startAdornment: (
-                    <InputAdornment position="start">https://</InputAdornment>
-                  ),
-                }}
-                sx={{
-                  width: "90%",
-                  "& .MuiOutlinedInput-root": {
-                    "&.Mui-focused fieldset": {
-                      borderColor: "rgb(115 3 91)",
-                    },
+          <div className="flex flex-col gap-1 mb-4">
+            <InputLabel label="Destination URL" required={true} />
+            <TextField
+              placeholder="example.com"
+              {...register("destinationURL", {
+                required: true,
+                onChange: (e) => handleInputGeneral(e),
+              })}
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">https://</InputAdornment>
+                ),
+              }}
+              sx={{
+              
+                "& .MuiOutlinedInput-root": {
+                  "&.Mui-focused fieldset": {
+                    borderColor: "rgb(115 3 91)",
                   },
-                }}
-                style={{
-                  backgroundColor: "rgba(255, 255, 255, 0.8)",
-                  boxShadow: "rgba(0, 0, 0, 0.1) 0px 4px 12px",
-                }}
-              />
-              <p className="text-xs font-light text-black">
-                Provide the Campaign's URL. It should lead to the offer page.
-              </p>
-            </div>
-            {errors.DestinationURL && (
-              <span style={{ color: "red" }}>Destination URL is required</span>
-            )}
-          </section>
-
-          <section>
-            <div className="d-flex mb-2  pt-4 justify-content-start align-items-center mx-auto">
-              <label
-                htmlFor="Connection Type"
-                className="block   SSAR_CreateCamp_18px_font 6  mr-5 w-1/5 "
-                style={{ fontWeight: "600" }}
-              >
-                After verification
-              </label>
-              <div>
+                  "&:hover fieldset": {
+                    borderColor: "rgb(115 3 91)",
+                },
+              }}}
+             
+            />
+            <p className="text-[0.7rem] pl-1 mb-0 font-extralight text-black">
+              Provide the Campaign's URL. It should lead to the offer page.
+            </p>
+            {errors.destinationURL && (
+            <span className="error-message">Destination URL is required</span>
+          )}
+          </div>
+         
+            <div className="flex flex-col gap-1 mb-4">
+              <InputLabel label="After Verification" required={true} />
+              
                 <Controller
                   name="afterVerification"
                   control={control}
@@ -689,34 +347,19 @@ export default function General(props) {
                           },
                         });
                       }}
-                      className="SSAR_Targeting_purple_border w-75"
-                      // {...register("afterVerification", { required: true ,onChange:handleInputGeneral})}
-                      styles={{
-                        control: (provided, state) => ({
-                          ...provided,
-                          width: "300px",
-                          backgroundColor: "rgba(255, 255, 255, 0.8)",
-                          boxShadow: "rgba(0, 0, 0, 0.1) 0px 4px 12px",
-                        }),
-                      }}
+                      className="SSAR_Targeting_purple_border w-60 text-sm"
+                     
                       theme={customTheme}
                     />
                   )}
                   // rules={{ required: true }}
                 />
-              </div>
+              
             </div>
 
             {generalData?.afterVerification == "Scheduled" && (
-              <div className="d-flex justify-content-start  pt-4 SSAR_CreateCamp_18px_font  align-items-center mx-auto">
-                <label
-                  htmlFor="scheduledTime"
-                  className="block pr-4 d-flex justify-content-start mr-5 align-items-center SSAR_CreateCamp_18px_font  text-start "
-                >
-                  Scheduled Time
-                </label>
-
-                <Box>
+              <div className="flex flex-col gap-1 mb-4">
+                <InputLabel label="Scheduled Date & Time" required={true} />
                   <div className="d-flex gap-3">
                     <LocalizationProvider dateAdapter={AdapterDayjs}>
                       {/* Add any required DemoContainer, DemoItem, etc., components here */}
@@ -724,9 +367,10 @@ export default function General(props) {
                       <DateTimePicker
                         {...register("scheduledDateTime", { required: true })}
                         id="scheduledDate"
-                        value={generalData.scheduledDateTime || ""}
+                        value={generalData?.scheduledDateTime ?? ""}
                         maxTime={fiveAM}
-                        sx={stylesFor}
+                        sx={{fontSize: "14px" }}
+                        className="SSAR_Targeting_purple_border w-60 "
                         onChange={(e) =>
                           handleInputGeneral({
                             target: {
@@ -743,10 +387,10 @@ export default function General(props) {
                       )}
                     </LocalizationProvider>
                   </div>
-                </Box>
+               
               </div>
             )}
-          </section>
+        
         </section>
 
         {/*--------buttons--------*/}
@@ -754,29 +398,35 @@ export default function General(props) {
 
         {generalData.adFormat === "Interstitial Ad" ||
         generalData.adFormat === "Direct Link" ? null : (
-          <section className="pb-5 pt-3">
+          <section className="px-12 pb-5 pt-3">
             <div>
-              <p
+              <div
                 style={{ cursor: "pointer" }}
-                className="pr-5 SSAR_CreateCamp_18px_font d-flex justify-content-between"
+                className="SSAR_CreateCamp_18px_font d-flex justify-content-between"
                 onClick={() => setOpenUploadSection(!openUploadSection)}
               >
-                <span className="SSAR_CreateCamp_18px_font pl-5">
-                  Upload Image
-                </span>
+                <h2 className="text-xl text-black ">
+                  Upload Creatives
+                </h2>
+               
                 {!openUploadSection ? (
-                  <div className="d-flex align-items-center">
+                  <div className="d-flex align-items-center text-sm text-[#504e4e]">
                     Show &nbsp; <IoIosArrowDown />
                   </div>
                 ) : (
-                  <div className="d-flex align-items-center">
+                  <div className="d-flex align-items-center text-sm text-[#504e4e]">
                     Hide &nbsp; <IoIosArrowUp />
                   </div>
                 )}
-              </p>
+              </div>
+              
             </div>
             {openUploadSection && (
               <div>
+                <p className="text-base pl-1 mt-0 mb-4 text-[#373636]">
+                Select a maximum of 5 files (photo/video/gif)
+            </p>
+               {fields.length==0&&
                 <div
                   className={`SSAR_FORM_uploadOuter ${
                     isDragging ? "dragging" : ""
@@ -816,44 +466,55 @@ export default function General(props) {
                       multiple
                     />
                   </span>
-                  <div id="preview" className="d-flex flex-wrap">
+                </div>
+                 }
+                  <div id="preview" className="grid grid-cols-2 gap-4">
                     {/* Render uploaded images with delete buttons */}
-                    {uploadedImages.map((image, index) => (
+                    {fields.map((field, index) => (
+                      <div className="flex flex-col rounded-sm  border border-solid border-gray-300 py-2.5 px-3" key={field.id}>
+                        <h3 className="text-lg  text-black text-left">Creative {index+1}</h3>
+                        <input type="file" className="w-[300px]" />  
                       <div
                         key={index}
-                        className="position-relative m-2"
+                        className="position-relative my-2"
                         style={{ position: "relative" }}
                       >
                         {/* Cross delete button */}
                         <button
-                          className="btn text-white btn-danger btn-sm position-absolute top-0 end-0"
+                        tyep="button"
+                          className="btn text-white btn-danger btn-sm absolute top-2 right-2 rounded-md p-1"
                           onClick={() => deleteImage(index)}
-                          style={{ zIndex: 1 }} // Ensure the button is above the image
+                           // Ensure the button is above the image
                         >
-                          x
+                          <MdOutlineDelete size={20}/>
                         </button>
                         <img
-                          src={image.url}
+                          src={URL.createObjectURL(watch(`creatives.${index}.image`))}
                           alt=""
                           width={300}
-                         
-                          height={
-                            generalData.imageSize === "300x250" ? 250 : 100
-                          }
-                          className="img-thumbnail "
+                          height={250}
+                          
+                          
                           style={{ display: "block" }}
                         />
+                        </div>
+                        <div className="relative w-[300px]">
+                      <input type="text" {...register(`creatives.${index}.targetingURL`)} className="text-xs w-full rounded-sm border-gray-400 disabled:bg-[#eaebed]" disabled={true} placeholder="Targeting URL*"/>
+                       <EditTargetingURL register={register}/>
+                      
+                      </div>
+                      
                       </div>
                     ))}
                   </div>
-                </div>
+                
               </div>
             )}
           </section>
         )}
 
         {/* {getStepContent(activeStep)} */}
-        <div className="d-flex justify-content-end mt-4 mb-5 ">
+        <div className="flex justify-content-end gap-4 mt-4 mb-5 ">
           <Button
             className={`${
               props.button > 1 && "text-black !bg-gray-200 mr-3"
@@ -881,6 +542,141 @@ export default function General(props) {
           </Button>
         </div>
       </form>
-    </>
+    
   );
+}
+
+const RadioInputLabel=({label,value,register,imgSrc,handleInputGeneral})=>{
+  return (
+    <label
+    
+    className="radio-card  "
+  >
+    <input
+      type="radio"
+      name="radio-card"
+     
+      className="hidden"
+      value={value}
+      
+      {...register("adFormat",{required:true,onChange:handleInputGeneral})}
+    />
+    <div className="card-content-wrapper">
+      <span className="check-icon" />
+      <div className="card-content flex flex-col items-center">
+        <div className="w-28 mt-4"></div>
+        
+          <img src={imgSrc} alt="" height= "100" width= "100"/>
+       
+        </div>
+        <span className="text-center pt-2">{label}</span>
+    
+    </div>
+  </label>
+  )
+
+}
+
+const EditTargetingURL=({register})=>{
+  const [isShowModal,setIsShowModal]=useState(false)
+  return(
+    
+      <div className="absolute top-1 right-2">
+     <button className="bg-gray-500 rounded-md px-2 py-1 text-xs text-white" type="button" onClick={()=>setIsShowModal(true)}><MdOutlineEdit size={16}/></button>
+    {isShowModal&&
+    <div className="fixed  z-50 flex items-center justify-center top-0 left-0 w-full h-screen bg-[rgba(0,0,0,0.5)] ">
+       <div className="max-w-lg bg-white mx-auto rounded-md px-10 py-6 space-y-2 ">
+       <h2 className="text-xl text-black  ">Select Target Url</h2>
+        <RadioGroup
+            row
+            aria-labelledby="demo-row-radio-buttons-group-label"
+            name="row-radio-buttons-group"
+            className="pl-2  "
+            defaultValue={"Add to one creative"}
+            sx={{
+              borderColor: "rgb(115 3 91)",
+              "& .MuiOutlinedInput-root": {
+                "&.Mui-focused fieldset": {
+                  borderColor: "rgb(115 3 91)",
+                },
+                "&:hover fieldset": {
+                  borderColor: "rgb(115 3 91)",
+                },
+              },
+            }}
+
+            // onChange={handleRadioChange}
+          >
+            <FormControlLabel
+              value="Add to one creative"
+              control={
+                <Radio
+                {...register("targetingCreativeType", { required: true })}
+                />
+              }
+              label="Add to one creative"
+            />
+            <FormControlLabel
+              className="text-sm"
+              value="SmartCPM"
+              control={
+                <Radio {...register("targetingCreativeType", { required: true })} />
+              }
+              label="Add to all creatives"
+            />
+          
+        </RadioGroup>
+          <TextField
+            placeholder="Target Url *"
+            {...register("Targeting URl", {
+              required: true,
+             
+            })}
+            sx={{
+              width:'100%',
+              "& .MuiOutlinedInput-root": {
+                "&.Mui-focused fieldset": {
+                  borderColor: "rgb(115 3 91)",
+                },
+                "&:hover fieldset": {
+                  borderColor: "rgb(115 3 91)",
+                },
+              },
+            }}
+            
+          /> 
+          <p className="text-xs font-light mb-1">{`Example: http://www.domain.com/in.php?sourceid={zoneid}Allowed placeholders: {zoneid}, SUBID, {campaignid} . More information`}</p>
+          <div className="flex justify-end gap-3 mt-3">
+          <Button
+            className={`font-semibold text-sm px-4 py-1 `}
+            style={{
+              background: '#000011',
+              padding: "8px 25px 8px 25px",
+            }}
+            variant="contained"
+            color="primary"
+            onClick={()=>setIsShowModal(false)}
+            type="button"
+          >
+            Cancel
+          </Button>
+          <Button
+            className={`font-semibold text-sm px-4 py-1 `}
+            style={{
+              background: "linear-gradient(180deg, #73035B 0%, #46133B 100%",
+              padding: "8px 25px 8px 25px",
+            }}
+            variant="contained"
+            color="primary"
+           
+            type="submit"
+          >
+            Add
+          </Button>
+          </div>
+       </div>
+    </div>
+    }
+    </div>
+  )
 }

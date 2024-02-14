@@ -3,7 +3,10 @@ import {Routes, Route } from 'react-router-dom'
 import HomePage from '../main/pages/HomePage'
 import BenefitsForAdvertiserPage from '../main/pages/BenefitsForAdvertiserPage'
 import ForgotPass from '../main/pages/ForgotPass'
+import LoginComp from '../main/components/Login/LoginComp'
+
 import ResetPass from '../main/pages/ResetPass'
+
 const MainRouter = () => {
   const mainRoutes=[
     {
@@ -20,10 +23,16 @@ const MainRouter = () => {
       path:'/forgot-password',  
       component:<ForgotPass/>,
       exact:true
+
+    },{
+      path:'/login',
+      component:<LoginComp/>,
+
     },
     {
       path:'/reset-password',
       component:<ResetPass/>,
+
       exact:true
     }
   ]
