@@ -7,6 +7,7 @@ import Button from "react-bootstrap/Button";
 import TextField from "@mui/material/TextField";
 import Checkbox from "@mui/material/Checkbox";
 import style from "./LoginComp.module.css";
+import gif from '../../../images/Comp 1_5.gif'
 import { useState } from 'react';
 import { FiEye, FiEyeOff } from 'react-icons/fi';
 
@@ -22,15 +23,17 @@ const togglePasswordVisibility = () => {
 };
   return (
     <Container fluid>
-      <Row className="align-items-center">
+      <Row className="align-items-center" >
         <Col
+          style={{ height: "100vh" }}
           md={8}
           className="bg-gray-10 p-5 d-flex justify-content-center align-items-center"
         >
           <img
-            src="https://demos.themeselection.com/materio-mui-nextjs-admin-template/demo-1/images/illustrations/auth/v2-login-light.png"
+            src={gif}
             alt=""
-            width="80%"
+            width="120%"
+            height="100%"
           />
         </Col>
 
@@ -121,7 +124,7 @@ const togglePasswordVisibility = () => {
             </form>
             <p className="text-center text-lg ">
               New on our platform?
-              <a href="#" className="text-purple">
+              <a href="/signup" className="text-purple">
                 {" "}
                 Create an Account
               </a>

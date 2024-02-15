@@ -1,0 +1,12 @@
+.SSA_TrafficInventry_Select{
+    color: #71065d;
+}
+
+.SSA_TrafficInventry_Select:hover {
+    border-color: purple; /* Change border color on hover */
+  }
+  
+  .SSAR_Targeting_Toggle_color:checked{
+    background-color: #73035b !important;
+    border-color: #73035b !important;
+}

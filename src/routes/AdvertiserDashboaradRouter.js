@@ -6,6 +6,7 @@ import MyCampaign from '../features/AdvertiserDashboard/pages/MyCampaign'
 
 import HelpCenter from '../features/AdvertiserDashboard/pages/HelpCenter'
 import AddFunds from '../features/AdvertiserDashboard/pages/AddFunds'
+import TrafficInventory from '../features/AdvertiserDashboard/pages/TrafficInventory'
 
 const AdvertiserDashboardRouter = () => {
   const advertiserDashboardRoutes = [
@@ -33,8 +34,16 @@ const AdvertiserDashboardRouter = () => {
       path: 'campaign/my-campaigns',
       component: <MyCampaign/>,
       exact: true
+    },
+    {
+      path:'traffic-inventory',
+      component:<TrafficInventory/>,
+      exact:true
     }
   ]
+
+  
+
   return (
 
     <Routes>

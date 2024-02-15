@@ -9,6 +9,7 @@ import Checkbox from "@mui/material/Checkbox";
 import style from "./SignupComp.module.css";
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
 // import { useState } from "react";
+import gif from '../../../images/gif.gif'
 import { FiEye, FiEyeOff } from "react-icons/fi";
 import { Select } from "@material-ui/core";
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
@@ -230,10 +231,10 @@ function SignupComp() {
         {!showOptions ? <MdKeyboardArrowDown /> : <MdKeyboardArrowUp />}
       </span>
       {showOptions && (
-        <div ref={optionsRef} className="bg-gray-10 w-full mt-1 border border-grey absolute z-10">
-          <div className={`py-2 pl-2 border-b-2 border-gray hover:bg-purple hover:text-white ${selectedOption === "option1" ? "bg-purple" : ""}`} onClick={() => handleOptionClick("option1")}> option1 </div>
-          <div className={`py-2 pl-2 border-b-2 border-gray hover:bg-purple hover:text-white ${selectedOption === "option2" ? "bg-purple" : ""}`} onClick={() => handleOptionClick("option2")}> option2 </div>
-          <div className={`py-2 pl-2 border-b-2 border-gray  hover:bg-purple hover:text-white ${selectedOption === "option3" ? "bg-purple" : ""}`} onClick={() => handleOptionClick("option3")}> option3 </div>
+        <div ref={optionsRef} className="bg-white w-full mt-1 border border-grey absolute z-10">
+          <div className={`py-2 pl-2 border-b-2 border-gray hover:bg-[#d8b1d0] hover:text-black ${selectedOption === "option1" ? "bg-purple" : ""}  ${selectedOption === "option1" ? "text-white" : ""}`} onClick={() => handleOptionClick("option1")}> option1 </div>
+          <div className={`py-2 pl-2 border-b-2 border-gray hover:bg-[#d8b1d0] hover:text-black ${selectedOption === "option2" ? "bg-purple" : ""}  ${selectedOption === "option2" ? "text-white" : ""}`} onClick={() => handleOptionClick("option2")}> option2 </div>
+          <div className={`py-2 pl-2 border-b-2 border-gray  hover:bg-[#d8b1d0] hover:text-black ${selectedOption === "option3" ? "bg-purple" : ""}  ${selectedOption === "option3" ? "text-white" : ""}`} onClick={() => handleOptionClick("option3")}> option3 </div>
         </div>
       )}
     </div>
@@ -309,7 +310,7 @@ function SignupComp() {
             </form>
             <p className="text-left text-lg ">
               Already have an account?
-              <a href=" " className="text-purple">
+              <a href="/login" className="text-purple">
                 {" "}
                 Sign in instead
               </a>
@@ -323,8 +324,9 @@ function SignupComp() {
           className="bg-gray-10 p-5 d-flex justify-content-center align-items-center"
         >
           <img
-            src="https://demos.themeselection.com/materio-mui-nextjs-admin-template/demo-1/images/illustrations/auth/v2-register-light.png"
-            alt=""
+          src={gif}
+          style={{transform: 'scale(1.23)'}}
+             alt=""
             width="100%"
             height="100%"
           />
