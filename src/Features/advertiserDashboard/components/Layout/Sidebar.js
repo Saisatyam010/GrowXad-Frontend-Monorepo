@@ -236,7 +236,7 @@ const Sidebar = () => {
 
               <Item
                 title="My Campaigns"
-                to="campaign/my-campaigns"
+                to="campaigns"
                 icon={<CampaignIcon />}
                 selected={selected}
                 setSelected={setSelected}
@@ -266,7 +266,7 @@ const Sidebar = () => {
                 icon={<ApiIcon />}
                 selected={selected}
                 setSelected={setSelected}
-                
+
               />
               <Item
                 title="Real Time Traffic"

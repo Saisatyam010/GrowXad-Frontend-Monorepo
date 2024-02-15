@@ -1,76 +1,88 @@
-import { useMemo } from 'react';
-import {
-  MRT_Table, //import alternative sub-component if we do not want toolbars
-  useMaterialReactTable,
-} from 'material-react-table';
-import data from './makeData';
+import React, { useState } from 'react';
+import Table from 'react-bootstrap/Table';
+import { DateRangePicker } from 'rsuite';
+import styles from './Finance.module.css';
 
-export const Example = () => {
-  const columns = useMemo(
-    //column definitions...
-    () => [
-      {
-        accessorKey: 'date',
-        header: 'Date',
-      },
-      {
-        accessorKey: 'debit',
-        header: 'Debit',
-      },
-      {
-        accessorKey: 'credit',
-        header: 'Credit',
-      },
-      // {
-      //   accessorKey: 'city',
-      //   header: 'City',
-      // },
-      // {
-      //   accessorKey: 'state',
-      //   header: 'State',
-      // },
-    ],
-    [],
-    //end
-  );
 
-  const table = useMaterialReactTable({
-    columns,
-    data, //data must be memoized or stable (useState, useMemo, defined outside of this component, etc.)
-    enableColumnActions: false,
-    enableColumnFilters: false,
-    enablePagination: false,
-    enableSorting: false,
-    mrtTheme: (theme) => ({
-      baseBackgroundColor: theme.palette.background.default, //change default background color
-    }),
-    muiTableBodyRowProps: { hover: false },
-    muiTableProps: {
-      sx: {
-        border: '1px solid rgb(202, 202, 202)',
-        caption: {
-          captionSide: 'top',
-        },
-      },
-    },
-    muiTableHeadCellProps: {
-      sx: {
-        border: '1px solid rgb(202, 202, 202)',
-        fontStyle: 'italic',
-        fontWeight: 'normal',
-      },
-    },
-    muiTableBodyCellProps: {
-      sx: {
-        border: '1px solid rgb(202, 202, 202)',
-      },
-    },
-    renderCaption: ({ table }) =>
-      `Here is a table rendered with the lighter weight MRT_Table sub-component, rendering ${table.getRowModel().rows.length} rows.`,
-  });
 
-  //using MRT_Table instead of MaterialReactTable if we do not need any of the toolbar components or features
-  return <MRT_Table table={table} />;
-};
+function AccountData() {
 
-export default Example;
+    const [dateRange, setDateRange] = useState([]);
+
+    const handleDateRangeChange = (range) => {
+        setDateRange(range);
+    };
+    const [startDate, setStartDate] = useState(null);
+    const [endDate, setEndDate] = useState(null);
+
+    const handleStartDateChange = (date) => {
+        setStartDate(date);
+    };
+
+    const handleEndDateChange = (date) => {
+        setEndDate(date);
+    };
+
+    return (
+        <>
+            <div>
+                <DateRangePicker
+                    placeholder="Select Date Range"
+                    value={dateRange}
+                    onChange={handleDateRangeChange}
+                    className="d-flex justify-end py-2 px-2 "
+                />
+                <div className={`${styles.abc} py-3 px-2`}>
+                    <h3 className='text-white'>Account Data</h3>
+                </div>
+
+                <Table striped bordered hover variant="light">
+
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Date</th>
+                            <th>Debit</th>
+                            <th>Credit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>01-02-2024</td>
+                            <td>$0.00</td>
+                            <td>$0.00</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>02-02-2024</td>
+                            <td>$0.00</td>
+                            <td>$0.00</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>03-02-2024</td>
+                            <td>$0.00</td>
+                            <td>$0.00</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>04-02-2024</td>
+                            <td>$0.00</td>
+                            <td>$0.00</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>05-02-2024</td>
+                            <td>$0.00</td>
+                            <td>$0.00</td>
+                        </tr>
+
+                    </tbody>
+                </Table>
+            </div>
+        </>
+    );
+}
+
+export default AccountData;

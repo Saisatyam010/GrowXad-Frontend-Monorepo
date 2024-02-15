@@ -1,86 +1,80 @@
-import React from 'react';
-import { useMemo } from 'react';
-import styles from "./Payment.module.css";
-import { MaterialReactTable, useMaterialReactTable } from 'material-react-table';
+import Table from 'react-bootstrap/Table';
+import styles from './Finance.module.css';
 
 function PaymentData() {
-    //nested data is ok, see accessorKeys in ColumnDef below
-    const data = [
-
-        {
-            amount: 'Joshua',
-            auto_payment: 'Rolluffs',
-            payment_method: 'payment_method',
-            Comment: 'Comment',
-            created_at: 'created_at',
-            download_invoice: 'created_at',
-            paid_at: 'created_at',
-        },
-        {
-            amount: 'Joshua',
-            auto_payment: 'Rolluffs',
-            payment_method: 'payment_method',
-            Comment: 'Comment',
-            created_at: 'created_at',
-            download_invoice: 'created_at',
-            paid_at: 'created_at',
-        },
-
-    ];
-
-    //should be memoized or stable
-    const columns = useMemo(
-        () => [
-            {
-                accessorKey: 'amount', //access nested data with dot notation
-                header: 'Amount',
-                size: 150,
-            },
-            {
-                accessorKey: 'auto_payment',
-                header: 'Auto Payment',
-                size: 150,
-            },
-            {
-                accessorKey: 'payment_method', //normal accessorKey
-                header: 'Payment Method',
-                size: 200,
-            },
-            {
-                accessorKey: 'Comment',
-                header: 'Comment',
-                size: 150,
-            },
-            {
-                accessorKey: 'created_at',
-                header: 'Created at',
-                size: 150,
-            },
-            {
-                accessorKey: 'download_invoice',
-                header: 'Download Invoice',
-                size: 150,
-            },
-            {
-                accessorKey: 'paid_at',
-                header: 'Paid at',
-                size: 150,
-            },
-        ],
-        [],
-    );
-
-    const table = useMaterialReactTable({
-        columns,
-        data, //data must be memoized or stable (useState, useMemo, defined outside of this component, etc.)
-    });
-
-
     return (
-        <div className={`${styles.ab_background}`}>
-            <MaterialReactTable table={table} />
-        </div>
-    )
-};
+        <>
+            <div>
+                <div className={`${styles.abc} py-3 px-2`}>
+                    <h3>Payments</h3>
+                </div>
+                <Table striped bordered hover variant="light">
+
+                    <thead>
+                        <tr>
+                            <th>Amount</th>
+                            <th>Auto Payment</th>
+                            <th>Payment Method</th>
+                            <th>Comment</th>
+                            <th>Created at</th>
+                            <th>Download invoice</th>
+                            <th>Paid at</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>01-02-2024</td>
+                            <td>$0.00</td>
+                            <td>$0.00</td>
+                            <td>$0.00</td>
+                            <td>$0.00</td>
+                            <td>$0.00</td>
+
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>02-02-2024</td>
+                            <td>$0.00</td>
+                            <td>$0.00</td>
+                            <td>$0.00</td>
+                            <td>$0.00</td>
+                            <td>$0.00</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>03-02-2024</td>
+                            <td>$0.00</td>
+                            <td>$0.00</td>
+                            <td>$0.00</td>
+                            <td>$0.00</td>
+                            <td>$0.00</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>04-02-2024</td>
+                            <td>$0.00</td>
+                            <td>$0.00</td>
+                            <td>$0.00</td>
+                            <td>$0.00</td>
+                            <td>$0.00</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>05-02-2024</td>
+                            <td>$0.00</td>
+                            <td>$0.00</td>
+                            <td>$0.00</td>
+                            <td>$0.00</td>
+                            <td>$0.00</td>
+                        </tr>
+
+                    </tbody>
+                </Table>
+            </div>
+        </>
+    );
+}
 
 export default PaymentData;
+
