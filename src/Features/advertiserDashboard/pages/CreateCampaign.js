@@ -217,6 +217,7 @@ const CreateCampaign = () => {
               handleAdvSettingData={handleAdvSettingData}
               button={activeStep}
               func={setActiveStep}
+              state={state}
               
             />
           )}
