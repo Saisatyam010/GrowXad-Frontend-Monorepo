@@ -150,13 +150,17 @@ const Table = () => {
                                         placeholder="Search by name"
                                         value={searchTerm}
                                         onChange={(e) => setSearchTerm(e.target.value)}
+                                        className={`${styles.ab_inputsearch}`}
+                                        style={{
+                                            "--tw-ring-shadow": "none",
+                                        }}
                                     />
                                     {/* <select name="filter-by">
                                 <option value="idea">Idea</option>
                             </select> */}
                                 </div>
-                                <button className="d-flex gap-2"><MdMenu className="ml-2 mt-1" />Tools</button>
-                                <button className="d-flex gap-2"><FaFilter className="ml-2 mt-1" />Filter</button>
+                                <button className="d-flex gap-2"><MdMenu className=" mt-1" />Tools</button>
+                                <button className="d-flex gap-2"><FaFilter className=" mt-1" />Filter</button>
                             </div>
                             {/* <div className={styles.table_info}>{`Showing ${tableData.length} of ${tableData.length} campaigns`}</div> */}
                         </div>

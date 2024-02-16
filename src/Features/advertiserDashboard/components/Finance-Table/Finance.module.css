@@ -163,3 +163,12 @@
     background-color: #212121;
     color: white;
 }
+
+/* .ab_datepicker {
+    border: 1px solid var(--primary) !important;
+} */
+
+.ab_datepicker:focus {
+    border: 1px solid var(--primary) !important;
+    --tw-ring-shadow: "none",
+}

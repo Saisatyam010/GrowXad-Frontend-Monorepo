@@ -5,8 +5,11 @@ import AccountData from '../components/Finance-Table/AccountData';
 function Finance() {
     return (
         <>
-            <div >
+            <div>
                 <AccountData />
+            </div>
+        
+            <div>
                 <PaymentData />
             </div>
         </>
