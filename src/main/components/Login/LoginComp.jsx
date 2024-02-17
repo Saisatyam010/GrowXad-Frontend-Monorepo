@@ -8,6 +8,7 @@ import TextField from "@mui/material/TextField";
 import Checkbox from "@mui/material/Checkbox";
 import style from "./LoginComp.module.css";
 import gif from '../../../images/Comp 1_5.gif'
+import { useForm } from "react-hook-form"
 import { useState } from 'react';
 import { FiEye, FiEyeOff } from 'react-icons/fi';
 
@@ -21,6 +22,18 @@ function LoginComp() {
 const togglePasswordVisibility = () => {
   setShowPassword(!showPassword);
 };
+
+
+const {
+  register,
+  handleSubmit,
+  watch,
+  formState: { errors },
+} = useForm()
+
+
+const onSubmit = (data) => console.log(data)
+
   return (
     <Container fluid>
       <Row className="align-items-center" >
@@ -39,8 +52,10 @@ const togglePasswordVisibility = () => {
 
         <Col md={4}>
           <div className="login-form p-5">
-            <form>
-              <div className="text-start text-3xl  font-semibold">
+          <form onSubmit={handleSubmit(onSubmit)}>
+          <div  > <img src="https://imagedelivery.net/f5tF3V4WaB6L98qcq1rX5w/4c01b7fc-36fd-4c9d-cb34-e325db9a2400/public" alt="logo" width={150} />  </div>
+       
+              <div className="text-start text-3xl pt-4  font-semibold">
               Log in as an Advertiser👋🏻
               </div>
               <p className="text-lg text-gray-100">
@@ -64,7 +79,7 @@ const togglePasswordVisibility = () => {
               </div> */}
 
               <div className="form-group pt-4">
-                <div class={style.form_input}>
+              <div className={`${errors.email ? style.form_input_red : style.form_input}`}>
                   <input
                     type="email"
                     placeholder="Email address"
@@ -73,13 +88,16 @@ const togglePasswordVisibility = () => {
                     style={{
                       '--tw-ring-shadow':'none'
                     }}
+                    {...register("email", { required: true })} 
                   />
                   <label for="email">Email Address</label>
                 </div>
+                {errors.email && <span  className="pt-1" style={{color:'red',fontSize:'12px'}}>This field is mandatory</span>}
               </div>
 
               <div className="form-group">
-  <div className={`${style.form_input} mt-4 relative`}>
+
+  <div className={`${errors.password ? style.form_input_red : style.form_input}  mt-4 relative`}>
     <input
       type={showPassword ? "text" : "password"}
       placeholder="Password"
@@ -88,12 +106,14 @@ const togglePasswordVisibility = () => {
       style={{
         '--tw-ring-shadow':'none'
       }}
+      {...register("password", { required: true })}
     />
     <label htmlFor="password">Password</label>
     <span className="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer" onClick={togglePasswordVisibility}>
       {!showPassword ? <FiEyeOff /> : <FiEye />}
     </span>
   </div>
+  {errors.password && <span  className="pt-1" style={{color:'red',fontSize:'12px'}}>This field is mandatory</span>}
 </div>
 
               <div className="clearfix py-3">

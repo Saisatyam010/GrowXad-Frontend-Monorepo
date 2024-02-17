@@ -17,8 +17,39 @@
     box-sizing: border-box;
     border-radius: 5px;
   }
+  .form_input_red {
+    position: relative;
+    width: 100%;
+  }
+  
+  .form_input_red input::placeholder {
+    opacity: 0;
+  }
+  .form_input_red input {
+    width: 100%;
+    height: 50px;
+    font-size: 1.2rem;
+    padding: 10px;
+    outline: none;
+    border: 1px solid rgb(163, 12, 12);
+    box-sizing: border-box;
+    border-radius: 5px;
+  }
 
-
+  
+  .form_input_red label {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    color: #ca0d0d;
+    letter-spacing: 0.6px;
+    transition: 0.3s;
+    padding-left: 12px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+  }
   
   .form_input label {
     position: absolute;
@@ -33,7 +64,18 @@
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
   }
+  .form_input_red input:focus + label,
+  .form_input_red input:not(:placeholder-shown) + label {
+    top: 0;
+    font-size: 0.8rem;
+    color: #ca0d0d;
+    background: #fff;
+    padding: 0px 7px;
+  }
   
+  .form_input_red input:focus {
+    border: 2px solid #b50e13 !important;
+  }
   .form_input input:focus + label,
   .form_input input:not(:placeholder-shown) + label {
     top: 0;
@@ -56,6 +98,14 @@
   }
   
 
+  .form_input_red span {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+  
 
 
 
