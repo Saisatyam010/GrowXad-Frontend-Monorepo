@@ -30,7 +30,7 @@ const Header = () => {
                
            <div className="d-flex justify-content-end align-items-center pt-3 pb-3">
                <div className="me-5 " >
-                   <Link to="/advertiserdashboard/campaign/createcampaign">
+                   <Link to="/advertiser-dashboard/campaign/add">
                        <button type='submit' formAction='' className={`${styles.ab_btndh} ${styles.ab_pointer}`}>Create Campaign </button>
                    </Link>
                </div>

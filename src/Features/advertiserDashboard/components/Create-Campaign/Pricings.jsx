@@ -163,6 +163,7 @@ const Pricings = (props) => {
               }}
               {...register("campaignBudget", {
                 required: "Campaign Budget is required",
+                min:{value:100,message:"Campaign Budget Should greater than 100"},
                 onChange: handleInputPricing,
                 validate: (value) =>
                   value <= 100000 ||
@@ -200,9 +201,10 @@ const Pricings = (props) => {
               }}
               {...register("dailyBudget", {
                 required: "Daily Budget is required",
+               
                 onChange: handleInputPricing,
                 validate: (value) =>
-                  value <= watch("campaignBudget") ||
+                  value <= parseInt(watch("campaignBudget")) ||
                   "Daily Budget Should be Less than or equal to Campaign Budget",
               })}
             />
