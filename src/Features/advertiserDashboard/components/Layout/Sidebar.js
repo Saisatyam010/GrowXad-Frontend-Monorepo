@@ -263,7 +263,7 @@ const Sidebar = () => {
                 icon={<ApiIcon />}
                 selected={selected}
                 setSelected={setSelected}
-                
+
               />
               <Item
                 title="Real Time Traffic"
