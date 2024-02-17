@@ -5,6 +5,7 @@ const TargetingsPreview = (props) => {
   const keyMap = new Map();
   keyMap.set('geo', 'Geo');
   keyMap.set('os', 'Operating System');
+  keyMap.set('device', 'Device');
   keyMap.set('browser', 'Browser');
   keyMap.set('connectionType', 'Connection Type');
   keyMap.set('language', 'Language');

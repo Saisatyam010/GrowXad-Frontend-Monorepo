@@ -96,7 +96,7 @@ const Table = () => {
 
     return (
         <div>
-            <h2 className="text-black font-medium text-xl ml-4 mb-4 flex gap-2 items-center"> <BiTargetLock className={`${styles.abc} `} /> Campaigns</h2>
+            <h2 className="text-black font-medium text-2xl ml-4 my-4 flex gap-2 items-center"> <BiTargetLock className={`${styles.abc} `} /> Campaigns</h2>
          <section className="bg-white px-4 pt-2.5 pb-2 rounded-sm border border-gray-500">
             <div className={styles.table_container}>
                 <div className={styles.ab_tablecontainerbox}>
