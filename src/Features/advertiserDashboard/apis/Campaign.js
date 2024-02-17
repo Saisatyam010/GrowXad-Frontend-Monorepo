@@ -12,3 +12,17 @@ export const createCampaign=async (data)=>{
     return response.data;
 }
 
+
+
+
+export const allCampaignDetail = async ()=>{
+    const res = await fetch(`${ADV_API_URL}/findCampaign`,{
+        method:"Get",
+        headers:{
+            "content-Type":"application/json",
+            'Authorization':`Bearer ${localStorage.getItem('token')}`
+        },
+        body:JSON.stringify()
+    })
+    return res.json()
+}

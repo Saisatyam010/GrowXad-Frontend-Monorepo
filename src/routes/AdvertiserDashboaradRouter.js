@@ -37,9 +37,9 @@ const AdvertiserDashboardRouter = () => {
       exact: true
     },
     {
-      path:'get-started',
-      component:<GetStarted/>,
-      exact:true
+      path: 'get-started',
+      component: <GetStarted />,
+      exact: true
     }
   ]
   return (
