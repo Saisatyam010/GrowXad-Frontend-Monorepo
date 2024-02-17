@@ -16,6 +16,7 @@ import { SlotBookingChart } from "./SlotBookingChart";
 import { useForm, Controller } from "react-hook-form";
 import "./AdvanceSettings.css";
 import InputLabel from "../shared/Form/Label";
+import { createCampaign } from "../../apis/Campaign";
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -49,7 +50,7 @@ const proxyFilterData = [
 ]; 
 
 export default function AdvSetting(props) {
-  const { advSettings, handleAdvSettingData } = props;
+  const { advSettings, handleAdvSettingData,state } = props;
   const [isChecked1, setIsChecked1] = useState(false);
   const [isChecked2, setIsChecked2] = useState(false);
   const [showComponent, setShowComponent] = useState(false);
@@ -90,9 +91,11 @@ export default function AdvSetting(props) {
     props.func(props.button - 1);
   };
 
-  const onSubmit = (data) => {
-    props.func(props.button + 1);
+  const onSubmit =async (data) => {
     
+    const res=await createCampaign(state);
+    console.log(res,"res")
+      
   };
   const handleInputAdvSettings = (e) => {
     const { name, value } = e.target;
@@ -228,7 +231,7 @@ export default function AdvSetting(props) {
                   },
                 }}
                 {...register("cappingImpression", {
-                  required: true,
+                  
                   onChange: handleInputAdvSettings,
                   validate: (value) =>
                     value <= 24 ||
@@ -318,7 +321,7 @@ export default function AdvSetting(props) {
                   },
                 }}
                 {...register("cappingClick", {
-                  required: true,
+                  
                   onChange: handleInputAdvSettings,
                   validate: (value) =>
                     value <= 24 ||

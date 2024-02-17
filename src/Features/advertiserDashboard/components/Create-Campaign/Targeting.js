@@ -5,11 +5,15 @@ import Select from "react-select";
 import { Button } from "@material-ui/core";
 import { useForm, SubmitHandler, Controller } from "react-hook-form";
 import TextField from "@mui/material/TextField";
+import { set } from "date-fns";
 
 const Targeting = (props) => {
   const { targetings, handleTargetingData, button, func } = props;
   const [isGeoEnabled, setIsGeoEnabled] = useState(
     typeof targetings.geo == "object" ? true : false
+  );
+  const [isDeviceEnabled, setIsDeviceEnabled] = useState(
+    typeof targetings.device == "object" ? true : false
   );
   const [isOSEnabled, setIsOSEnabled] = useState(
     typeof targetings.os == "object" ? true : false
@@ -26,7 +30,7 @@ const Targeting = (props) => {
   const [isIPRangeEnabled, setIsIPRangeEnabled] = useState(
     typeof targetings.ipRange == "object" ? true : false
   );
-
+  const [osOptions, setOSOptions] = useState([]);
   const handleToggleChangeGeo = (e) => {
     console.log(e.target.checked, "e.target.checked");
     setIsGeoEnabled(!isGeoEnabled);
@@ -34,11 +38,19 @@ const Targeting = (props) => {
       delete targetings.geo;
       handleTargetingData({ ...targetings });
     }
-    // if (targetings.geo && targetings.geo.length > 0) {
-    //   setIsGeoEnabled(true);
-    // } else {
-    //   setIsGeoEnabled(e.target.checked);
-    // }
+   
+  };
+  const handleToggleChangeDevice = (e) => {
+    setIsDeviceEnabled(!isDeviceEnabled);
+    if(isOSEnabled){
+      setIsOSEnabled(false)
+      delete targetings.os;
+      handleTargetingData({ ...targetings });
+    }
+    if (!e.target.checked) {
+      delete targetings.device;
+      handleTargetingData({ ...targetings });
+    }
   };
   const handleToggleChangeOS = (e) => {
     setIsOSEnabled(!isOSEnabled);
@@ -74,7 +86,31 @@ const Targeting = (props) => {
       handleTargetingData({ ...targetings });
     }
   };
-
+  const handleOSOptions=(deviceType)=>{
+    if(deviceType){
+      if(deviceType.length>0){
+        if(deviceType.includes("Mobile")){
+          console.log("deviceType")
+          console.log(mobileOs,"mobileOS")
+          setOSOptions([...osOptions,...mobileOs])
+        } else {
+          // Remove mobileOs from osOptions if deviceType does not include "Mobile"
+          console.log("mobile not")
+          setOSOptions(osOptions.filter(os => !mobileOs.find(os=>os.value===os.value)))
+        }
+      if(deviceType.includes("Desktop")){
+        setOSOptions([...osOptions,...desktopOs])
+    } else {
+        // Remove mobileOs from osOptions if deviceType does not include "Mobile"
+        setOSOptions(osOptions.filter(os => !desktopOs.includes(os)))
+    }
+      
+    }
+    
+  }
+  
+}
+  console.log(osOptions,"osOptions")
   const customTheme = (theme) => ({
     ...theme,
     colors: {
@@ -95,6 +131,7 @@ const Targeting = (props) => {
       value: "USA",
       label: "USA",
       name: "Geo",
+      
     },
     {
       value: "UK",
@@ -144,28 +181,103 @@ const Targeting = (props) => {
       name: "Browser",
     },
   ];
+  const Devices=[
+    {
+      value: "Mobile",
+      label: "Mobile",
+      name: "Device",
+    },
+    {
+      value: "Desktop",
+      label: "Desktop",
+      name: "Device",
+    },
 
-  const os = [
+    {
+      value: "Other",
+      label: "Other",
+      name: "Device",
+    },
+  ]
+  const desktopOs = [
     {
       value: "Windows",
       label: "Windows",
-      name: "OS",
     },
     {
-      value: "Mac",
-      label: "Mac",
-      name: "OS",
+      value: "MacOS",
+      label:"MacOS"
     },
     {
       value: "Linux",
       label: "Linux",
-      name: "OS",
+    }
+  ];
+  const mobileOs = [
+    {
+      value: "Andriod",
+      label: "Andriod",
+      
     },
     {
-      value: "Other",
-      label: "Other",
-      name: "OS",
+      value: "Blackberry",
+      label: "Blackberry",
+      
     },
+    {
+      value: "IOS",
+      label: "IOS",
+     
+    },
+    {
+      value: "IPadOs",
+      label: "IPadOs",
+      
+    },
+    {
+      value: "Symbian",
+      label: "Symbian",
+      
+    },
+    {
+      value: "Window Phone",
+      label: "Window Phone",
+      
+    },
+
+  ];
+  const otherOs = [
+    {
+      value: "ChromeOS",
+      label: "ChromeOS",
+      
+    },
+    {
+      value: "ChromeCast",
+      label: "ChromeCast",
+      
+    },
+    {
+      value: "Nintendo",
+      label: "Nintendo",
+     
+    },
+    {
+      value: "WebOS",
+      label: "WebOs",
+      
+    },
+    {
+      value: "XboxOS",
+      label: "XboxOS",
+      
+    },
+    {
+      value: "Window Phone",
+      label: "Window Phone",
+      
+    },
+    
   ];
 
   const connectiontype = [
@@ -259,6 +371,10 @@ const Targeting = (props) => {
   useEffect(() => {
     reset(targetings);
   }, []);
+  useEffect(()=>{
+    console.log("Changed")
+    handleOSOptions(targetings.device)
+  },[targetings.device])
 
   return (
     <div>
@@ -304,11 +420,9 @@ const Targeting = (props) => {
                     } // assuming 'all' is expected as string
                     onChange={(newValue) => {
                       if (!newValue || newValue.length === 0) {
-                        // onChange([{ label: 'All', value: 'all' }]);
-                        console.log("All selected");
-                        handleInputTaregting({
-                          target: { name: "geo", value: "all" }, // assuming 'all' is expected as string
-                        });
+                        delete targetings.geo;
+                        handleTargetingData({ ...targetings})
+                        setIsGeoEnabled(false);
                       } else {
                         onChange(newValue);
                         console.log(newValue);
@@ -325,6 +439,69 @@ const Targeting = (props) => {
                     options={geo}
                     isMulti={true}
                     isDisabled={!isGeoEnabled}
+                    theme={customTheme}
+                  ></Select>
+                )}
+              />
+            </div>
+          </div>
+          <div className=" row p-3">
+            <div className="col-md-3 ">
+              <label
+                for="exampleInputEmail1"
+                class="form-label pt-1  d-flex justify-content-start align-items-center "
+              >
+                Devices
+              </label>
+            </div>
+            <div className="col-md-1">
+              <div className="text-center pt-2 d-flex SSAR_CreateCamp_18px_font SSA_fontgrey  justify-content-center ">
+                <span class="form-check form-switch">
+                  &nbsp;
+                  <input
+                    className="form-check-input SSAR_Targeting_Toggle_color"
+                    type="checkbox"
+                    id="flexSwitchCheckChecked"
+                    onChange={handleToggleChangeDevice}
+                    checked={isDeviceEnabled}
+                  />
+                </span>
+              </div>
+            </div>
+            <div className="col-md-8 pt-1 ps-5">
+              <Controller
+                control={control}
+                name="device"
+                render={({ field: { onChange, value } }) => (
+                  <Select
+                    value={
+                      typeof targetings.device == "object"
+                        ? targetings.device?.map((v) => ({ value: v, label: v }))
+                        : "ALL"
+                    } // assuming 'all' is expected as string
+                    onChange={(newValue) => {
+                      if (!newValue || newValue.length === 0) {
+                       
+                        
+                       delete targetings.device;
+                      handleTargetingData({ ...targetings})
+                      setIsDeviceEnabled(false);
+                      } else {
+                        onChange(newValue);
+                        console.log(newValue);
+                        handleInputTaregting({
+                          target: {
+                            name: "device",
+                            value: newValue.map((v) => v.value),
+                          },
+                        });
+                      }
+                    }}
+                    className="SSAR_Targeting_purple_border text-sm"
+                    aria-label="Default select example"
+                    options={Devices}
+                    isMulti={true}
+                    isDisabled={!isDeviceEnabled}
                     theme={customTheme}
                   ></Select>
                 )}
@@ -352,6 +529,7 @@ const Targeting = (props) => {
                     id="flexSwitchCheckChecked"
                     onChange={handleToggleChangeOS}
                     checked={isOSEnabled}
+                    disabled={watch("device")?.length>0?false:true}
                   />
                 </span>
               </div>
@@ -370,10 +548,9 @@ const Targeting = (props) => {
                     onChange={(newValue) => {
                       if (!newValue || newValue.length === 0) {
                         // onChange([{ label: 'All', value: 'all' }]);
-                        console.log("All selected");
-                        handleInputTaregting({
-                          target: { name: "os", value: "all" }, // assuming 'all' is expected as string
-                        });
+                        delete targetings.os;
+                        handleTargetingData({ ...targetings})
+                        setIsOSEnabled(false);
                       } else {
                         onChange(newValue);
                         console.log(newValue);
@@ -387,10 +564,10 @@ const Targeting = (props) => {
                     }}
                     className="SSAR_Targeting_purple_border  text-sm"
                     aria-label="Default select example"
-                    options={os}
+                    options={osOptions}
                     isMulti={true}
                     theme={customTheme}
-                    isDisabled={!isOSEnabled}
+                    isDisabled={!isOSEnabled&&!isDeviceEnabled}
                     // {...register("os")}
                   />
                 )}
@@ -437,11 +614,9 @@ const Targeting = (props) => {
                     } // assuming 'all' is expected as string
                     onChange={(newValue) => {
                       if (!newValue || newValue.length === 0) {
-                        // onChange([{ label: 'All', value: 'all' }]);
-                        console.log("All selected");
-                        handleInputTaregting({
-                          target: { name: "browser", value: "all" }, // assuming 'all' is expected as string
-                        });
+                        delete targetings.browser;
+                        handleTargetingData({ ...targetings})
+                        setIsBrowserEnabled(false);
                       } else {
                         onChange(newValue);
                         console.log(newValue);
@@ -505,11 +680,10 @@ const Targeting = (props) => {
                     } // assuming 'all' is expected as string
                     onChange={(newValue) => {
                       if (!newValue || newValue.length === 0) {
-                        // onChange([{ label: 'All', value: 'all' }]);
-                        console.log("All selected");
-                        handleInputTaregting({
-                          target: { name: "connectionType", value: "all" }, // assuming 'all' is expected as string
-                        });
+                     
+                        delete targetings.connectionType;
+                        handleTargetingData({ ...targetings})
+                        setIsConnectionTypeEnabled(false);
                       } else {
                         onChange(newValue);
                         console.log(newValue);
@@ -575,11 +749,11 @@ const Targeting = (props) => {
                     } // assuming 'all' is expected as string
                     onChange={(newValue) => {
                       if (!newValue || newValue.length === 0) {
-                        // onChange([{ label: 'All', value: 'all' }]);
-                        console.log("All selected");
-                        handleInputTaregting({
-                          target: { name: "language", value: "all" }, // assuming 'all' is expected as string
-                        });
+                       
+                        delete targetings.language;
+                        handleTargetingData({ ...targetings})
+                        setIsLanguageEnabled(false);
+                      
                       } else {
                         onChange(newValue);
                         console.log(newValue);

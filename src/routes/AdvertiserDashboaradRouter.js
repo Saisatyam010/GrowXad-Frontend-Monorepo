@@ -5,8 +5,11 @@ import CreateCampaign from '../features/AdvertiserDashboard/pages/CreateCampaign
 import MyCampaign from '../features/AdvertiserDashboard/pages/MyCampaign'
 import HelpCenter from '../features/AdvertiserDashboard/pages/HelpCenter'
 import AddFunds from '../features/AdvertiserDashboard/pages/AddFunds'
+
 import Overview from '../features/AdvertiserDashboard/pages/Overview';
 import Finance from '../features/AdvertiserDashboard/pages/Finance';
+import GetStarted from '../features/AdvertiserDashboard/pages/GetStarted';
+
 
 const AdvertiserDashboardRouter = () => {
   const advertiserDashboardRoutes = [
@@ -36,10 +39,16 @@ const AdvertiserDashboardRouter = () => {
       exact: true
     },
     {
+
       path: 'finance',
       component: <Finance />,
       exact: true
     },
+
+      path: 'get-started',
+      component: <GetStarted />,
+      exact: true
+
   ]
   return (
 

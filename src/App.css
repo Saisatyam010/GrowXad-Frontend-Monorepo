@@ -8,7 +8,8 @@
 }
 
 * {
-  --primary-color: #71065b;
+
+  --primary-color: #71065d;
   --secondary-color: #000;
   --tertiary-color: #fff;
   --primary-btn: #FFC107;
@@ -30,6 +31,9 @@
   background-color: #311DB2;
 }
 
+
+
+
 .webcl_theme {
   color: rgb(115 3 91) !important;
 }
@@ -38,3 +42,49 @@
   background-color: rgb(115 3 91) !important;
 }
 
+/* Hide scrollbar for Chrome, Safari and Opera */
+.pro-sidebar::-webkit-scrollbar {
+  display: none !important;
+
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.pro-sidebar {
+  -ms-overflow-style: none !important;
+  /* IE and Edge */
+  scrollbar-width: none !important;
+  /* Firefox */
+}
+
+
+
+.pro-sidebar-layout::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.pro-sidebar-layout {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+.idsgfkhbdskhbvkdsh {
+  margin-bottom: 100px !important;
+}
+
+.buttonClickanimatioonstart {
+  color: rgb(255, 0, 0);
+  background-color: rgba(83, 11, 11, 0.185);
+  width: 35px;
+  height: 20px;
+  border-radius: 3px;
+
+.buttonClickanimatioonend {
+  color: rgb(22, 133, 22);
+  background-color: rgba(2, 39, 2, 0.123);
+  width: 35px;
+  height: 20px;
+  border-radius: 3px;
+}

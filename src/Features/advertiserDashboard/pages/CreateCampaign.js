@@ -56,7 +56,7 @@ const CreateCampaign = () => {
   };
   const [state, dispatch] = useReducer(reducer, campaignDatata);
   const [activeStep, setActiveStep] = useState(1);
- 
+  console.log(state,"state")
   const StepIconComponent = (index) => {
     switch (index) {
       case 0:
@@ -162,7 +162,7 @@ const CreateCampaign = () => {
     );
   };
   return (
-    <div className="bg-[#fafafa] px-12 py-4 m-0 h-auto flex gap-4 ">
+    <div className="m-0 h-auto flex gap-4 ">
       <section className="w-[70%]">
         <h2 className="text-black font-medium text-xl ml-2">
           Create Campaign
@@ -217,6 +217,7 @@ const CreateCampaign = () => {
               handleAdvSettingData={handleAdvSettingData}
               button={activeStep}
               func={setActiveStep}
+              state={state}
               
             />
           )}
