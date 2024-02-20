@@ -1,6 +1,6 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route,  } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 // import { ColorModeContext, useMode } from './AdvertiserDashboard/DashboardHeader/Theme';
 import MainRouter from "./routes/MainRouter";
@@ -12,7 +12,7 @@ import AdvertiserDashboardRouter from './routes/AdvertiserDashboaradRouter';
 
 function App() {
  
-  
+   
   return (
     <>
     
