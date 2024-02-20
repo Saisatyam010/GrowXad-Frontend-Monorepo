@@ -1,0 +1,26 @@
+.ab_divbox {
+    padding: 30px 15px;
+    border-radius: 8px;
+    margin: 3px 3px 16px 16px;
+    background-color: white;
+    text-align: center;
+    width: 190px;
+}
+
+.ab_text {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.ab_divnumber {
+    font-size: 25px;
+}
+
+.ab_divtext {
+    font-size: 18px;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+

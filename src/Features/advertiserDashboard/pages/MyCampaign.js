@@ -3,9 +3,9 @@ import Table from '../components/Mycampaign/Table';
 
 const MyCampaign = () => {
     return (
-
+       <>
         <Table />
-        
+        </>
     );
 };
 

@@ -17,7 +17,7 @@ const GenralPreview = (props) => {
   return (
     <div className="bg-white px-4 pt-2.5 pb-2 rounded-sm border border-gray-500 hover:!border-[#71065d] border-solid" onClick={()=>setActiveStep(1)}>
       <h2 className="text-[#4c4b4b] text-lg ">General</h2>
-
+      
       <div className="flex flex-col gap-1">
         {props.generalData &&
           Object.entries(generalData).map(([key, value], index) => {
